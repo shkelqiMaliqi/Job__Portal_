@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
@@ -45,20 +46,18 @@ namespace Job__Portal_.Controllers
             return new JsonResult(table);
         }
 
-        [HttpPost]
-        public JsonResult Post(Users usp)
+        [HttpPost("create")]
+        public IActionResult Post(Users usp)
         {
             string query = @"
-                            INSERT INTO dbo.Users (U_Name,U_Surname,U_Email,U_Username,U_Phone,U_Password,U_RepeatPassword,U_TimeCreated) 
-                            VALUES (@U_Name, @U_Surname, @U_Email, @U_Username, @U_Phone, @U_Password, @U_RepeatPassword, @U_TimeCreated)";
+                    INSERT INTO dbo.Users (U_Name,U_Surname,U_Email,U_Username,U_Phone,U_Password,U_RepeatPassword,U_TimeCreated) 
+                    VALUES (@U_Name, @U_Surname, @U_Email, @U_Username, @U_Phone, @U_Password, @U_RepeatPassword, @U_TimeCreated)";
 
-            DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
             using (SqlConnection myCon = new SqlConnection(sqlDataSource))
             {
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    // myCon.Open();
                     myCommand.Parameters.AddWithValue("@U_Name", usp.U_Name);
                     myCommand.Parameters.AddWithValue("@U_Surname", usp.U_Surname);
                     myCommand.Parameters.AddWithValue("@U_Email", usp.U_Email);
@@ -68,14 +67,49 @@ namespace Job__Portal_.Controllers
                     myCommand.Parameters.AddWithValue("@U_RepeatPassword", usp.U_RepeatPassword);
                     myCommand.Parameters.AddWithValue("@U_TimeCreated", usp.U_TimeCreated);
 
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader);
-                    myReader.Close();
+                    myCon.Open();
+                    myCommand.ExecuteNonQuery(); // Execute the query without a reader
                     myCon.Close();
-
                 }
             }
-            return new JsonResult(table);
+            return StatusCode(201); // Return status code for created resource
+        }
+        [HttpPost("Update")]
+        public IActionResult Put(Users usp)
+        {
+            string query = @"
+                    UPDATE dbo.Users 
+                    SET U_Name = @U_Name, 
+                        U_Surname = @U_Surname, 
+                        U_Email = @U_Email, 
+                        U_Username = @U_Username, 
+                        U_Phone = @U_Phone, 
+                        U_Password = @U_Password, 
+                        U_RepeatPassword = @U_RepeatPassword, 
+                        U_TimeCreated = @U_TimeCreated
+                    WHERE U_ID = @U_ID";
+
+            string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
+            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            {
+                using (SqlCommand myCommand = new SqlCommand(query, myCon))
+                {
+                //   myCommand.Parameters.AddWithValue("@U_ID", usp.U_ID); // Assuming U_ID is the primary key for identifying the user to update
+                    myCommand.Parameters.AddWithValue("@U_Name", usp.U_Name);
+                    myCommand.Parameters.AddWithValue("@U_Surname", usp.U_Surname);
+                    myCommand.Parameters.AddWithValue("@U_Email", usp.U_Email);
+                    myCommand.Parameters.AddWithValue("@U_Username", usp.U_Username);
+                    myCommand.Parameters.AddWithValue("@U_Phone", usp.U_Phone);
+                    myCommand.Parameters.AddWithValue("@U_Password", usp.U_Password);
+                    myCommand.Parameters.AddWithValue("@U_RepeatPassword", usp.U_RepeatPassword);
+                    myCommand.Parameters.AddWithValue("@U_TimeCreated", usp.U_TimeCreated);
+
+                    myCon.Open();
+                    myCommand.ExecuteNonQuery(); // Execute the query without a reader
+                    myCon.Close();
+                }
+            }
+            return StatusCode(204); // Return status code for no content after successful update
         }
     }
 }
