@@ -8,7 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using Job__Portal_.Models;
 
-namespace Job_Portal.Controllers
+namespace Job__Portal_.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

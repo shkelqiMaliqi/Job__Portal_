@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Job__Portal_.Models;
 using Job__Portal_;
+using WebApplication1;
 
-namespace Job_Portal
+namespace Job__Portal_
 {
     public class Program
     {
