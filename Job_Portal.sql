@@ -17,6 +17,9 @@ U_TimeCreated datetime
 INSERT INTO Users (U_Name, U_Surname, U_Email, U_Username, U_Phone, U_Password, U_RepeatPassword, U_TimeCreated)
 VALUES ('John', 'Doe', 'john.doe@example.com', 'johndoe', 1234567890, 'password123', 'password123', GETDATE());
 
+select * 
+from DBO.Users 
+
 create table Contact_Form(
 C_Id int primary key identity(1,1),		
 C_Name varchar (255),
