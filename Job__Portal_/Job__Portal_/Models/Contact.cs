@@ -1,23 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 
 namespace Job__Portal_.Models
 {
-    public class Contact_Form
+    public class Contact
 
     {
-        public int Contact_Id { get; set; }
+        public int C_Id { get; set; }
 
-        public string Contact_Name { get; set; }
-        public string Contact_Surame { get; set; }
+        public string C_Name { get; set; }
+        public string C_Surname { get; set; }
 
-        public string Contact_Email { get; set; }
-        public string Contact_Subject { get; set; }
-        public string Contact_Message { get; set; }
-        public DateTime Contact_TimeCreated { get; set; }
+        public string C_Email { get; set; }
+        public string C_Subject { get; set; }
+        public string C_Message { get; set; }
+        public DateTime C_TimeCreated { get; set; }
 
 
     }

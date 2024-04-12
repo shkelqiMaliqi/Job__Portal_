@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iTU9SgddJO3MMIJOVVgb+WMSjLo0l/v3ooWBozFKsmF3jD6pTJQVm6rO4hYz5zt00Nb/DeP3yNy3Qlsz59YQNA==",
+  "dgSpecHash": "CoVwUqX7YgXVg3pXLgP95Qykr/4xejcTykD7Z7pxJ2gy1cM01eprZcItqqIb+auP7xm2CVX15n4CMhGHAqlq+Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Elvir\\OneDrive\\Desktop\\react-email.js\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
+  "projectFilePath": "C:\\Users\\Elvir\\OneDrive\\Desktop\\Projekti\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Elvir\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Elvir\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

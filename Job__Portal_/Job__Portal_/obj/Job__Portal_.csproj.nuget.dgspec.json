@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Elvir\\OneDrive\\Desktop\\react-email.js\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj": {}
+    "C:\\Users\\Elvir\\OneDrive\\Desktop\\Projekti\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Elvir\\OneDrive\\Desktop\\react-email.js\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj": {
+    "C:\\Users\\Elvir\\OneDrive\\Desktop\\Projekti\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Elvir\\OneDrive\\Desktop\\react-email.js\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
+        "projectUniqueName": "C:\\Users\\Elvir\\OneDrive\\Desktop\\Projekti\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
         "projectName": "Job__Portal_",
-        "projectPath": "C:\\Users\\Elvir\\OneDrive\\Desktop\\react-email.js\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
+        "projectPath": "C:\\Users\\Elvir\\OneDrive\\Desktop\\Projekti\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
         "packagesPath": "C:\\Users\\Elvir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Elvir\\OneDrive\\Desktop\\react-email.js\\Job__Portal_\\Job__Portal_\\Job__Portal_\\obj\\",
+        "outputPath": "C:\\Users\\Elvir\\OneDrive\\Desktop\\Projekti\\Job__Portal_\\Job__Portal_\\Job__Portal_\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Elvir\\AppData\\Roaming\\NuGet\\NuGet.Config",
