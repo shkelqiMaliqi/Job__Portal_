@@ -21,7 +21,7 @@ namespace Job__Portal_.Controllers
         {
             _configuration = configuration;
         }
-
+        
         //Create
         [HttpGet]
         public JsonResult Get()
