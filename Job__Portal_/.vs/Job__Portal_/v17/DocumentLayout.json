@@ -7,6 +7,7 @@
       "RelativeMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|solutionrelative:job__portal_\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|c:\\users\\elvir\\onedrive\\desktop\\projekti\\job__portal_\\job__portal_\\job__portal_\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|solutionrelative:job__portal_\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -17,6 +18,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|c:\\users\\elvir\\onedrive\\desktop\\projekti\\job__portal_\\job__portal_\\job__portal_\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|solutionrelative:job__portal_\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|c:\\users\\user\\desktop\\job__portal_\\job__portal_\\job__portal_\\controllers\\jobscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|solutionrelative:job__portal_\\controllers\\jobscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> 8001bf664150815ab05b4352c876073414dbcbfd
     }
   ],
   "DocumentGroupContainers": [
@@ -26,11 +31,29 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 0,
+=======
+          "SelectedChildIndex": 2,
+>>>>>>> 8001bf664150815ab05b4352c876073414dbcbfd
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "JobsController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Controllers\\JobsController.cs",
+              "RelativeDocumentMoniker": "Job__Portal_\\Controllers\\JobsController.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Controllers\\JobsController.cs",
+              "RelativeToolTip": "Job__Portal_\\Controllers\\JobsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T07:14:20.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< HEAD
               "Title": "ContactController.cs",
               "DocumentMoniker": "C:\\Users\\Elvir\\OneDrive\\Desktop\\Projekti\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Controllers\\ContactController.cs",
               "RelativeDocumentMoniker": "Job__Portal_\\Controllers\\ContactController.cs",
@@ -83,6 +106,17 @@
               "ViewState": "AQIAAFYAAAAAAAAAAAAIwDEAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-11T10:36:38.33Z"
+=======
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Job__Portal_\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Job__Portal_\\Controllers\\UsersController.cs",
+              "ViewState": "AQIAAHoAAAAAAAAAAAAowIgAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T07:14:20.955Z",
+              "EditorCaption": ""
+>>>>>>> 8001bf664150815ab05b4352c876073414dbcbfd
             }
           ]
         }
