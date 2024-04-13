@@ -46,22 +46,27 @@
           }
         }
       },
-<<<<<<< HEAD
-      "Microsoft.AspNetCore.Cryptography.Internal/8.0.4": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
-=======
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
           "lib/net6.0/_._": {
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
             "related": ".xml"
           }
         },
         "runtime": {
-<<<<<<< HEAD
+          "lib/net6.0/Humanizer.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Cryptography.Internal/8.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
           "lib/net8.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
             "related": ".xml"
           }
@@ -96,9 +101,6 @@
         },
         "runtime": {
           "lib/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {
-=======
-          "lib/net6.0/Humanizer.dll": {
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
             "related": ".xml"
           }
         }
@@ -141,19 +143,12 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-<<<<<<< HEAD
-      "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
-=======
       "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
             "related": ".xml"
           }
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
         },
         "runtime": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
@@ -161,8 +156,6 @@
           }
         }
       },
-<<<<<<< HEAD
-=======
       "Microsoft.CodeAnalysis.Analyzers/3.3.3": {
         "type": "package",
         "build": {
@@ -409,7 +402,6 @@
           }
         }
       },
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
       "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
@@ -522,8 +514,6 @@
           "lib/netstandard2.0/_._": {}
         }
       },
-<<<<<<< HEAD
-=======
       "Microsoft.EntityFrameworkCore.Design/8.0.4": {
         "type": "package",
         "dependencies": {
@@ -547,7 +537,6 @@
           "build/net8.0/Microsoft.EntityFrameworkCore.Design.props": {}
         }
       },
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
       "Microsoft.EntityFrameworkCore.Relational/8.0.4": {
         "type": "package",
         "dependencies": {
@@ -582,8 +571,6 @@
           }
         }
       },
-<<<<<<< HEAD
-=======
       "Microsoft.EntityFrameworkCore.Tools/8.0.4": {
         "type": "package",
         "dependencies": {
@@ -596,7 +583,6 @@
           "lib/net8.0/_._": {}
         }
       },
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
         "type": "package",
         "build": {
@@ -704,7 +690,26 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-<<<<<<< HEAD
+      "Microsoft.Extensions.DependencyModel/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Encodings.Web": "8.0.0",
+          "System.Text.Json": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.DependencyModel.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
       "Microsoft.Extensions.Identity.Core/8.0.4": {
         "type": "package",
         "dependencies": {
@@ -714,21 +719,10 @@
         },
         "compile": {
           "lib/net8.0/Microsoft.Extensions.Identity.Core.dll": {
-=======
-      "Microsoft.Extensions.DependencyModel/8.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Text.Encodings.Web": "8.0.0",
-          "System.Text.Json": "8.0.0"
-        },
-        "compile": {
-          "lib/net8.0/_._": {
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
             "related": ".xml"
           }
         },
         "runtime": {
-<<<<<<< HEAD
           "lib/net8.0/Microsoft.Extensions.Identity.Core.dll": {
             "related": ".xml"
           }
@@ -750,14 +744,6 @@
           "lib/net8.0/Microsoft.Extensions.Identity.Stores.dll": {
             "related": ".xml"
           }
-=======
-          "lib/net8.0/Microsoft.Extensions.DependencyModel.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
         }
       },
       "Microsoft.Extensions.Logging/8.0.0": {
@@ -800,11 +786,7 @@
           "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
         }
       },
-<<<<<<< HEAD
       "Microsoft.Extensions.Options/8.0.2": {
-=======
-      "Microsoft.Extensions.Options/8.0.0": {
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0",
@@ -1067,8 +1049,6 @@
           }
         }
       },
-<<<<<<< HEAD
-=======
       "Mono.TextTemplating/2.2.1": {
         "type": "package",
         "dependencies": {
@@ -1081,7 +1061,6 @@
           "lib/netstandard2.0/Mono.TextTemplating.dll": {}
         }
       },
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
       "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
@@ -1209,8 +1188,6 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-<<<<<<< HEAD
-=======
       "System.CodeDom/4.4.0": {
         "type": "package",
         "compile": {
@@ -1358,7 +1335,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
       "System.Configuration.ConfigurationManager/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -1407,8 +1383,6 @@
           }
         }
       },
-<<<<<<< HEAD
-=======
       "System.Diagnostics.Debug/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1422,7 +1396,6 @@
           }
         }
       },
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
       "System.Diagnostics.DiagnosticSource/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -1484,8 +1457,6 @@
           }
         }
       },
-<<<<<<< HEAD
-=======
       "System.Globalization/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1499,7 +1470,6 @@
           }
         }
       },
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
       "System.IdentityModel.Tokens.Jwt/6.35.0": {
         "type": "package",
         "dependencies": {
@@ -1517,8 +1487,6 @@
           }
         }
       },
-<<<<<<< HEAD
-=======
       "System.IO/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1534,7 +1502,6 @@
           }
         }
       },
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
       "System.IO.FileSystem.AccessControl/5.0.0": {
         "type": "package",
         "dependencies": {
@@ -1558,8 +1525,6 @@
           }
         }
       },
-<<<<<<< HEAD
-=======
       "System.IO.Pipelines/6.0.3": {
         "type": "package",
         "compile": {
@@ -1594,7 +1559,6 @@
           "lib/netstandard1.6/System.Linq.dll": {}
         }
       },
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
       "System.Memory/4.5.4": {
         "type": "package",
         "compile": {
@@ -1630,8 +1594,6 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
-<<<<<<< HEAD
-=======
       "System.Reflection/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1694,7 +1656,6 @@
           }
         }
       },
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
       "System.Runtime/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1748,8 +1709,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-<<<<<<< HEAD
-=======
       "System.Runtime.Extensions/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1763,7 +1722,6 @@
           }
         }
       },
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
       "System.Security.AccessControl/6.0.0": {
         "type": "package",
         "compile": {
@@ -1911,55 +1869,28 @@
           }
         }
       },
-<<<<<<< HEAD
-      "System.Text.Encodings.Web/6.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
-        },
-        "compile": {
-          "lib/net6.0/System.Text.Encodings.Web.dll": {
-=======
       "System.Text.Encodings.Web/8.0.0": {
         "type": "package",
         "compile": {
           "lib/net8.0/System.Text.Encodings.Web.dll": {
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
             "related": ".xml"
           }
         },
         "runtime": {
-<<<<<<< HEAD
-          "lib/net6.0/System.Text.Encodings.Web.dll": {
-=======
           "lib/net8.0/System.Text.Encodings.Web.dll": {
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
             "related": ".xml"
           }
         },
         "build": {
-<<<<<<< HEAD
-          "buildTransitive/netcoreapp3.1/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll": {
-=======
           "buildTransitive/net6.0/_._": {}
         },
         "runtimeTargets": {
           "runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll": {
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
             "assetType": "runtime",
             "rid": "browser"
           }
         }
       },
-<<<<<<< HEAD
-      "System.Text.Json/4.7.2": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/System.Text.Json.dll": {
-=======
       "System.Text.Json/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -1967,14 +1898,10 @@
         },
         "compile": {
           "lib/net8.0/System.Text.Json.dll": {
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
             "related": ".xml"
           }
         },
         "runtime": {
-<<<<<<< HEAD
-          "lib/netcoreapp3.0/System.Text.Json.dll": {
-=======
           "lib/net8.0/System.Text.Json.dll": {
             "related": ".xml"
           }
@@ -2008,7 +1935,6 @@
         },
         "compile": {
           "ref/netstandard1.3/_._": {
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
             "related": ".xml"
           }
         }
@@ -2089,7 +2015,24 @@
         "lib/netstandard2.0/Azure.Identity.xml"
       ]
     },
-<<<<<<< HEAD
+    "Humanizer.Core/2.14.1": {
+      "sha512": "lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
+      "type": "package",
+      "path": "humanizer.core/2.14.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "humanizer.core.2.14.1.nupkg.sha512",
+        "humanizer.core.nuspec",
+        "lib/net6.0/Humanizer.dll",
+        "lib/net6.0/Humanizer.xml",
+        "lib/netstandard1.0/Humanizer.dll",
+        "lib/netstandard1.0/Humanizer.xml",
+        "lib/netstandard2.0/Humanizer.dll",
+        "lib/netstandard2.0/Humanizer.xml",
+        "logo.png"
+      ]
+    },
     "Microsoft.AspNetCore.Cryptography.Internal/8.0.4": {
       "sha512": "W9pteGr3myODvbXWqicrh3xAGe1R1oNMnFp5M8w51ncgdiOIn6/OhMfHwC2yzn6Jj6JfM4Fq3S/Hpxhu6+dkVA==",
       "type": "package",
@@ -2141,24 +2084,6 @@
         "lib/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml",
         "microsoft.aspnetcore.identity.entityframeworkcore.8.0.4.nupkg.sha512",
         "microsoft.aspnetcore.identity.entityframeworkcore.nuspec"
-=======
-    "Humanizer.Core/2.14.1": {
-      "sha512": "lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
-      "type": "package",
-      "path": "humanizer.core/2.14.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "humanizer.core.2.14.1.nupkg.sha512",
-        "humanizer.core.nuspec",
-        "lib/net6.0/Humanizer.dll",
-        "lib/net6.0/Humanizer.xml",
-        "lib/netstandard1.0/Humanizer.dll",
-        "lib/netstandard1.0/Humanizer.xml",
-        "lib/netstandard2.0/Humanizer.dll",
-        "lib/netstandard2.0/Humanizer.xml",
-        "logo.png"
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
       ]
     },
     "Microsoft.AspNetCore.JsonPatch/8.0.4": {
@@ -2195,17 +2120,10 @@
         "microsoft.aspnetcore.mvc.newtonsoftjson.nuspec"
       ]
     },
-<<<<<<< HEAD
-    "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
-      "sha512": "yuvf07qFWFqtK3P/MRkEKLhn5r2UbSpVueRziSqj0yJQIKFwG1pq9mOayK3zE5qZCTs0CbrwL9M6R8VwqyGy2w==",
-      "type": "package",
-      "path": "microsoft.bcl.asyncinterfaces/1.1.1",
-=======
     "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
       "sha512": "UcSjPsst+DfAdJGVDsu346FX0ci0ah+lw3WRtn18NUwEqRt70HaOQ7lI72vy3+1LxtqI3T5GWwV39rQSrCzAeg==",
       "type": "package",
       "path": "microsoft.bcl.asyncinterfaces/6.0.0",
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2218,15 +2136,6 @@
         "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.xml",
         "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
         "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml",
-<<<<<<< HEAD
-        "microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
-        "microsoft.bcl.asyncinterfaces.nuspec",
-        "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll",
-        "ref/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
-        "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-=======
         "microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
         "microsoft.bcl.asyncinterfaces.nuspec",
         "useSharedDesignerContext.txt"
@@ -2661,7 +2570,6 @@
         "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll",
         "microsoft.codeanalysis.workspaces.common.4.5.0.nupkg.sha512",
         "microsoft.codeanalysis.workspaces.common.nuspec"
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
       ]
     },
     "Microsoft.CSharp/4.7.0": {
@@ -2856,8 +2764,6 @@
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
-<<<<<<< HEAD
-=======
     "Microsoft.EntityFrameworkCore.Design/8.0.4": {
       "sha512": "QD5/h3+h4N7GlUaA4bzaYFW9CoeB7ne2KMiDIENIT0GPx+E6up/v9fDA36FAS3NIq9zeKUAQgN8aj6IwE7tMGw==",
       "type": "package",
@@ -2874,7 +2780,6 @@
         "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
     "Microsoft.EntityFrameworkCore.Relational/8.0.4": {
       "sha512": "aWLT6e9a8oMzXgF0YQpYYa3mDeU+yb2UQSQ+RrIgyGgSpzPfSKgpA7v2kOVDuZr2AQ6NNAlWPaBG7wZuKQI96w==",
       "type": "package",
@@ -2905,8 +2810,6 @@
         "microsoft.entityframeworkcore.sqlserver.nuspec"
       ]
     },
-<<<<<<< HEAD
-=======
     "Microsoft.EntityFrameworkCore.Tools/8.0.4": {
       "sha512": "txPWQf+SGx8Aa6Z8FbdQ8zMHckArroaE0AlV6iqnqJp9w46RiOBtkJlkPgohteQS1uhxIwjtHfwFiQATw059fg==",
       "type": "package",
@@ -2933,7 +2836,6 @@
         "tools/netcoreapp2.0/any/ef.runtimeconfig.json"
       ]
     },
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
     "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
       "sha512": "Ckb5EDBUNJdFWyajfXzUIMRkhf52fHZOQuuZg/oiu8y7zDCVwD0iHhew6MnThjHmevanpxL3f5ci2TtHQEN6bw==",
       "type": "package",
@@ -3319,22 +3221,44 @@
         "useSharedDesignerContext.txt"
       ]
     },
-<<<<<<< HEAD
-    "Microsoft.Extensions.Identity.Core/8.0.4": {
-      "sha512": "YC5ou4FBKDGrAvKOBoPG9QjbAkRifDaZ4JJAoWz4V8fG9Ks3AzIMnKNffIJs5KX5q7wIyK0MrQRYgRxFfCGmwQ==",
-      "type": "package",
-      "path": "microsoft.extensions.identity.core/8.0.4",
-=======
     "Microsoft.Extensions.DependencyModel/8.0.0": {
       "sha512": "NSmDw3K0ozNDgShSIpsZcbFIzBX4w28nDag+TfaQujkXGazBm+lid5onlWoCBy4VsLxqnnKjEBbGSJVWJMf43g==",
       "type": "package",
       "path": "microsoft.extensions.dependencymodel/8.0.0",
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-<<<<<<< HEAD
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.DependencyModel.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyModel.targets",
+        "lib/net462/Microsoft.Extensions.DependencyModel.dll",
+        "lib/net462/Microsoft.Extensions.DependencyModel.xml",
+        "lib/net6.0/Microsoft.Extensions.DependencyModel.dll",
+        "lib/net6.0/Microsoft.Extensions.DependencyModel.xml",
+        "lib/net7.0/Microsoft.Extensions.DependencyModel.dll",
+        "lib/net7.0/Microsoft.Extensions.DependencyModel.xml",
+        "lib/net8.0/Microsoft.Extensions.DependencyModel.dll",
+        "lib/net8.0/Microsoft.Extensions.DependencyModel.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.xml",
+        "microsoft.extensions.dependencymodel.8.0.0.nupkg.sha512",
+        "microsoft.extensions.dependencymodel.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Identity.Core/8.0.4": {
+      "sha512": "YC5ou4FBKDGrAvKOBoPG9QjbAkRifDaZ4JJAoWz4V8fG9Ks3AzIMnKNffIJs5KX5q7wIyK0MrQRYgRxFfCGmwQ==",
+      "type": "package",
+      "path": "microsoft.extensions.identity.core/8.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net462/Microsoft.Extensions.Identity.Core.dll",
         "lib/net462/Microsoft.Extensions.Identity.Core.xml",
@@ -3363,28 +3287,6 @@
         "lib/netstandard2.0/Microsoft.Extensions.Identity.Stores.xml",
         "microsoft.extensions.identity.stores.8.0.4.nupkg.sha512",
         "microsoft.extensions.identity.stores.nuspec"
-=======
-        "LICENSE.TXT",
-        "PACKAGE.md",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/Microsoft.Extensions.DependencyModel.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyModel.targets",
-        "lib/net462/Microsoft.Extensions.DependencyModel.dll",
-        "lib/net462/Microsoft.Extensions.DependencyModel.xml",
-        "lib/net6.0/Microsoft.Extensions.DependencyModel.dll",
-        "lib/net6.0/Microsoft.Extensions.DependencyModel.xml",
-        "lib/net7.0/Microsoft.Extensions.DependencyModel.dll",
-        "lib/net7.0/Microsoft.Extensions.DependencyModel.xml",
-        "lib/net8.0/Microsoft.Extensions.DependencyModel.dll",
-        "lib/net8.0/Microsoft.Extensions.DependencyModel.xml",
-        "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.xml",
-        "microsoft.extensions.dependencymodel.8.0.0.nupkg.sha512",
-        "microsoft.extensions.dependencymodel.nuspec",
-        "useSharedDesignerContext.txt"
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
       ]
     },
     "Microsoft.Extensions.Logging/8.0.0": {
@@ -3492,17 +3394,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-<<<<<<< HEAD
     "Microsoft.Extensions.Options/8.0.2": {
       "sha512": "dWGKvhFybsaZpGmzkGCbNNwBD1rVlWzrZKANLW/CcbFJpCEceMCGzT7zZwHOGBCbwM0SzBuceMj5HN1LKV1QqA==",
       "type": "package",
       "path": "microsoft.extensions.options/8.0.2",
-=======
-    "Microsoft.Extensions.Options/8.0.0": {
-      "sha512": "JOVOfqpnqlVLUzINQ2fox8evY2SKLYJ3BV8QDe/Jyp21u1T7r45x/R/5QdteURMR5r01GxeJSBBUOCOyaNXA3g==",
-      "type": "package",
-      "path": "microsoft.extensions.options/8.0.0",
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3541,11 +3436,7 @@
         "lib/netstandard2.0/Microsoft.Extensions.Options.xml",
         "lib/netstandard2.1/Microsoft.Extensions.Options.dll",
         "lib/netstandard2.1/Microsoft.Extensions.Options.xml",
-<<<<<<< HEAD
         "microsoft.extensions.options.8.0.2.nupkg.sha512",
-=======
-        "microsoft.extensions.options.8.0.0.nupkg.sha512",
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
         "microsoft.extensions.options.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -3908,8 +3799,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-<<<<<<< HEAD
-=======
     "Mono.TextTemplating/2.2.1": {
       "sha512": "KZYeKBET/2Z0gY1WlTAK7+RHTl7GSbtvTLDXEZZojUdAPqpQNDL6tHv7VUpqfX5VEOh+uRGKaZXkuD253nEOBQ==",
       "type": "package",
@@ -3923,7 +3812,6 @@
         "mono.texttemplating.nuspec"
       ]
     },
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
     "Newtonsoft.Json/13.0.3": {
       "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "type": "package",
@@ -4119,8 +4007,6 @@
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
-<<<<<<< HEAD
-=======
     "System.CodeDom/4.4.0": {
       "sha512": "2sCCb7doXEwtYAbqzbF/8UAeDRMNmPaQbU2q50Psg1J9KzumyVVCgKQY8s53WIPTufNT0DpSe9QRvVjOzfDWBA==",
       "type": "package",
@@ -4365,7 +4251,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
     "System.Configuration.ConfigurationManager/6.0.1": {
       "sha512": "jXw9MlUu/kRfEU0WyTptAVueupqIeE3/rl0EZDMlf8pcvJnitQ8HeVEp69rZdaStXwTV72boi/Bhw8lOeO+U2w==",
       "type": "package",
@@ -4477,8 +4362,6 @@
         "version.txt"
       ]
     },
-<<<<<<< HEAD
-=======
     "System.Diagnostics.Debug/4.3.0": {
       "sha512": "ZUhUOdqmaG5Jk3Xdb8xi5kIyQYAA4PnTNlHx1mu9ZY3qv4ELIdKbnL/akbGaKi2RnNUWaZsAs31rvzFdewTj2g==",
       "type": "package",
@@ -4547,7 +4430,6 @@
         "system.diagnostics.debug.nuspec"
       ]
     },
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
     "System.Diagnostics.DiagnosticSource/6.0.1": {
       "sha512": "KiLYDu2k2J82Q9BJpWiuQqCkFjRBWVq4jDzKKWawVi9KWzyD0XG3cmfX0vqTQlL14Wi9EufJrbL0+KCLTbqWiQ==",
       "type": "package",
@@ -4632,8 +4514,6 @@
         "version.txt"
       ]
     },
-<<<<<<< HEAD
-=======
     "System.Globalization/4.3.0": {
       "sha512": "kYdVd2f2PAdFGblzFswE4hkNANJBKRmsfa2X5LG2AcWE1c7/4t0pYae1L8vfZ5xvE2nK/R9JprtToA61OSHWIg==",
       "type": "package",
@@ -4702,7 +4582,6 @@
         "system.globalization.nuspec"
       ]
     },
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
     "System.IdentityModel.Tokens.Jwt/6.35.0": {
       "sha512": "yxGIQd3BFK7F6S62/7RdZk3C/mfwyVxvh6ngd1VYMBmbJ1YZZA9+Ku6suylVtso0FjI0wbElpJ0d27CdsyLpBQ==",
       "type": "package",
@@ -4726,8 +4605,6 @@
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
-<<<<<<< HEAD
-=======
     "System.IO/4.3.0": {
       "sha512": "3qjaHvxQPDpSOYICjUoTsmoq5u6QJAFRUITgeT/4gqkF1bajbSmb1kwSxEA8AHlofqgcKJcM8udgieRNhaJ5Cg==",
       "type": "package",
@@ -4809,7 +4686,6 @@
         "system.io.nuspec"
       ]
     },
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
     "System.IO.FileSystem.AccessControl/5.0.0": {
       "sha512": "SxHB3nuNrpptVk+vZ/F+7OHEpoHUIKKMl02bUmYHQr1r+glbZQxs7pRtsf4ENO29TVm2TH3AEeep2fJcy92oYw==",
       "type": "package",
@@ -4854,8 +4730,6 @@
         "version.txt"
       ]
     },
-<<<<<<< HEAD
-=======
     "System.IO.Pipelines/6.0.3": {
       "sha512": "ryTgF+iFkpGZY1vRQhfCzX0xTdlV3pyaTTqRu2ETbEv+HlV7O6y7hyQURnghNIXvctl5DuZ//Dpks6HdL/Txgw==",
       "type": "package",
@@ -4953,7 +4827,6 @@
         "system.linq.nuspec"
       ]
     },
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
     "System.Memory/4.5.4": {
       "sha512": "1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
       "type": "package",
@@ -5042,8 +4915,6 @@
         "version.txt"
       ]
     },
-<<<<<<< HEAD
-=======
     "System.Reflection/4.3.0": {
       "sha512": "KMiAFoW7MfJGa9nDFNcfu+FpEdiHpWgTcS2HdMpDvt9saK3y/G4GwprPyzqjFH9NTaGPQeWNHU+iDlDILj96aQ==",
       "type": "package",
@@ -5262,7 +5133,6 @@
         "system.resources.resourcemanager.nuspec"
       ]
     },
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
     "System.Runtime/4.3.0": {
       "sha512": "JufQi0vPQ0xGnAczR13AUFglDyVYt4Kqnz1AZaiKZ5+GICq0/1MH/mO/eAJHt/mHW1zjKBJd7kV26SrxddAhiw==",
       "type": "package",
@@ -5417,8 +5287,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-<<<<<<< HEAD
-=======
     "System.Runtime.Extensions/4.3.0": {
       "sha512": "guW0uK0fn5fcJJ1tJVXYd7/1h5F+pea1r7FLSOz/f8vPEqbR2ZAknuRDvTQ8PzAilDveOxNjSfr0CHfIQfFk8g==",
       "type": "package",
@@ -5500,7 +5368,6 @@
         "system.runtime.extensions.nuspec"
       ]
     },
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
     "System.Security.AccessControl/6.0.0": {
       "sha512": "AUADIc0LIEQe7MzC+I0cl0rAT8RrTAKFHl53yHjEUzNVIaUlhFY11vc2ebiVJzVBuOzun6F7FBA+8KAbGTTedQ==",
       "type": "package",
@@ -5837,33 +5704,16 @@
         "useSharedDesignerContext.txt"
       ]
     },
-<<<<<<< HEAD
-    "System.Text.Encodings.Web/6.0.0": {
-      "sha512": "Vg8eB5Tawm1IFqj4TVK1czJX89rhFxJo9ELqc/Eiq0eXy13RK00eubyU6TJE6y+GQXjyV5gSfiewDUZjQgSE0w==",
-      "type": "package",
-      "path": "system.text.encodings.web/6.0.0",
-=======
     "System.Text.Encodings.Web/8.0.0": {
       "sha512": "yev/k9GHAEGx2Rg3/tU6MQh4HGBXJs70y7j1LaM1i/ER9po+6nnQ6RRqTJn1E7Xu0fbIFK80Nh5EoODxrbxwBQ==",
       "type": "package",
       "path": "system.text.encodings.web/8.0.0",
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
-<<<<<<< HEAD
-        "buildTransitive/netcoreapp2.0/System.Text.Encodings.Web.targets",
-        "buildTransitive/netcoreapp3.1/_._",
-        "lib/net461/System.Text.Encodings.Web.dll",
-        "lib/net461/System.Text.Encodings.Web.xml",
-        "lib/net6.0/System.Text.Encodings.Web.dll",
-        "lib/net6.0/System.Text.Encodings.Web.xml",
-        "lib/netcoreapp3.1/System.Text.Encodings.Web.dll",
-        "lib/netcoreapp3.1/System.Text.Encodings.Web.xml",
-=======
         "buildTransitive/net461/System.Text.Encodings.Web.targets",
         "buildTransitive/net462/_._",
         "buildTransitive/net6.0/_._",
@@ -5876,30 +5726,19 @@
         "lib/net7.0/System.Text.Encodings.Web.xml",
         "lib/net8.0/System.Text.Encodings.Web.dll",
         "lib/net8.0/System.Text.Encodings.Web.xml",
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
         "lib/netstandard2.0/System.Text.Encodings.Web.dll",
         "lib/netstandard2.0/System.Text.Encodings.Web.xml",
         "runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll",
         "runtimes/browser/lib/net6.0/System.Text.Encodings.Web.xml",
-<<<<<<< HEAD
-        "system.text.encodings.web.6.0.0.nupkg.sha512",
-=======
         "runtimes/browser/lib/net7.0/System.Text.Encodings.Web.dll",
         "runtimes/browser/lib/net7.0/System.Text.Encodings.Web.xml",
         "runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll",
         "runtimes/browser/lib/net8.0/System.Text.Encodings.Web.xml",
         "system.text.encodings.web.8.0.0.nupkg.sha512",
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
         "system.text.encodings.web.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-<<<<<<< HEAD
-    "System.Text.Json/4.7.2": {
-      "sha512": "TcMd95wcrubm9nHvJEQs70rC0H/8omiSGGpU4FQ/ZA1URIqD4pjmFJh2Mfv1yH1eHgJDWTi2hMDXwTET+zOOyg==",
-      "type": "package",
-      "path": "system.text.json/4.7.2",
-=======
     "System.Text.Json/8.0.0": {
       "sha512": "OdrZO2WjkiEG6ajEFRABTRCi/wuXQPxeV6g8xvUJqdxMvvuCCEk86zPla8UiIQJz3durtUEbNyY/3lIhS0yZvQ==",
       "type": "package",
@@ -5977,25 +5816,12 @@
       "sha512": "TY8/9+tI0mNaUMgntOxxaq2ndTkdXqLSxvPmas7XEqOlv9lQtB7wLjYGd756lOaO7Dvb5r/WXhluM+0Xe87v5Q==",
       "type": "package",
       "path": "system.threading.channels/6.0.0",
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
-<<<<<<< HEAD
-        "lib/net461/System.Text.Json.dll",
-        "lib/net461/System.Text.Json.xml",
-        "lib/netcoreapp3.0/System.Text.Json.dll",
-        "lib/netcoreapp3.0/System.Text.Json.xml",
-        "lib/netstandard2.0/System.Text.Json.dll",
-        "lib/netstandard2.0/System.Text.Json.xml",
-        "system.text.json.4.7.2.nupkg.sha512",
-        "system.text.json.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-=======
         "buildTransitive/netcoreapp2.0/System.Threading.Channels.targets",
         "buildTransitive/netcoreapp3.1/_._",
         "lib/net461/System.Threading.Channels.dll",
@@ -6079,7 +5905,6 @@
         "ref/xamarinwatchos10/_._",
         "system.threading.tasks.4.3.0.nupkg.sha512",
         "system.threading.tasks.nuspec"
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
       ]
     },
     "System.Threading.Tasks.Extensions/4.5.4": {
@@ -6145,36 +5970,34 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-<<<<<<< HEAD
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.4",
-      "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 8.0.4",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.4",
-      "Swashbuckle.AspNetCore >= 6.4.0",
-      "System.Data.SqlClient >= 4.8.6"
-=======
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 8.0.4",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.4",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.4",
       "Swashbuckle.AspNetCore >= 6.4.0",
       "System.Data.SqlClient >= 4.8.6",
       "System.Linq >= 4.3.0"
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Elvir\\.nuget\\packages\\": {}
+    "C:\\Users\\Lenovo\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Elvir\\OneDrive\\Desktop\\react-email.js\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
+      "projectUniqueName": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
       "projectName": "Job__Portal_",
-      "projectPath": "C:\\Users\\Elvir\\OneDrive\\Desktop\\react-email.js\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
-      "packagesPath": "C:\\Users\\Elvir\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Elvir\\OneDrive\\Desktop\\react-email.js\\Job__Portal_\\Job__Portal_\\Job__Portal_\\obj\\",
+      "projectPath": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
+      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Elvir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6182,6 +6005,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -6205,13 +6029,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
-<<<<<<< HEAD
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
             "version": "[8.0.4, )"
           },
-=======
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
             "target": "Package",
             "version": "[8.0.4, )"
@@ -6220,15 +6041,12 @@
             "target": "Package",
             "version": "[8.0.4, )"
           },
-<<<<<<< HEAD
-=======
           "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
             "version": "[8.0.4, )"
           },
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.4.0, )"
@@ -6236,13 +6054,10 @@
           "System.Data.SqlClient": {
             "target": "Package",
             "version": "[4.8.6, )"
-<<<<<<< HEAD
-=======
           },
           "System.Linq": {
             "target": "Package",
             "version": "[4.3.0, )"
->>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
           }
         },
         "imports": [
@@ -6264,8 +6079,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Lenovo\\OneDrive\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

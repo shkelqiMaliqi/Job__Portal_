@@ -30,19 +30,68 @@ C_TimeCreated datetime
 create table Jobs(
 JobId int primary key identity (1,1),
 JobTitle varchar(50),
-NumberOfPositions varchar(50),
+NumberOfPositions int ,
 JobDescription varchar(MAX),
-Qualification varchar(50),
+Qualification varchar(MAX),
 Experience varchar(50),
 Requirements varchar(MAX),
-LastDateToApply date,
+LastDateToApply varchar(255),
 JobType varchar(50),
 CompanyName varchar(50),
-ComapnyLogo varchar(MAX),
+CompanyLogo varchar(MAX),
 Website varchar(100),
 CompanyEmail varchar(50),
 CompanyAddress varchar(MAX),
-CompanyCoutry varchar(50),
+CompanyCountry varchar(50),
 CompanyState varchar(50),
-CrateDate_C datetime
+CompanyPhone int,
+CreateDate_C datetime
 )
+INSERT INTO Jobs (
+    JobTitle,
+    NumberOfPositions,
+    JobDescription,
+    Qualification,
+    Experience,
+    Requirements,
+    LastDateToApply,
+    JobType,
+    CompanyName,
+    CompanyLogo,
+    Website,
+    CompanyEmail,
+    CompanyAddress,
+    CompanyCountry,
+    CompanyState,
+    CompanyPhone,
+    CreateDate_C
+) VALUES (
+    'Software Engineer',
+    3,
+    'We are seeking a talented Software Engineer to join our team...',
+    'Bachelor’s degree in Computer Science or related field',
+    '2+ years',
+    'Strong knowledge of C#, .NET Core, and SQL Server',
+    '12Shkurt'
+    'Full-time',
+    'ABC Technologies',
+    'https://example.com/logo.png',
+    'https://www.example.com',
+    'info@example.com',
+    '123 Main St, City, Country',
+    'Country',
+    'State',
+    1234567890,
+    GETDATE() -- Current date and time
+);
+select * from jobs
+
+create table JobCategories(
+JobCategoryId int primary key identity(1,1),
+JobCategoryName varchar (255)
+)
+
+INSERT INTO JobCategories (JobCategoryName)
+VALUES ('Teknologji Informative');
+
+select * from JobCategories
