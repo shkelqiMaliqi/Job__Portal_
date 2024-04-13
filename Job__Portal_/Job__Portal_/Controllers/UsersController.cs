@@ -46,7 +46,7 @@ namespace Job__Portal_.Controllers
             return new JsonResult(table);
         }
 
-        [HttpPost("create")]
+        [HttpPost]
         public IActionResult Post(Users usp)
         {
             string query = @"
@@ -74,7 +74,7 @@ namespace Job__Portal_.Controllers
             }
             return StatusCode(201); // Return status code for created resource
         }
-        [HttpPost("Update")]
+        [HttpPut]
         public IActionResult Put(Users usp)
         {
             string query = @"
@@ -87,14 +87,14 @@ namespace Job__Portal_.Controllers
                         U_Password = @U_Password, 
                         U_RepeatPassword = @U_RepeatPassword, 
                         U_TimeCreated = @U_TimeCreated
-                    WHERE U_ID = @U_ID";
+                    WHERE U_Id = @U_Id";
 
             string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
             using (SqlConnection myCon = new SqlConnection(sqlDataSource))
             {
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                //   myCommand.Parameters.AddWithValue("@U_ID", usp.U_ID); // Assuming U_ID is the primary key for identifying the user to update
+                    myCommand.Parameters.AddWithValue("@U_Id", usp.U_Id);
                     myCommand.Parameters.AddWithValue("@U_Name", usp.U_Name);
                     myCommand.Parameters.AddWithValue("@U_Surname", usp.U_Surname);
                     myCommand.Parameters.AddWithValue("@U_Email", usp.U_Email);
@@ -105,12 +105,38 @@ namespace Job__Portal_.Controllers
                     myCommand.Parameters.AddWithValue("@U_TimeCreated", usp.U_TimeCreated);
 
                     myCon.Open();
-                    myCommand.ExecuteNonQuery(); // Execute the query without a reader
+                    myCommand.ExecuteNonQuery();
                     myCon.Close();
                 }
             }
-            return StatusCode(204); // Return status code for no content after successful update
+            return new JsonResult("User updated Sucessfully");
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            string query = @"
+                    delete from dbo.Users
+                    where U_Id = @U_Id
+                    ";
+
+            string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
+            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            {
+                using (SqlCommand myCommand = new SqlCommand(query, myCon))
+                {
+                    myCommand.Parameters.AddWithValue("@U_Id", id);
+
+
+
+                    myCon.Open();
+                    myCommand.ExecuteNonQuery();
+                    myCon.Close();
+                }
+            }
+            return new JsonResult("User Deleted Succesfully");
         }
     }
+
 }
 
