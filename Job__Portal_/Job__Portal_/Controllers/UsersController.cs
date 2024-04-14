@@ -136,7 +136,47 @@ namespace Job__Portal_.Controllers
             }
             return new JsonResult("User Deleted Succesfully");
         }
+
+        /*
+        [HttpPost("login")]
+        public IActionResult Login(LoginModel login)
+        {
+            string query = @"
+        SELECT U_ID, U_Name, U_Surname, U_Email, U_Username, U_Phone
+        FROM dbo.Users
+        WHERE U_Email = @U_Email AND U_Password = @U_Password";
+
+            string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
+            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            {
+                using (SqlCommand myCommand = new SqlCommand(query, myCon))
+                {
+                    myCommand.Parameters.AddWithValue("@U_Email", login.Email);
+                    myCommand.Parameters.AddWithValue("@U_Password", login.Password);
+
+                    myCon.Open();
+                    SqlDataReader reader = myCommand.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        // User found, return user data
+                        DataTable table = new DataTable();
+                        table.Load(reader);
+                        myCon.Close();
+                        return new JsonResult(table);
+                    }
+                    else
+                    {
+                        // User not found or password incorrect
+                        myCon.Close();
+                        return NotFound("Invalid email or password.");
+                    }
+                }
+        */
+
     }
 
 }
+
+         
 

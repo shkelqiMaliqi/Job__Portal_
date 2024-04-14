@@ -30,6 +30,9 @@ C_Message varchar (MAX),
 C_TimeCreated datetime
 
 )
+INSERT INTO Contact_Form (C_Name, C_Surname, C_Email, C_Subject, C_Message, C_TimeCreated)
+VALUES ('John', 'Doe', 'john.doe@example.com', 'Query about your services', 'Hello, I am interested in learning more about your services.', GETDATE());
+
 create table Jobs(
 JobId int primary key identity (1,1),
 JobTitle varchar(50),
@@ -38,7 +41,6 @@ JobDescription varchar(MAX),
 Qualification varchar(MAX),
 Experience varchar(50),
 Requirements varchar(MAX),
-LastDateToApply varchar(255),
 JobType varchar(50),
 CompanyName varchar(50),
 CompanyLogo varchar(MAX),
@@ -57,7 +59,6 @@ INSERT INTO Jobs (
     Qualification,
     Experience,
     Requirements,
-    LastDateToApply,
     JobType,
     CompanyName,
     CompanyLogo,
@@ -75,7 +76,6 @@ INSERT INTO Jobs (
     'Bachelor’s degree in Computer Science or related field',
     '2+ years',
     'Strong knowledge of C#, .NET Core, and SQL Server',
-    '12Shkurt'
     'Full-time',
     'ABC Technologies',
     'https://example.com/logo.png',
@@ -96,5 +96,16 @@ JobCategoryName varchar (255)
 
 INSERT INTO JobCategories (JobCategoryName)
 VALUES ('Teknologji Informative');
+ALTER TABLE Jobs
+ADD JobCategoryId int,
+CONSTRAINT FK_Jobs_JobCategories FOREIGN KEY (JobCategoryId) REFERENCES JobCategories(JobCategoryId);
 
-select * from JobCategories
+-- Add foreign key reference from Contact_Form table to Users table
+ALTER TABLE Contact_Form
+ADD U_Id int,
+CONSTRAINT FK_Contact_Form_Users FOREIGN KEY (U_Id) REFERENCES Users(U_Id);
+
+-- Add foreign key reference from Jobs table to Users table (for company information)
+ALTER TABLE Jobs
+ADD U_Id int,
+CONSTRAINT FK_Jobs_Users FOREIGN KEY (U_Id) REFERENCES Users(U_Id);

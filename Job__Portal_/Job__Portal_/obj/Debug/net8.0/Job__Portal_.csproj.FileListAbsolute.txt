@@ -234,7 +234,6 @@ C:\Users\user\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\obj\Debug\net8.0\re
 C:\Users\user\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\obj\Debug\net8.0\Job__Portal_.pdb
 C:\Users\user\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\obj\Debug\net8.0\Job__Portal_.genruntimeconfig.cache
 C:\Users\user\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\obj\Debug\net8.0\ref\Job__Portal_.dll
-<<<<<<< HEAD
 C:\Users\Elvir\OneDrive\Desktop\Projekti\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Elvir\OneDrive\Desktop\Projekti\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\appsettings.json
 C:\Users\Elvir\OneDrive\Desktop\Projekti\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\Job__Portal_.exe
@@ -382,9 +381,7 @@ C:\Users\Elvir\OneDrive\Desktop\Projekti\Job__Portal_\Job__Portal_\Job__Portal_\
 C:\Users\Elvir\OneDrive\Desktop\Projekti\Job__Portal_\Job__Portal_\Job__Portal_\obj\Debug\net8.0\Job__Portal_.pdb
 C:\Users\Elvir\OneDrive\Desktop\Projekti\Job__Portal_\Job__Portal_\Job__Portal_\obj\Debug\net8.0\Job__Portal_.genruntimeconfig.cache
 C:\Users\Elvir\OneDrive\Desktop\Projekti\Job__Portal_\Job__Portal_\Job__Portal_\obj\Debug\net8.0\ref\Job__Portal_.dll
-=======
 >>>>>>> 5ef7cfd2eae6ea9f394b76f4dad23f7d2e2b91c6
-<<<<<<< HEAD
 C:\Users\Lenovo\OneDrive\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\Humanizer.dll
 C:\Users\Lenovo\OneDrive\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
 C:\Users\Lenovo\OneDrive\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -451,7 +448,6 @@ C:\Users\Lenovo\OneDrive\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debu
 C:\Users\Lenovo\OneDrive\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Lenovo\OneDrive\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Lenovo\OneDrive\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-=======
 C:\Users\user\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\user\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\user\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

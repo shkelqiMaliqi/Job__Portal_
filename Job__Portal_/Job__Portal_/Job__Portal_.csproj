@@ -23,14 +23,13 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
     <PackageReference Include="System.Linq" Version="4.3.0" />
-<<<<<<< HEAD
+
 
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Photos\" />
-=======
->>>>>>> e37da12a683fa42797cb7d024524685f32cfa643
+
   </ItemGroup>
 
 </Project>

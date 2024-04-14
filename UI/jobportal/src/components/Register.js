@@ -1,47 +1,116 @@
-import React from 'react';
+import React, { useState } from 'react';
+import {variables} from '../Varibales'
+import axios from 'axios'; 
 
-const Register = () => {
+function Register() {
+  // State variables to store form data and validation errors
+  const [formData, setFormData] = useState({
+    U_Name: '',
+    U_Surname: '',
+    U_Email: '',
+    U_Username: '',
+    U_Phone: '',
+    U_Password: '',
+    U_RepeatPassword: ''
+  });
+
+  const [errors, setErrors] = useState({});
+
+  // Function to handle form input changes
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  // Function to handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+
+
+    // Validate form fields
+    const validationErrors = validateForm(formData);
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    try {
+      // Send a POST request to the backend API with the form data
+      await axios.post('/api/Users', formData);
+      // Redirect the user to the profile page after successful registration
+      window.location.href = '/profile';
+    } catch (error) {
+      console.error('Registration failed:', error);
+      // Handle errors (e.g., display an error message to the user)
+    }
+  };
+
+  // Function to validate form fields
+  const validateForm = (data) => {
+    let errors = {};
+
+    if (!data.U_Name.trim()) {
+      errors.U_Name = 'Name is required';
+    }
+    // Repeat this for other fields
+    return errors;
+  };
+
   return (
-    <section className="vh-100 bg-image" style={{backgroundImage: "url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp')"}}>
+   
       <div className="mask d-flex align-items-center h-100 gradient-custom-3">
         <div className="container h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-12 col-md-9 col-lg-7 col-xl-6">
-              <div className="card" style={{borderRadius: '15px'}}>
+              <div className="card" style={{ borderRadius: '15px' }}>
                 <div className="card-body p-5">
                   <h2 className="text-uppercase text-center mb-5">Create an account</h2>
 
-                  <form>
-
-                    <div data-mdb-input-init className="form-outline mb-4">
-                      <input type="text" id="form3Example1cg" className="form-control form-control-lg" />
-                      <label className="form-label" htmlFor="form3Example1cg">Your Name</label>
+                  <form onSubmit={handleSubmit}>
+                    <div className="form-outline mb-4">
+                      <input type="text" id="U_Name" className={`form-control form-control-lg ${errors.U_Name ? 'is-invalid' : ''}`} onChange={handleInputChange} />
+                      <label className="form-label" htmlFor="U_Name">Your Name</label>
+                      {errors.U_Name && <div className="invalid-feedback">{errors.U_Name}</div>}
+                    </div>
+                    {/* Repeat this structure for other form fields */}
+                    <div className="form-outline mb-4">
+                      <input type="text" id="U_Surame" className={`form-control form-control-lg ${errors.U_Surname ? 'is-invalid' : ''}`} onChange={handleInputChange} />
+                      <label className="form-label" htmlFor="U_Surname">Your Surname</label>
+                      {errors.U_Surame && <div className="invalid-feedback">{errors.U_Surname}</div>}
                     </div>
 
-                    <div data-mdb-input-init className="form-outline mb-4">
-                      <input type="email" id="form3Example3cg" className="form-control form-control-lg" />
-                      <label className="form-label" htmlFor="form3Example3cg">Your Email</label>
+                    <div className="form-outline mb-4">
+                      <input type="email" id="U_Email" className={`form-control form-control-lg ${errors.U_Email ? 'is-invalid' : ''}`} onChange={handleInputChange} />
+                      <label className="form-label" htmlFor="U_Name">Your Email</label>
+                      {errors.U_Email && <div className="invalid-feedback">{errors.U_Email}</div>}
                     </div>
 
-                    <div data-mdb-input-init className="form-outline mb-4">
-                      <input type="password" id="form3Example4cg" className="form-control form-control-lg" />
-                      <label className="form-label" htmlFor="form3Example4cg">Password</label>
+                    <div className="form-outline mb-4">
+                      <input type="text" id="U_Username" className={`form-control form-control-lg ${errors.U_Username ? 'is-invalid' : ''}`} onChange={handleInputChange} />
+                      <label className="form-label" htmlFor="U_Username">Your Username</label>
+                      {errors.U_Userame && <div className="invalid-feedback">{errors.U_Username}</div>}
                     </div>
 
-                    <div data-mdb-input-init className="form-outline mb-4">
-                      <input type="password" id="form3Example4cdg" className="form-control form-control-lg" />
-                      <label className="form-label" htmlFor="form3Example4cdg">Repeat your password</label>
+                    <div className="form-outline mb-4">
+                      <input type="text" id="U_Phone" className={`form-control form-control-lg ${errors.U_Phone ? 'is-invalid' : ''}`} onChange={handleInputChange} />
+                      <label className="form-label" htmlFor="U_Phone">Your Phone no</label>
+                      {errors.U_Phone && <div className="invalid-feedback">{errors.U_Phone}</div>}
                     </div>
 
-                    <div className="form-check d-flex justify-content-center mb-5">
-                      <input className="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
-                      <label className="form-check-label" htmlFor="form2Example3g">
-                        I agree all statements in <a href="#!" className="text-body"><u>Terms of service</u></a>
-                      </label>
+                    <div className="form-outline mb-4">
+                      <input type="password" id="U_Password" className={`form-control form-control-lg ${errors.U_Password ? 'is-invalid' : ''}`} onChange={handleInputChange} />
+                      <label className="form-label" htmlFor="U_Password">Your Password</label>
+                      {errors.U_Password && <div className="invalid-feedback">{errors.U_Password}</div>}
                     </div>
+
+                    <div className="form-outline mb-4">
+                      <input type="password" id="U_RepeatPassword" className={`form-control form-control-lg ${errors.U_RepeatPassword ? 'is-invalid' : ''}`} onChange={handleInputChange} />
+                      <label className="form-label" htmlFor="U_RepeatPassword">Repeat Password</label>
+                      {errors.U_RepeatPassword && <div className="invalid-feedback">{errors.U_RepeatPassword}</div>}
+                    </div>
+
 
                     <div className="d-flex justify-content-center">
-                      <button type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                      <button type="submit" className="register_btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
                     </div>
 
                     <p className="text-center text-muted mt-5 mb-0">Have already an account? <a href="./profile" className="fw-bold text-body"><u>Login here</u></a></p>
@@ -54,7 +123,7 @@ const Register = () => {
           </div>
         </div>
       </div>
-    </section>
+   
   );
 }
 

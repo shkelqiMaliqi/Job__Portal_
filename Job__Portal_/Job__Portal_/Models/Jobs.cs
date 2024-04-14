@@ -18,7 +18,6 @@ namespace Job__Portal_.Models
        public string Qualification { get; set; }
        public string Experience { get; set; }
        public string Requirements { get; set; }
-       public string LastDateToApply { get; set; }
        public string JobType { get; set; }
        public string CompanyName { get; set; }
        public string CompanyLogo { get; set; }

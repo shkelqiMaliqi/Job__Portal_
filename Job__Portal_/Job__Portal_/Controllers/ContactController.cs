@@ -26,7 +26,7 @@ namespace Job__Portal_.Controllers
         [HttpGet]
         public JsonResult Get()
         {
-            string query = @"SELECT C_ID, C_Name, C_Surname, C_Email, C_Subject, C_Message, C_TimeCreated FROM dbo.Contact_Form";
+            string query = @"SELECT C_Id, C_Name, C_Surname, C_Email, C_Subject, C_Message, C_TimeCreated FROM dbo.Contact_Form";
 
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
@@ -74,8 +74,8 @@ namespace Job__Portal_.Controllers
         }
 
         //Update
-        [HttpPut("{id}")]
-        public IActionResult Put(int id, Contact c)
+        [HttpPut]
+        public IActionResult Put(Contact c)
         {
             string query = @"
             UPDATE dbo.Contact_Form SET 
@@ -85,14 +85,14 @@ namespace Job__Portal_.Controllers
             C_Subject = @C_Subject, 
             C_Message = @C_Message, 
             C_TimeCreated = @C_TimeCreated
-            WHERE C_ID = @C_ID";
+            WHERE C_Id = @C_Id";
 
             string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
             using (SqlConnection myCon = new SqlConnection(sqlDataSource))
             {
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@C_ID", id);
+                    myCommand.Parameters.AddWithValue("@C_ID",c.C_Id);
                     myCommand.Parameters.AddWithValue("@C_Name", c.C_Name);
                     myCommand.Parameters.AddWithValue("@C_Surname", c.C_Surname);
                     myCommand.Parameters.AddWithValue("@C_Email", c.C_Email);
@@ -112,14 +112,14 @@ namespace Job__Portal_.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            string query = @"DELETE FROM dbo.Contact_Form WHERE C_ID = @C_ID";
+            string query = @"DELETE FROM dbo.Contact_Form WHERE C_Id = @C_Id";
 
             string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
             using (SqlConnection myCon = new SqlConnection(sqlDataSource))
             {
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@C_ID", id);
+                    myCommand.Parameters.AddWithValue("@C_Id", id);
 
                     myCon.Open();
                     myCommand.ExecuteNonQuery();

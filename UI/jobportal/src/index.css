@@ -13,8 +13,8 @@ code {
 }
 
 .nav {
-  background-color: gainsboro;
-  color: white;
+  background-color: whitesmoke;
+  color: gray;
   display: flex;
   justify-content: space-between;
   align-items: center; /* Center items vertically */
@@ -121,4 +121,111 @@ color : white;
   margin-top: 70px;
   font-family: 'Bookman Old Style';
 }
+/*Contact Us*/
+.contactus_main {
+  padding: 50px 0;
+}
+
+.contactus_container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.contactus_container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin-left: 250px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  
+}
+
+.btn:hover {
+  background-color: black;
+  color: #fff;
+  transition: 0.6s ease;
+}
+
+.contactus_submit_btn {
+  margin-top: 20px;
+}
+
+/* Home */
+.job-listing-container {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.job-title {
+  color: #007bff;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.job-details {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.form-select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Style the dropdown arrow */
+.form-select::after {
+  content: '\25BC'; /* Unicode character for downward arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Style the dropdown options */
+.form-select option {
+  padding: 8px 12px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Style the selected option */
+.form-select option:checked {
+  background-color: #007bff;
+  color: #fff;
+}
+
 

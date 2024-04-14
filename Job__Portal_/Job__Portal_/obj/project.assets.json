@@ -5980,47 +5980,23 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\Lenovo\\.nuget\\packages\\": {},
-=======
-    "C:\\Users\\user\\.nuget\\packages\\": {},
->>>>>>> e37da12a683fa42797cb7d024524685f32cfa643
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
       "projectName": "Job__Portal_",
       "projectPath": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\obj\\",
-=======
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\Elvir\\OneDrive\\Desktop\\Projekti\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
-      "projectName": "Job__Portal_",
-      "projectPath": "C:\\Users\\Elvir\\OneDrive\\Desktop\\Projekti\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
-      "packagesPath": "C:\\Users\\Elvir\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Elvir\\OneDrive\\Desktop\\Projekti\\Job__Portal_\\Job__Portal_\\Job__Portal_\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
-      "projectName": "Job__Portal_",
-      "projectPath": "C:\\Users\\user\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\obj\\",
->>>>>>> 8001bf664150815ab05b4352c876073414dbcbfd
->>>>>>> e37da12a683fa42797cb7d024524685f32cfa643
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
         "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> e37da12a683fa42797cb7d024524685f32cfa643
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -6112,11 +6088,7 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
-<<<<<<< HEAD
       "message": "Problem reading the cache file C:\\Users\\Lenovo\\OneDrive\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-=======
-      "message": "Problem reading the cache file C:\\Users\\user\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
->>>>>>> e37da12a683fa42797cb7d024524685f32cfa643
     }
   ]
 }
