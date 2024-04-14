@@ -11,3 +11,114 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.nav {
+  background-color: gainsboro;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center items vertically */
+  gap: 2rem;
+  /*padding: 0 1rem;*/
+  padding: 10px;
+  
+}
+
+.site-title {
+  font-size: 1.5rem;
+  align-items: flex-start;
+}
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  gap: 1rem;
+  display: flex;
+  align-items: center; 
+}
+
+.nav a {
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  border-radius: 20px;
+}
+
+.nav li:hover {
+  background-color: rebeccapurple;
+  border-radius: 40px;
+  transition: 0.7s ease;
+  color: black;
+}
+
+/*
+.nav li.active {
+  background-color: red;
+}
+*/
+
+/*Why Us*/
+
+.h2_whyus_intro{
+  color : black;
+  text-align: center;
+  font-family: 'Times New Roman';
+}
+.whyUs_desc{
+ font-family: 'Times New Roman';
+ color: dimgray;
+
+}
+.ourmission {
+  color: black;
+  text-align: center;
+  font-family: 'Times New Roman';
+}
+.whyUs_sectors{
+  display : flex;
+  width : 100%;
+  justify-content : space-between;
+  flex-wrap : wrap;
+
+
+}
+.whyUs_spliter {
+  text-align: center;
+}
+.whyUs_Split{
+  font-family: 'Times New Roman' ;
+  font-style: italic; 
+  padding : 30px;
+  
+}
+
+.sector_1 {
+  height: 400px;
+  width: 300px;
+  margin: 30px;
+  border: 2px solid slategray;
+  border-radius: 10px;
+  background-color: lightgray;
+}
+
+.sector_1:hover {
+    
+background-color: darkolivegreen;
+border-color: whitesmoke;
+transition : ease 0.7s;
+color : white;
+}
+.sector_h2{
+  text-align: center;
+  font-family: 'Bookman Old Style';
+}
+.sector_p {
+  text-align: center;
+  margin-top: 70px;
+  font-family: 'Bookman Old Style';
+}
+
