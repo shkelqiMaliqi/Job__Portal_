@@ -94,6 +94,64 @@ JobCategoryId int primary key identity(1,1),
 JobCategoryName varchar (255)
 )
 
+----------------------------- THE CV FIELD -----------------------------------------
+create table CV (
+Cv_Id int primary key identity(1,1),
+Cv_Name varchar (50),
+Cv_Surname varchar (50),
+Cv_DateOfBirth date,
+Cv_PhoneNumber int,
+Cv_Email varchar(255),
+
+)
+INSERT INTO CV (Cv_Name, Cv_Surname, Cv_DateOfBirth, Cv_PhoneNumber, Cv_Email)
+VALUES ('John', 'Doe', '1990-01-01', 1234567890, 'john@example.com');
+
+create table Cv_Education(
+CvEdu_Id int primary key identity(1,1),
+CvEdu_Education varchar(MAX)
+)
+
+create table Cv_Experience(
+CvExp_Id int primary key identity(1,1),
+CvExp_Experiences varchar(MAX)
+)
+
+create table Cv_Industry(
+CvIndustry_Id int primary key identity(1,1),
+CvIndustry_IndustryType varchar(MAX)
+)
+
+create table Cv_TechnicalSkills(
+CvTs_Id int primary key identity(1,1),
+CvTs_TSkills varchar(MAX)
+)
+
+create table Cv_Certifications(
+CvCertifications_Id int primary key identity(1,1),
+CvCertifications_Certifications varchar(MAX)
+)
+
+create table Cv_AdditionalSkills(
+CvAs_Id int primary key identity(1,1),
+CvAs_ASkills varchar(MAX)
+)
+
+create table Cv_Courses(
+CvCourses_Id int primary key identity(1,1),
+CvCourses_C varchar(MAX)
+)
+
+create table Cv_Languages(
+CvLang_Id int primary key identity(1,1),
+CvLang_Lang varchar(MAX)
+)
+
+create table Cv_AddMore(
+CvAddMore_Id int primary key identity(1,1),
+CvAddMore_Add varchar(MAX)
+)
+
 INSERT INTO JobCategories (JobCategoryName)
 VALUES ('Teknologji Informative');
 ALTER TABLE Jobs
@@ -109,3 +167,56 @@ CONSTRAINT FK_Contact_Form_Users FOREIGN KEY (U_Id) REFERENCES Users(U_Id);
 ALTER TABLE Jobs
 ADD U_Id int,
 CONSTRAINT FK_Jobs_Users FOREIGN KEY (U_Id) REFERENCES Users(U_Id);
+
+
+---------------------------------- CV Foreigns -------------------------
+
+ALTER TABLE CV
+ADD U_Id int,
+CONSTRAINT FK_CV_Users FOREIGN KEY (U_Id) REFERENCES Users(U_Id);
+
+
+
+
+ALTER TABLE Cv_Education
+ADD Cv_Id int,
+CONSTRAINT FK_Cv_Education_CV FOREIGN KEY (Cv_Id) REFERENCES CV(Cv_Id);
+
+
+ALTER TABLE Cv_Experience
+ADD Cv_Id int,
+CONSTRAINT FK_Cv_Experience_CV FOREIGN KEY (Cv_Id) REFERENCES CV(Cv_Id);
+
+
+ALTER TABLE Cv_Industry
+ADD Cv_Id int,
+CONSTRAINT FK_Cv_Industry_CV FOREIGN KEY (Cv_Id) REFERENCES CV(Cv_Id);
+
+ALTER TABLE Cv_TechnicalSkills
+ADD Cv_Id int,
+CONSTRAINT FK_Cv_TechnicalSkills_CV FOREIGN KEY (Cv_Id) REFERENCES CV(Cv_Id);
+
+
+ALTER TABLE Cv_Certifications
+ADD Cv_Id int,
+CONSTRAINT FK_Cv_Certifications_CV FOREIGN KEY (Cv_Id) REFERENCES CV(Cv_Id);
+
+
+ALTER TABLE Cv_AdditionalSkills
+ADD Cv_Id int,
+CONSTRAINT FK_Cv_AdditionalSkills_CV FOREIGN KEY (Cv_Id) REFERENCES CV(Cv_Id);
+
+
+ALTER TABLE Cv_Courses
+ADD Cv_Id int,
+CONSTRAINT FK_Cv_Courses_CV FOREIGN KEY (Cv_Id) REFERENCES CV(Cv_Id);
+
+
+ALTER TABLE Cv_Languages
+ADD Cv_Id int,
+CONSTRAINT FK_Cv_Languages_CV FOREIGN KEY (Cv_Id) REFERENCES CV(Cv_Id);
+
+
+ALTER TABLE Cv_AddMore
+ADD Cv_Id int,
+CONSTRAINT FK_Cv_AddMore_CV FOREIGN KEY (Cv_Id) REFERENCES CV(Cv_Id);

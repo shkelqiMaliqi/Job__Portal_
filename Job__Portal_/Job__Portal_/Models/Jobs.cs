@@ -29,5 +29,7 @@ namespace Job__Portal_.Models
        public int CompanyPhone { get; set; }
        public DateTime CreateDate_C { get; set; }
 
+        
+
     }
 }

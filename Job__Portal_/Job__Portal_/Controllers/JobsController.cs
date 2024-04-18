@@ -34,13 +34,13 @@ namespace Job__Portal_.Controllers
         {
             string query = @"
            INSERT INTO dbo.Jobs
-           (JobId, JobTitle, NumberOfPositions, JobDescription,
+           (JobTitle, NumberOfPositions, JobDescription,
            Qualification, Experience, Requirements,
            JobType, CompanyName, CompanyLogo, Website,
            CompanyEmail, CompanyAddress, CompanyCountry, CompanyState, CompanyPhone,
            CreateDate_C) 
      VALUES 
-           (@JobId, @JobTitle, @NumberOfPositions, @JobDescription,
+           (@JobTitle, @NumberOfPositions, @JobDescription,
             @Qualification, @Experience, @Requirements,
             @JobType, @CompanyName, @CompanyLogo, @Website,
             @CompanyEmail, @CompanyAddress, @CompanyCountry, @CompanyState, @CompanyPhone,
@@ -51,8 +51,7 @@ namespace Job__Portal_.Controllers
             {
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@JobId", job.JobId);
-                    myCommand.Parameters.AddWithValue("@JobTitle", job.JobTitle);
+                    
                     myCommand.Parameters.AddWithValue("@NumberOfPositions", job.NumberOfPositions);
                     myCommand.Parameters.AddWithValue("@JobDescription", job.JobDescription);
                     myCommand.Parameters.AddWithValue("@Qualification", job.Qualification);
