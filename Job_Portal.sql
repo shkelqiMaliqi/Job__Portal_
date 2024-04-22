@@ -220,3 +220,23 @@ CONSTRAINT FK_Cv_Languages_CV FOREIGN KEY (Cv_Id) REFERENCES CV(Cv_Id);
 ALTER TABLE Cv_AddMore
 ADD Cv_Id int,
 CONSTRAINT FK_Cv_AddMore_CV FOREIGN KEY (Cv_Id) REFERENCES CV(Cv_Id);
+
+CREATE TABLE TrainingCourses (
+    TrainingCourseId int primary key identity(1,1),	
+    Title VARCHAR(255) NOT NULL,
+    Description TEXT,
+    StartDate DATE,
+    EndDate DATE,
+    Instructor VARCHAR(255),
+    Price DECIMAL(10, 2)
+);
+
+CREATE TABLE EnrollmentTypes (
+    EnrollmentTypeId int primary key identity(1,1),	
+    TypeName VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE ExperienceLevels (
+    ExperienceLevelId int primary key identity(1,1),	
+    LevelName VARCHAR(255) NOT NULL
+);
