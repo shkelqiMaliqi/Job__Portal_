@@ -22,7 +22,7 @@ namespace Job__Portal_.Models
         /* Table 2 */
         [Key]
         public int CvExp_Id { get; set; }
-        public string CvExp_Experinces { get; set; }
+        public string CvExp_Experiences { get; set; }
 
         /* Table 3 */
         [Key]
@@ -43,7 +43,7 @@ namespace Job__Portal_.Models
         [Key]
         public int CvCertifications_Id { get; set; }
         public string CvCertifications_Certifications { get; set; }
-
+        
         /* Table 7 */
         [Key]
         public int CvAs_Id { get; set; }
