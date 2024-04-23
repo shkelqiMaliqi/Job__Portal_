@@ -221,6 +221,8 @@ ALTER TABLE Cv_AddMore
 ADD Cv_Id int,
 CONSTRAINT FK_Cv_AddMore_CV FOREIGN KEY (Cv_Id) REFERENCES CV(Cv_Id);
 
+---------------------------------- Training and Courses -------------------------
+
 CREATE TABLE TrainingCourses (
     TrainingCourseId int primary key identity(1,1),	
     Title VARCHAR(255) NOT NULL,

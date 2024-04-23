@@ -1,0 +1,8 @@
+C:\Users\Elvir\OneDrive\Desktop\Projektii\Job__Portal_\Job__Portal_\Job__Portal_\obj\Release\net8.0\Job__Portal_.csproj.AssemblyReference.cache
+C:\Users\Elvir\OneDrive\Desktop\Projektii\Job__Portal_\Job__Portal_\Job__Portal_\obj\Release\net8.0\Job__Portal_.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Elvir\OneDrive\Desktop\Projektii\Job__Portal_\Job__Portal_\Job__Portal_\obj\Release\net8.0\Job__Portal_.AssemblyInfoInputs.cache
+C:\Users\Elvir\OneDrive\Desktop\Projektii\Job__Portal_\Job__Portal_\Job__Portal_\obj\Release\net8.0\Job__Portal_.AssemblyInfo.cs
+C:\Users\Elvir\OneDrive\Desktop\Projektii\Job__Portal_\Job__Portal_\Job__Portal_\obj\Release\net8.0\Job__Portal_.csproj.CoreCompileInputs.cache
+C:\Users\Elvir\OneDrive\Desktop\Projektii\Job__Portal_\Job__Portal_\Job__Portal_\obj\Release\net8.0\Job__Portal_.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Elvir\OneDrive\Desktop\Projektii\Job__Portal_\Job__Portal_\Job__Portal_\obj\Release\net8.0\Job__Portal_.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Elvir\OneDrive\Desktop\Projektii\Job__Portal_\Job__Portal_\Job__Portal_\obj\Release\net8.0\Job__Portal_.sourcelink.json
