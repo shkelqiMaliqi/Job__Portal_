@@ -50,24 +50,25 @@ namespace WebApplication1
                 app.UseDeveloperExceptionPage();
             }
 
+            
+                app.UseRouting();
+                app.UseAuthorization();
 
-            app.UseRouting();
-            app.UseAuthorization();
+                // Kontrolli i rrugës për dosjen "Photos"
+                string photosPath = Path.Combine(Directory.GetCurrentDirectory(), "Photos");
+                Console.WriteLine("Photos path: " + photosPath);
 
-            // Kontrolli i rrugës për dosjen "Photos"
-            string photosPath = Path.Combine(Directory.GetCurrentDirectory(), "Photos");
-            Console.WriteLine("Photos path: " + photosPath);
+                app.UseStaticFiles(new StaticFileOptions
+                {
+                    FileProvider = new PhysicalFileProvider(photosPath),
+                    RequestPath = "/Photos"
+                });
 
-            app.UseStaticFiles(new StaticFileOptions
-            {
-                FileProvider = new PhysicalFileProvider(photosPath),
-                RequestPath = "/Photos"
-            });
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+                app.UseEndpoints(endpoints =>
+                {
+                    endpoints.MapControllers();
+                });
+            }
+            
         }
     }
-}
