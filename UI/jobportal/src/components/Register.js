@@ -3,7 +3,7 @@ import {variables} from '../Varibales'
 import axios from 'axios'; 
 
 function Register() {
-  // State variables to store form data and validation errors
+  
   const [formData, setFormData] = useState({
     U_Name: '',
     U_Surname: '',
@@ -16,17 +16,16 @@ function Register() {
 
   const [errors, setErrors] = useState({});
 
-  // Function to handle form input changes
+
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-  // Function to handle form submission
+  
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault();
 
 
-    // Validate form fields
     const validationErrors = validateForm(formData);
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
@@ -34,24 +33,46 @@ function Register() {
     }
 
     try {
-      // Send a POST request to the backend API with the form data
-      await axios.post('/api/Users', formData);
-      // Redirect the user to the profile page after successful registration
+  
+      await axios.post('https://localhost:7263/api/users', formData);
+     
       window.location.href = '/profile';
     } catch (error) {
       console.error('Registration failed:', error);
-      // Handle errors (e.g., display an error message to the user)
+     
     }
   };
 
-  // Function to validate form fields
+
   const validateForm = (data) => {
     let errors = {};
 
     if (!data.U_Name.trim()) {
       errors.U_Name = 'Name is required';
+    
     }
-    // Repeat this for other fields
+    /*
+    else if (!data.U_Surname.trim()) {
+      errors.U_Surname = 'Surname is required';
+    }
+    else if (!data.U_Email.trim()) {
+      errors.U_Email = 'Email is required';
+    }
+    else if (!data.U_Username.trim()) {
+      errors.U_Usernme = 'Username is required';
+    }
+    else if (!data.U_Phone.trim()) {
+      errors.U_Phone = 'Phone Number is required';
+    }
+    else if (!data.U_Password.trim()) {
+      errors.U_Password = 'Password is required';
+    }
+    else if (!data.U_RepeatPassword.trim()) {
+      errors.U_RepeatPassword = 'Repeat password is required';
+    }
+    */
+
+  
     return errors;
   };
 
@@ -73,14 +94,14 @@ function Register() {
                     </div>
                     {/* Repeat this structure for other form fields */}
                     <div className="form-outline mb-4">
-                      <input type="text" id="U_Surame" className={`form-control form-control-lg ${errors.U_Surname ? 'is-invalid' : ''}`} onChange={handleInputChange} />
+                      <input type="text" id="U_Surname" className={`form-control form-control-lg ${errors.U_Surname ? 'is-invalid' : ''}`} onChange={handleInputChange} />
                       <label className="form-label" htmlFor="U_Surname">Your Surname</label>
                       {errors.U_Surame && <div className="invalid-feedback">{errors.U_Surname}</div>}
                     </div>
 
                     <div className="form-outline mb-4">
                       <input type="email" id="U_Email" className={`form-control form-control-lg ${errors.U_Email ? 'is-invalid' : ''}`} onChange={handleInputChange} />
-                      <label className="form-label" htmlFor="U_Name">Your Email</label>
+                      <label className="form-label" htmlFor="U_Email">Your Email</label>
                       {errors.U_Email && <div className="invalid-feedback">{errors.U_Email}</div>}
                     </div>
 

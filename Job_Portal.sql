@@ -10,8 +10,7 @@ U_Email varchar (MAX),
 U_Username varchar(255),
 U_Phone int ,
 U_Password varchar(255),
-U_RepeatPassword varchar(255),
-U_TimeCreated datetime
+U_RepeatPassword varchar(255)
 
 )
 INSERT INTO Users (U_Name, U_Surname, U_Email, U_Username, U_Phone, U_Password, U_RepeatPassword, U_TimeCreated)
@@ -27,7 +26,7 @@ C_Surname varchar(255),
 C_Email varchar (MAX),
 C_Subject varchar (255),
 C_Message varchar (MAX),
-C_TimeCreated datetime
+
 
 )
 INSERT INTO Contact_Form (C_Name, C_Surname, C_Email, C_Subject, C_Message, C_TimeCreated)
@@ -52,6 +51,7 @@ CompanyState varchar(50),
 CompanyPhone int,
 CreateDate_C datetime
 )
+
 INSERT INTO Jobs (
     JobTitle,
     NumberOfPositions,

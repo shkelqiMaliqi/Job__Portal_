@@ -456,3 +456,7 @@ C:\Users\user\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\Mi
 C:\Users\user\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 >>>>>>> 8001bf664150815ab05b4352c876073414dbcbfd
 >>>>>>> e37da12a683fa42797cb7d024524685f32cfa643
+C:\Users\Lenovo\OneDrive\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\System.Web.Cors.dll
+C:\Users\Lenovo\OneDrive\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\System.Net.Http.Formatting.dll
+C:\Users\Lenovo\OneDrive\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\System.Web.Http.dll
+C:\Users\Lenovo\OneDrive\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\System.Web.Http.Cors.dll
