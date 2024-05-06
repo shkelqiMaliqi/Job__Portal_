@@ -221,6 +221,8 @@ ALTER TABLE Cv_AddMore
 ADD Cv_Id int,
 CONSTRAINT FK_Cv_AddMore_CV FOREIGN KEY (Cv_Id) REFERENCES CV(Cv_Id);
 
+---------------------------------- Training and Courses -------------------------
+
 CREATE TABLE TrainingCourses (
     TrainingCourseId int primary key identity(1,1),	
     Title VARCHAR(255) NOT NULL,
@@ -239,4 +241,25 @@ CREATE TABLE EnrollmentTypes (
 CREATE TABLE ExperienceLevels (
     ExperienceLevelId int primary key identity(1,1),	
     LevelName VARCHAR(255) NOT NULL
+);
+
+-----------------------Normal or Business User-------------------
+create table BusinessUser (
+	B_Id int primary key identity(1,1),
+    B_CompanyName varchar(255),
+    B_Email varchar(MAX),
+    B_Username varchar(255),
+    B_Phone int,
+    B_Password varchar(255),
+    B_RepeatPassword varchar(255),
+);
+
+create table UserType (
+    UserType_Id int primary key identity(1,1),
+    UserType_Name varchar(50) 
+);
+
+create table BusinessType (
+    BusinessType_Id int primary key identity(1,1),
+    BusinessType_Name varchar(255)
 );
