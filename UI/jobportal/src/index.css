@@ -229,3 +229,86 @@ color : white;
 }
 
 
+
+/*Profile*/
+.login_intro{
+  color: grey;
+  text-align: center;
+}
+.profile-container {
+  
+  padding: 50px;
+  margin: auto;
+  margin-top: 50px;
+  width: 50%;
+  border: 5px solid transparent;
+  border-radius: 100px;
+  background-color: black;
+  color: white;
+}
+
+.error {
+  color: red;
+}
+.login_labels {
+
+  color: transparent;
+  background-image: linear-gradient(to right, #007bff, #00bfff);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.input-field {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: none;
+  background-color: transparent;
+  border-radius: 0;
+  border-bottom: 1px solid blue; 
+  outline: none; 
+  color: white;
+}
+
+.input-field:focus{
+  border-bottom-color: green;
+  transition: 0.6s ease;
+}
+
+.login-button {
+  margin-left: 230px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: blue;
+  color: white;
+  border: none;
+  margin-top: 20px;
+}
+.login-button:hover{
+  background-color: green;
+  transition: 0.9s ease;
+  color: black;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 30px;
+}
+.register_link:hover{
+  color: green;
+  transition: 0.4s ease-in-out;
+}
+
+.loggedIn_div{
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+
+}
+.loggedIn_intro{
+  color: red;
+}
+.logout_button{
+color: blue;
+width: 300px;
+}
+

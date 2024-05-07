@@ -19,7 +19,7 @@ namespace Job__Portal_.Models
         public string C_Email { get; set; }
         public string C_Subject { get; set; }
         public string C_Message { get; set; }
-        public DateTime C_TimeCreated { get; set; }
+        
 
 
     }

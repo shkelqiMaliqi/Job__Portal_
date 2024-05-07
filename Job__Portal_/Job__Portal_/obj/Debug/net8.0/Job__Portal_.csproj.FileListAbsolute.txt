@@ -456,6 +456,10 @@ C:\Users\user\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\Mi
 C:\Users\user\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 >>>>>>> 8001bf664150815ab05b4352c876073414dbcbfd
 >>>>>>> e37da12a683fa42797cb7d024524685f32cfa643
+C:\Users\Lenovo\OneDrive\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\System.Web.Cors.dll
+C:\Users\Lenovo\OneDrive\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\System.Net.Http.Formatting.dll
+C:\Users\Lenovo\OneDrive\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\System.Web.Http.dll
+C:\Users\Lenovo\OneDrive\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\System.Web.Http.Cors.dll
 C:\Users\Elvir\OneDrive\Desktop\Projektii\Job__Portal_\Job__Portal_\Job__Portal_\obj\Debug\net8.0\Job__Portal_.csproj.AssemblyReference.cache
 C:\Users\Elvir\OneDrive\Desktop\Projektii\Job__Portal_\Job__Portal_\Job__Portal_\obj\Debug\net8.0\Job__Portal_.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Elvir\OneDrive\Desktop\Projektii\Job__Portal_\Job__Portal_\Job__Portal_\obj\Debug\net8.0\Job__Portal_.AssemblyInfoInputs.cache
@@ -762,3 +766,5 @@ C:\Users\PC\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\obj\Debug\net8.0\refi
 C:\Users\PC\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\obj\Debug\net8.0\Job__Portal_.pdb
 C:\Users\PC\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\obj\Debug\net8.0\Job__Portal_.genruntimeconfig.cache
 C:\Users\PC\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\obj\Debug\net8.0\ref\Job__Portal_.dll
+>>>>>>> b9fbdaf52401f64cac6e2c8395382121a5a5d91e
+>>>>>>> bd63c2d3f660f6c38b8a66926c5079266fba3413
