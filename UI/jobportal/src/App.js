@@ -7,6 +7,8 @@ import ContactUs from './components/ContactUs';
 import Profile from './components/Profile';
 import Publish from './components/Publish'
 import Register  from './components/Register';
+import LoggedIn from './components/LoggedIn';
+import LoginPage from './components/LoginPage';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/register" element={<Register />} />
           <Route path="/publish" element={<Publish />} />
+          <Route path="/loggedIn" element={<LoggedIn />} />
+          <Route path="/loginPage" element={<LoginPage />} />
         </Routes>
       </div>
       <footer>

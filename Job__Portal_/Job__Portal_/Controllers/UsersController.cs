@@ -27,7 +27,7 @@ namespace Job__Portal_.Controllers
         [HttpGet]
         public JsonResult Get()
         {
-            string query = @"SELECT U_ID, U_Name, U_Surname, U_Email, U_Username, U_Phone, U_Password, U_RepeatPassword, U_TimeCreated FROM dbo.Users";
+            string query = @"SELECT U_ID, U_Name, U_Surname, U_Email, U_Username, U_Phone, U_Password, U_RepeatPassword FROM dbo.Users";
 
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
@@ -50,8 +50,8 @@ namespace Job__Portal_.Controllers
         public IActionResult Post(Users usp)
         {
             string query = @"
-                    INSERT INTO dbo.Users (U_Name,U_Surname,U_Email,U_Username,U_Phone,U_Password,U_RepeatPassword,U_TimeCreated) 
-                    VALUES (@U_Name, @U_Surname, @U_Email, @U_Username, @U_Phone, @U_Password, @U_RepeatPassword, @U_TimeCreated)";
+                    INSERT INTO dbo.Users (U_Name,U_Surname,U_Email,U_Username,U_Phone,U_Password,U_RepeatPassword) 
+                    VALUES (@U_Name, @U_Surname, @U_Email, @U_Username, @U_Phone, @U_Password, @U_RepeatPassword)";
 
             string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
             using (SqlConnection myCon = new SqlConnection(sqlDataSource))
@@ -65,14 +65,14 @@ namespace Job__Portal_.Controllers
                     myCommand.Parameters.AddWithValue("@U_Phone", usp.U_Phone);
                     myCommand.Parameters.AddWithValue("@U_Password", usp.U_Password);
                     myCommand.Parameters.AddWithValue("@U_RepeatPassword", usp.U_RepeatPassword);
-                    myCommand.Parameters.AddWithValue("@U_TimeCreated", usp.U_TimeCreated);
+                   
 
                     myCon.Open();
-                    myCommand.ExecuteNonQuery(); // Execute the query without a reader
+                    myCommand.ExecuteNonQuery(); 
                     myCon.Close();
                 }
             }
-            return StatusCode(201); // Return status code for created resource
+            return StatusCode(201); 
         }
         [HttpPut]
         public IActionResult Put(Users usp)
@@ -85,8 +85,8 @@ namespace Job__Portal_.Controllers
                         U_Username = @U_Username, 
                         U_Phone = @U_Phone, 
                         U_Password = @U_Password, 
-                        U_RepeatPassword = @U_RepeatPassword, 
-                        U_TimeCreated = @U_TimeCreated
+                        U_RepeatPassword = @U_RepeatPassword 
+                        
                     WHERE U_Id = @U_Id";
 
             string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
@@ -102,7 +102,7 @@ namespace Job__Portal_.Controllers
                     myCommand.Parameters.AddWithValue("@U_Phone", usp.U_Phone);
                     myCommand.Parameters.AddWithValue("@U_Password", usp.U_Password);
                     myCommand.Parameters.AddWithValue("@U_RepeatPassword", usp.U_RepeatPassword);
-                    myCommand.Parameters.AddWithValue("@U_TimeCreated", usp.U_TimeCreated);
+                    
 
                     myCon.Open();
                     myCommand.ExecuteNonQuery();
@@ -137,46 +137,50 @@ namespace Job__Portal_.Controllers
             return new JsonResult("User Deleted Succesfully");
         }
 
-        /*
+
         [HttpPost("login")]
         public IActionResult Login(LoginModel login)
         {
-            string query = @"
-        SELECT U_ID, U_Name, U_Surname, U_Email, U_Username, U_Phone
-        FROM dbo.Users
-        WHERE U_Email = @U_Email AND U_Password = @U_Password";
+            string query = @"SELECT U_Id, U_Email FROM dbo.Users WHERE U_Email = @U_Email AND U_Password = @U_Password";
 
             string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
             using (SqlConnection myCon = new SqlConnection(sqlDataSource))
             {
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@U_Email", login.Email);
-                    myCommand.Parameters.AddWithValue("@U_Password", login.Password);
+                    myCommand.Parameters.AddWithValue("@U_Email", login.U_Email);
+                    myCommand.Parameters.AddWithValue("@U_Password", login.U_Password);
 
                     myCon.Open();
                     SqlDataReader reader = myCommand.ExecuteReader();
-
-                    if (reader.HasRows)
+                    if (reader.Read())
                     {
-                        // User found, return user data
-                        DataTable table = new DataTable();
-                        table.Load(reader);
-                        myCon.Close();
-                        return new JsonResult(table);
+                        int userId = reader.GetInt32(0);
+                        string email = reader.GetString(1);
+                       
+                        return Ok(new { UserId = userId, U_Email = email });
                     }
                     else
                     {
-                        // User not found or password incorrect
-                        myCon.Close();
-                        return NotFound("Invalid email or password.");
+                        return Unauthorized(); 
                     }
                 }
-        */
+            }
 
-    }
 
+        }
+        [HttpPost("logout")]
+        public IActionResult Logout()
+        {
+           
+            HttpContext.Session.Clear();
+       
+            return Ok("Logged out successfully");
+        }
+    }   
 }
+
+    
 
          
 
