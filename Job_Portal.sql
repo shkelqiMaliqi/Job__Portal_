@@ -248,8 +248,7 @@ create table BusinessUser (
 	B_Id int primary key identity(1,1),
     B_CompanyName varchar(255),
     B_Email varchar(MAX),
-    B_Username varchar(255),
-    B_Phone int,
+    B_PhoneNumber int,
     B_Password varchar(255),
     B_RepeatPassword varchar(255),
 );
@@ -258,6 +257,9 @@ create table UserType (
     UserType_Id int primary key identity(1,1),
     UserType_Name varchar(50) 
 );
+
+INSERT INTO dbo.UserType(UserType_Name)
+Values ('Admin')
 
 create table BusinessType (
     BusinessType_Id int primary key identity(1,1),

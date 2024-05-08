@@ -7,40 +7,40 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using Job__Portal_.Models;
+using Job__Portal_.Models.UserType;
 
-namespace Job__Portal_.Controllers
+namespace Job__Portal_.Controllers.UserType
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserTypeController : ControllerBase
+    public class BusinessController : ControllerBase
     {
         private readonly IConfiguration _configuration;
         private SqlDataReader myReader;
 
-        public UserTypeController(IConfiguration configuration)
+        public BusinessController(IConfiguration configuration)
         {
             _configuration = configuration;
         }
-
         //BusinessUser Create
-        [HttpPost/*("BusinessUser")*/]
-        public IActionResult Post/*BusinessUser*/(UserType usertype) 
+        [HttpPost]
+        public IActionResult Post(Business b)
         {
             string query = @"
                     INSERT INTO dbo.BusinessUser (B_CompanyName, B_Email, B_PhoneNumber, B_Password, B_RepeatPassword) 
-                    VALUES (@B_CompanyName, @B_Email, @B_PhoneNumber, @B_Password, @B_RepeatPassword)";
+                    VALUES (@B_CompanyName, @B_Email, @B_PhoneNumber, @B_Password, @B_RepeatPassword)"
+            ;
 
             string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
             using (SqlConnection myCon = new SqlConnection(sqlDataSource))
             {
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@B_CompanyName", usertype.B_CompanyName);
-                    myCommand.Parameters.AddWithValue("@B_Email", usertype.B_Email);
-                    myCommand.Parameters.AddWithValue("@B_PhoneNumber", usertype.B_PhoneNumber);
-                    myCommand.Parameters.AddWithValue("@B_Password", usertype.B_Password);
-                    myCommand.Parameters.AddWithValue("@B_RepeatPassword", usertype.B_RepeatPassword);
+                    myCommand.Parameters.AddWithValue("@B_CompanyName", b.B_CompanyName);
+                    myCommand.Parameters.AddWithValue("@B_Email", b.B_Email);
+                    myCommand.Parameters.AddWithValue("@B_PhoneNumber", b.B_PhoneNumber);
+                    myCommand.Parameters.AddWithValue("@B_Password", b.B_Password);
+                    myCommand.Parameters.AddWithValue("@B_RepeatPassword", b.B_RepeatPassword);
 
 
                     myCon.Open();
@@ -52,7 +52,7 @@ namespace Job__Portal_.Controllers
         }
 
         //Business Read
-        [HttpGet/*("BusinessUser")*/]
+        [HttpGet]
         public JsonResult Get/*BusinessUser*/()
         {
             string query = @"SELECT B_Id, B_CompanyName, B_Email, B_PhoneNumber, B_Password, B_RepeatPassword  FROM dbo.BusinessUser";
@@ -76,9 +76,9 @@ namespace Job__Portal_.Controllers
 
 
         //Bussiness Update
-        [HttpPut/*("BusinessUser")*/]
-        public IActionResult Put/*BusinessUser*/(UserType usertype)
-        { 
+        [HttpPut]
+        public IActionResult Put/*BusinessUser*/(Business b)
+        {
             string query = @"
                     UPDATE dbo.BusinessUser
 
@@ -92,19 +92,20 @@ namespace Job__Portal_.Controllers
                     
                     
                     where B_Id=@B_Id
-                    ";
+                    "
+            ;
 
             string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
             using (SqlConnection myCon = new SqlConnection(sqlDataSource))
             {
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@B_CompanyName", usertype.B_CompanyName);
-                    myCommand.Parameters.AddWithValue("@B_Email", usertype.B_Email);
-                    myCommand.Parameters.AddWithValue("@B_PhoneNumber", usertype.B_PhoneNumber);
-                    myCommand.Parameters.AddWithValue("@B_Password", usertype.B_Password);
-                    myCommand.Parameters.AddWithValue("@B_RepeatPassword", usertype.B_RepeatPassword);
-                    myCommand.Parameters.AddWithValue("@B_Id",usertype.B_Id);
+                    myCommand.Parameters.AddWithValue("@B_CompanyName", b.B_CompanyName);
+                    myCommand.Parameters.AddWithValue("@B_Email", b.B_Email);
+                    myCommand.Parameters.AddWithValue("@B_PhoneNumber", b.B_PhoneNumber);
+                    myCommand.Parameters.AddWithValue("@B_Password", b.B_Password);
+                    myCommand.Parameters.AddWithValue("@B_RepeatPassword", b.B_RepeatPassword);
+                    myCommand.Parameters.AddWithValue("@B_Id", b.B_Id);
 
 
                     myCon.Open();
@@ -142,10 +143,5 @@ namespace Job__Portal_.Controllers
             }
             return StatusCode(201);
         }
-
-
     }
-}   
-
-
-
+}
