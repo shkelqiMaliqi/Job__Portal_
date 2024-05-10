@@ -49,9 +49,7 @@ function Register() {
 
     if (!data.U_Name.trim()) {
       errors.U_Name = 'Name is required';
-    
     }
-    /*
     else if (!data.U_Surname.trim()) {
       errors.U_Surname = 'Surname is required';
     }
@@ -70,7 +68,7 @@ function Register() {
     else if (!data.U_RepeatPassword.trim()) {
       errors.U_RepeatPassword = 'Repeat password is required';
     }
-    */
+    
 
   
     return errors;
@@ -96,7 +94,7 @@ function Register() {
                     <div className="form-outline mb-4">
                       <input type="text" id="U_Surname" className={`form-control form-control-lg ${errors.U_Surname ? 'is-invalid' : ''}`} onChange={handleInputChange} />
                       <label className="form-label" htmlFor="U_Surname">Your Surname</label>
-                      {errors.U_Surame && <div className="invalid-feedback">{errors.U_Surname}</div>}
+                      {errors.U_Surname && <div className="invalid-feedback">{errors.U_Surname}</div>}
                     </div>
 
                     <div className="form-outline mb-4">

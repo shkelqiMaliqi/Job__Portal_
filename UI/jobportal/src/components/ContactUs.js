@@ -27,10 +27,10 @@ function ContactUs() {
 
     try {
       await axios.post('https://localhost:7263/api/contact', formData);
-      // Assuming you have a success message or redirection logic here
+    
     } catch (error) {
       console.error('Submission failed:', error);
-      // Handle error appropriately, e.g., display an error message to the user
+      
     }
   };
 
@@ -43,7 +43,7 @@ function ContactUs() {
     if (!data.C_Email.trim()) {
       errors.C_Email = 'Email is required';
     }
-    // Add validation for other fields as needed
+   
 
     return errors;
   };

@@ -13,6 +13,7 @@ code {
 }
 
 .nav {
+  width: 100%;
   background-color: whitesmoke;
   color: gray;
   display: flex;
