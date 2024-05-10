@@ -58,12 +58,10 @@ namespace WebApplication1
             {
                 app.UseDeveloperExceptionPage();
             }
-<<<<<<< HEAD
+
             app.UseRouting();
             app.UseAuthorization();
             app.UseSession();
-=======
->>>>>>> b9fbdaf52401f64cac6e2c8395382121a5a5d91e
 
             
                 app.UseRouting();
