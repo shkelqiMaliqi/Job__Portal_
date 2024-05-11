@@ -244,8 +244,8 @@ color : white;
   width: 50%;
   border: 5px solid transparent;
   border-radius: 100px;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 .error {
@@ -313,3 +313,78 @@ color: blue;
 width: 300px;
 }
 
+/* styles.css */
+.logged-in-container {
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+}
+
+.user-details {
+  margin-bottom: 20px;
+}
+
+.logout-button, .publish-job-button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.logout-button:hover, .publish-job-button:hover {
+  background-color: #0056b3;
+}
+
+
+
+/*   CV   */
+/* cvStyles.css */
+.cv_form {
+  max-width: 800px;
+  margin-top: 100px;
+  margin-left: 250px;
+  padding: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cv_form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.cv_form input[type="text"],
+.cv_form input[type="date"],
+.cv_form input[type="tel"],
+.cv_form input[type="email"] {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.cv_form input[type="text"]:focus,
+.cv_form input[type="date"]:focus,
+.cv_form input[type="tel"]:focus,
+.cv_form input[type="email"]:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.cv_form button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.cv_form button[type="submit"]:hover {
+  background-color: #0056b3;
+}

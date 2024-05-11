@@ -6106,39 +6106,23 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\Lenovo\\.nuget\\packages\\": {},
-=======
-    "C:\\Users\\PC\\.nuget\\packages\\": {},
->>>>>>> c6007446873322717e9bfb917f138c7bc8d3967a
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
       "projectName": "Job__Portal_",
       "projectPath": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\PC\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
-      "projectName": "Job__Portal_",
-      "projectPath": "C:\\Users\\PC\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
-      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\obj\\",
->>>>>>> c6007446873322717e9bfb917f138c7bc8d3967a
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
         "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> c6007446873322717e9bfb917f138c7bc8d3967a
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -6225,7 +6209,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   },
@@ -6234,11 +6218,7 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
-<<<<<<< HEAD
       "message": "Problem reading the cache file C:\\Users\\Lenovo\\OneDrive\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-=======
-      "message": "Problem reading the cache file C:\\Users\\PC\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
->>>>>>> c6007446873322717e9bfb917f138c7bc8d3967a
     },
     {
       "code": "NU1701",

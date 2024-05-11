@@ -9,6 +9,7 @@ import Publish from './components/Publish'
 import Register  from './components/Register';
 import LoggedIn from './components/LoggedIn';
 import LoginPage from './components/LoginPage';
+import Cv from'./Cv_Form/Cv';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/publish" element={<Publish />} />
           <Route path="/loggedIn" element={<LoggedIn />} />
           <Route path="/loginPage" element={<LoginPage />} />
+          <Route path="/cv" element={<Cv />} />
         </Routes>
       </div>
       <footer>

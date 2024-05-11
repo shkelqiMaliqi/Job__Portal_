@@ -29,15 +29,15 @@ namespace Job__Portal_.Controllers.CV_FolderControllers
         public IActionResult Post(Industry cvInd)
         {
             string query = @"
-                    INSERT INTO dbo.Cv_Industry (Cv_Industry_IndustryType) 
-                    VALUES (@Cv_Industry_IndustryType)";
+                    INSERT INTO dbo.Cv_Industry (CvIndustry_IndustryType) 
+                    VALUES (@CvIndustry_IndustryType)";
 
             string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
             using (SqlConnection myCon = new SqlConnection(sqlDataSource))
             {
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@Cv_Industry_IndustryType", cvInd.Cv_Industry_IndustryType);
+                    myCommand.Parameters.AddWithValue("@CvIndustry_IndustryType", cvInd.CvIndustry_IndustryType);
 
 
                     myCon.Open();
@@ -52,7 +52,7 @@ namespace Job__Portal_.Controllers.CV_FolderControllers
         [HttpGet]
         public JsonResult Get()
         {
-            string query = @"SELECT CvIndustry_Id ,Cv_Industry_IndustryType FROM dbo.Cv_Industry";
+            string query = @"SELECT CvIndustry_Id ,CvIndustry_IndustryType FROM dbo.Cv_Industry";
 
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
@@ -77,7 +77,7 @@ namespace Job__Portal_.Controllers.CV_FolderControllers
         {
             string query = @"
                     UPDATE dbo.Cv_Industry
-                    SET Cv_Industry_IndustryType=@Cv_Industry_IndustryType
+                    SET CvIndustry_IndustryType=@CvIndustry_IndustryType
                     where CvIndustry_Id=@CvIndustry_Id
                     ";
 
@@ -87,7 +87,7 @@ namespace Job__Portal_.Controllers.CV_FolderControllers
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
                     myCommand.Parameters.AddWithValue("@CvIndustry_Id", cvInd.Cv_Industry_Id);
-                    myCommand.Parameters.AddWithValue("@Cv_Industry_IndustryType", cvInd.Cv_Industry_IndustryType);
+                    myCommand.Parameters.AddWithValue("@CvIndustry_IndustryType", cvInd.CvIndustry_IndustryType);
 
 
                     myCon.Open();

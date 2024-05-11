@@ -1,8 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom'; // Assuming you're using React Router
-
-
 import LoggedIn from './LoggedIn';
 
 const Profile = () => {
@@ -11,6 +8,18 @@ const Profile = () => {
   const [error, setError] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
   const [userData, setUserData] = useState(null);
+  const [editMode, setEditMode] = useState(false);
+
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (isLoggedIn) {
+      const userData = JSON.parse(localStorage.getItem('userData'));
+      if (userData) {
+        setLoggedIn(true);
+        setUserData(userData);
+      }
+    }
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,11 +28,13 @@ const Profile = () => {
         U_Email: email,
         U_Password: password,
       });
-      console.log('Login successful!');
-      console.log('User:', response.data);
-
       setLoggedIn(true);
       setUserData(response.data);
+      localStorage.setItem('isLoggedIn', true);
+      localStorage.setItem('userData', JSON.stringify(response.data));
+      // Fetch user details by ID
+      const userResponse = await axios.get(`https://localhost:7263/api/Users/${response.data.UserId}`);
+      setUserData(userResponse.data);
     } catch (error) {
       console.error('Login error:', error);
       setError('Invalid email or password');
@@ -35,7 +46,8 @@ const Profile = () => {
       await axios.post('https://localhost:7263/api/Users/logout');
       setLoggedIn(false);
       setUserData(null);
-      console.log('Logged out successfully');
+      localStorage.removeItem('isLoggedIn');
+      localStorage.removeItem('userData');
     } catch (error) {
       console.error('Logout error:', error);
     }
@@ -44,32 +56,27 @@ const Profile = () => {
   return (
     <div className="profile-container">
       {!loggedIn ? (
-        <>
-          <h2 className='login_intro'>Login</h2>
-          {error && <p className="error">{error}</p>}
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label className='login_labels'>Email</label>
-              <input 
-                type="text"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="input-field"
-              />
-            </div>
-            <div>
-              <label className='login_labels'>Password</label>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="input-field"
-              />
-            </div>
-            <button type="submit" className="login-button">Sign In</button>
-          </form>
-          <p className="register-link">Don't have an account? <Link className='register_link' to="/register">Sign Up</Link></p>
-        </>
+        <form className="login-form" onSubmit={handleSubmit}>
+          <h2>Login</h2>
+          {error && <p className="error-message">{error}</p>}
+          <div className="form-group">
+            <label>Email:</label>
+            <input
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label>Password:</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button type="submit">Login</button>
+        </form>
       ) : (
         <LoggedIn user={userData} onLogout={handleLogout} />
       )}

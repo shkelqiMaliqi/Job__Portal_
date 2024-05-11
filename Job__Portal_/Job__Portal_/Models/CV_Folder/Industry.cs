@@ -11,7 +11,7 @@ namespace Job__Portal_.Models.CV_Folder
     {
         [Key]
         public int Cv_Industry_Id { get; set; }
-        public string Cv_Industry_IndustryType { get; set; }
+        public string CvIndustry_IndustryType { get; set; }
 
     }
 }

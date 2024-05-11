@@ -77,7 +77,7 @@ namespace Job__Portal_.Controllers.CV_FolderControllers
         public IActionResult Put(Experiences cvExp)
         {
             string query = @"
-                    UPDATE dbo.Cv_Experiences
+                    UPDATE dbo.Cv_Experience
                     SET CvExp_Experiences=@CvExp_Experiences
                     where CvExp_Id=@CvExp_Id
                     ";

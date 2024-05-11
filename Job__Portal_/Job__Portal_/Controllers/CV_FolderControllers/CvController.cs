@@ -34,12 +34,12 @@ namespace Job__Portal_.Controllers.CV_FolderControllers
         {
             string query = @"
            INSERT INTO dbo.Cv
-            (Cv_Name, Cv_Surame, Cv_DateOfBirth,
+            (Cv_Name, Cv_Surname, Cv_DateOfBirth,
              Cv_PhoneNumber, Cv_Email) 
 
             VALUES 
 
-            (@Cv_Name, @Cv_Surame, @Cv_DateOfBirth,
+            (@Cv_Name, @Cv_Surname, @Cv_DateOfBirth,
              @Cv_PhoneNumber, @Cv_Email)";
 
             string sqlDataSource = _configuration.GetConnectionString("CRUDCS");

@@ -106,7 +106,7 @@ Cv_Email varchar(255),
 )
 INSERT INTO CV (Cv_Name, Cv_Surname, Cv_DateOfBirth, Cv_PhoneNumber, Cv_Email)
 VALUES ('John', 'Doe', '1990-01-01', 1234567890, 'john@example.com');
-
+select * from Cv
 create table Cv_Education(
 CvEdu_Id int primary key identity(1,1),
 CvEdu_Education varchar(MAX)
@@ -116,6 +116,7 @@ create table Cv_Experience(
 CvExp_Id int primary key identity(1,1),
 CvExp_Experiences varchar(MAX)
 )
+insert into Cv_Experience(CvExp_Experiences) Values('Internnn');
 
 create table Cv_Industry(
 CvIndustry_Id int primary key identity(1,1),

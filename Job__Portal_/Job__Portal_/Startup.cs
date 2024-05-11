@@ -38,17 +38,14 @@ namespace WebApplication1
                 options.SerializerSettings.ContractResolver = new DefaultContractResolver();
             });
 
-            services.AddControllers();
-            
             services.AddSession(options =>
             {
-                // Configure session options
-                options.Cookie.Name = ".MySession";
-                options.IdleTimeout = TimeSpan.FromMinutes(30);
+                options.IdleTimeout = TimeSpan.FromMinutes(30); // Session expires after 30 minutes of inactivity
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
             });
         }
+    
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

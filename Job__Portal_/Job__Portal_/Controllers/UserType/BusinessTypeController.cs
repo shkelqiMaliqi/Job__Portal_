@@ -18,7 +18,7 @@ namespace Job__Portal_.Controllers.UserType
        private readonly IConfiguration _configuration;
        private SqlDataReader myReader;
 
-       public User_TypeController(IConfiguration configuration)
+       public BusinessTypeController(IConfiguration configuration)
        {
             _configuration = configuration;
        }
@@ -72,7 +72,7 @@ namespace Job__Portal_.Controllers.UserType
 
         //BusinessType Update
         [HttpPut]
-        public IActionResult Put(User_Type businesst)
+        public IActionResult Put(BusinessType businesst)
         {
             string query = @"
                     UPDATE dbo.BusinessType
@@ -91,7 +91,7 @@ namespace Job__Portal_.Controllers.UserType
             {
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@BusinessType_Name", bsuinesst.BusinessType_Name);
+                    myCommand.Parameters.AddWithValue("@BusinessType_Name", businesst.BusinessType_Name);
                     myCommand.Parameters.AddWithValue("@BusinessType_Id", businesst.BusinessType_Id);
 
 
