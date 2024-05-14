@@ -768,3 +768,7 @@ C:\Users\PC\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\obj\Debug\net8.0\Job_
 C:\Users\PC\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\obj\Debug\net8.0\ref\Job__Portal_.dll
 >>>>>>> b9fbdaf52401f64cac6e2c8395382121a5a5d91e
 >>>>>>> bd63c2d3f660f6c38b8a66926c5079266fba3413
+C:\Users\user\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\System.Web.Cors.dll
+C:\Users\user\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\System.Net.Http.Formatting.dll
+C:\Users\user\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\System.Web.Http.dll
+C:\Users\user\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\System.Web.Http.Cors.dll

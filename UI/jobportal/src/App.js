@@ -10,6 +10,7 @@ import Register  from './components/Register';
 import LoggedIn from './components/LoggedIn';
 import LoginPage from './components/LoginPage';
 import Cv from'./Cv_Form/Cv';
+import NormalorBusiness from './components/NormalorBusiness';
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
           <Route path="/loggedIn" element={<LoggedIn />} />
           <Route path="/loginPage" element={<LoginPage />} />
           <Route path="/cv" element={<Cv />} />
+          <Route path="/normalorbusiness" element={<NormalorBusiness />} />
+
         </Routes>
       </div>
       <footer>

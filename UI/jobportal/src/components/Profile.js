@@ -8,7 +8,6 @@ const Profile = () => {
   const [error, setError] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
   const [userData, setUserData] = useState(null);
-  const [editMode, setEditMode] = useState(false);
 
   useEffect(() => {
     const isLoggedIn = localStorage.getItem('isLoggedIn');
@@ -32,7 +31,6 @@ const Profile = () => {
       setUserData(response.data);
       localStorage.setItem('isLoggedIn', true);
       localStorage.setItem('userData', JSON.stringify(response.data));
-      // Fetch user details by ID
       const userResponse = await axios.get(`https://localhost:7263/api/Users/${response.data.UserId}`);
       setUserData(userResponse.data);
     } catch (error) {
@@ -76,6 +74,9 @@ const Profile = () => {
             />
           </div>
           <button type="submit">Login</button>
+          <p className="text-center text-muted mt-5 mb-0">
+            Don't have an account? <a href="/register" className="fw-bold text-body"><u>Register here</u></a>
+          </p>
         </form>
       ) : (
         <LoggedIn user={userData} onLogout={handleLogout} />

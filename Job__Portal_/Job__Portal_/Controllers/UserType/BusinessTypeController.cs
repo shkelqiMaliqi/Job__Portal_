@@ -15,20 +15,20 @@ namespace Job__Portal_.Controllers.UserType
     [ApiController]
     public class BusinessTypeController : ControllerBase
     {
-       private readonly IConfiguration _configuration;
-       private SqlDataReader myReader;
+        private readonly IConfiguration _configuration;
+        private SqlDataReader myReader;
 
-       public BusinessTypeController(IConfiguration configuration)
-       {
+        public BusinessTypeController(IConfiguration configuration)
+        {
             _configuration = configuration;
-       }
+        }
 
         //BusinessType Create
         [HttpPost]
         public IActionResult Post(BusinessType businesst)
         {
             string query = @"
-                    INSERT INTO dbo.BusinessType (BusinessType_Name) 
+                    INSERT INTO dbo.BusinessType (BusinessType_Name)
                     VALUES (@BusinessType_Name)";
 
             string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
@@ -80,8 +80,8 @@ namespace Job__Portal_.Controllers.UserType
                     SET
 
                     BusinessType_Name = @BusinessType_Name
-                    
-                    
+                   
+                   
                     where BusinessType_Id=@BusinessType_Id
                     "
             ;

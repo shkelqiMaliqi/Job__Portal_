@@ -27,7 +27,7 @@ namespace Job__Portal_.Controllers.UserType
         public IActionResult Post(Business b)
         {
             string query = @"
-                    INSERT INTO dbo.BusinessUser (B_CompanyName, B_Email, B_PhoneNumber, B_Password, B_RepeatPassword) 
+                    INSERT INTO dbo.BusinessUser (B_CompanyName, B_Email, B_PhoneNumber, B_Password, B_RepeatPassword)
                     VALUES (@B_CompanyName, @B_Email, @B_PhoneNumber, @B_Password, @B_RepeatPassword)"
             ;
 
@@ -84,13 +84,13 @@ namespace Job__Portal_.Controllers.UserType
 
                     SET
 
-                    B_CompanyName = @B_CompanyName, 
+                    B_CompanyName = @B_CompanyName,
                     B_Email = @B_Email,
                     B_PhoneNumber = @B_PhoneNumber,
                     B_Password = @B_Password,
                     B_RepeatPassword = @B_RepeatPassword,
-                    
-                    
+                   
+                   
                     where B_Id=@B_Id
                     "
             ;
