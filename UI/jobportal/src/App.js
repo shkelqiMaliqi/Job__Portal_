@@ -1,5 +1,7 @@
 import React from 'react';
 import  {Route, Routes } from 'react-router-dom'; 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Navbar from "./Navbar"
 import Home from './components/Home';
 import WhyUs from './components/WhyUs';
@@ -10,6 +12,9 @@ import Register  from './components/Register';
 import LoggedIn from './components/LoggedIn';
 import LoginPage from './components/LoginPage';
 import Cv from'./Cv_Form/Cv';
+import Jobs_Publish from './Jobs_Repository/Jobs_Publish';
+import MainPage from './components/MainPage';
+import BusinessDashboard from './BusinessDetails/BusinessDashboard';
 
 function App() {
   return (
@@ -17,6 +22,7 @@ function App() {
       <Navbar />
       <div className="container">
         <Routes>
+          <Route path="/mainpage" element={<MainPage />} />
           <Route path="/home" element={<Home />} />
           <Route path="/whyus" element={<WhyUs />} />
           <Route path="/contactus" element={<ContactUs />} />
@@ -26,6 +32,8 @@ function App() {
           <Route path="/loggedIn" element={<LoggedIn />} />
           <Route path="/loginPage" element={<LoginPage />} />
           <Route path="/cv" element={<Cv />} />
+          <Route path="/jobs_publish" element={<Jobs_Publish />} />
+          <Route path="/businessdashboard" element={<BusinessDashboard />} />
         </Routes>
       </div>
       <footer>

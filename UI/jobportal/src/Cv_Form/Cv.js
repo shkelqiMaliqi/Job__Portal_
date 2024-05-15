@@ -28,7 +28,6 @@ const Cv = () => {
         e.preventDefault();
     
         try {
-       
             await axios.post('https://localhost:7263/api/experiences', { CvExp_Experiences: cvData.CvExp_Experiences });
             await axios.post('https://localhost:7263/api/education', { CvEdu_Education: cvData.CvEdu_Education });
             await axios.post('https://localhost:7263/api/industry', { CvIndustry_IndustryType: cvData.CvIndustry_IndustryType });
@@ -44,13 +43,10 @@ const Cv = () => {
                 Cv_DateOfBirth: cvData.Cv_DateOfBirth,
                 Cv_PhoneNumber: cvData.Cv_PhoneNumber,
                 Cv_Email: cvData.Cv_Email,
-               
             };
     
-           
             await axios.post('https://localhost:7263/api/cv', cvFormData);
     
-
             setCvData({
                 Cv_Name: '',
                 Cv_Surname: '',
@@ -66,14 +62,11 @@ const Cv = () => {
                 CvCourses_C:'',
                 CvLang_Lang:'',
                 CvAddMore_Add:'',
-
             });
     
-           
             console.log('CV and experience added successfully');
         } catch (error) {
             console.error('Error adding CV and experience:', error);
-
         }
     };
     
@@ -82,30 +75,23 @@ const Cv = () => {
         <div className='cv_form'>
             <h2>Create CV</h2>
             <form onSubmit={handleSubmit}>
-               
-                <input type="text" name="Cv_Label" placeholder="First Name" value={cvData.Cv_Name} onChange={handleChange} />
-                <input type="text" name="Cv_Label" placeholder="Last Name" value={cvData.Cv_Surname} onChange={handleChange} />
-                <input type="date" name="Cv_Label" value={cvData.Cv_DateOfBirth} onChange={handleChange} />
-                <input type="tel" name="Cv_Label" placeholder="Phone Number" value={cvData.Cv_PhoneNumber} onChange={handleChange} />
-                <input type="email" name="Cv_Label" placeholder="Email" value={cvData.Cv_Email} onChange={handleChange} />
-                
-                {/* Add an input field for the additional label */}
-                <input type="text" name="Cv_Label" placeholder="Experiences" value={cvData.CvExp_Experiences} onChange={handleChange} />
-                <input type="text" name="Cv_Label" placeholder="Education" value={cvData.CvEdu_Education} onChange={handleChange} />
-                <input type="text" name="Cv_Label" placeholder="Industry" value={cvData.CvIndustry_IndustryType} onChange={handleChange} />
-                <input type="text" name="Cv_Label" placeholder="Technical Skills" value={cvData.CvTs_TSkills} onChange={handleChange} />
-                <input type="text" name="Cv_Label" placeholder="Certifications" value={cvData.CvCertifications_Certifications} onChange={handleChange} />
-                <input type="text" name="Cv_Label" placeholder="Additional Skills" value={cvData.CvAs_ASkills} onChange={handleChange} />
-                <input type="text" name="Cv_Label" placeholder="Courses" value={cvData.CvCourses_C} onChange={handleChange} />
-                <input type="text" name="Cv_Label" placeholder="Languages" value={cvData.CvLang_Lang} onChange={handleChange} />
-                <input type="text" name="Cv_Label" placeholder="Add More" value={cvData.CvAddMore_Add} onChange={handleChange} />
-                {/* Add more input fields for additional sections */}
-
+                <input type="text" name="Cv_Name" placeholder="First Name" value={cvData.Cv_Name} onChange={handleChange} />
+                <input type="text" name="Cv_Surname" placeholder="Last Name" value={cvData.Cv_Surname} onChange={handleChange} />
+                <input type="date" name="Cv_DateOfBirth" value={cvData.Cv_DateOfBirth} onChange={handleChange} />
+                <input type="tel" name="Cv_PhoneNumber" placeholder="Phone Number" value={cvData.Cv_PhoneNumber} onChange={handleChange} />
+                <input type="email" name="Cv_Email" placeholder="Email" value={cvData.Cv_Email} onChange={handleChange} />
+                <input type="text" name="CvExp_Experiences" placeholder="Experiences" value={cvData.CvExp_Experiences} onChange={handleChange} />
+                <input type="text" name="CvEdu_Education" placeholder="Education" value={cvData.CvEdu_Education} onChange={handleChange} />
+                <input type="text" name="CvIndustry_IndustryType" placeholder="Industry" value={cvData.CvIndustry_IndustryType} onChange={handleChange} />
+                <input type="text" name="CvTs_TSkills" placeholder="Technical Skills" value={cvData.CvTs_TSkills} onChange={handleChange} />
+                <input type="text" name="CvCertifications_Certifications" placeholder="Certifications" value={cvData.CvCertifications_Certifications} onChange={handleChange} />
+                <input type="text" name="CvAs_ASkills" placeholder="Additional Skills" value={cvData.CvAs_ASkills} onChange={handleChange} />
+                <input type="text" name="CvCourses_C" placeholder="Courses" value={cvData.CvCourses_C} onChange={handleChange} />
+                <input type="text" name="CvLang_Lang" placeholder="Languages" value={cvData.CvLang_Lang} onChange={handleChange} />
+                <input type="text" name="CvAddMore_Add" placeholder="Add More" value={cvData.CvAddMore_Add} onChange={handleChange} />
                 <button type="submit" className="cv-button">Create</button>
             </form>
-            </div>
-    
-       
+        </div>
     );
 };
 

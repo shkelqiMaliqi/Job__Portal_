@@ -2,15 +2,16 @@ import { Link} from "react-router-dom"
 export default function Navbar() {
     return (
         <nav className="nav">
-            <CustomLink to="/Home" className="site-titile">
+            <CustomLink to="/MainPage" className="site-titile">
             Job Portal
             </CustomLink>
             <ul>
                
                 <CustomLink to="/Whyus">Why Us</CustomLink>
                 <CustomLink to="/Publish">Publish</CustomLink>
-                
                 <CustomLink to="/Contactus">Contact Us</CustomLink>
+
+           
                 
                
             </ul>
