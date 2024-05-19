@@ -38,8 +38,14 @@ namespace WebApplication1
                 options.SerializerSettings.ContractResolver = new DefaultContractResolver();
             });
 
-            services.AddControllers();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30); // Session expires after 30 minutes of inactivity
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
         }
+    
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -50,24 +56,29 @@ namespace WebApplication1
                 app.UseDeveloperExceptionPage();
             }
 
-
             app.UseRouting();
             app.UseAuthorization();
+            app.UseSession();
 
-            // Kontrolli i rrugës për dosjen "Photos"
-            string photosPath = Path.Combine(Directory.GetCurrentDirectory(), "Photos");
-            Console.WriteLine("Photos path: " + photosPath);
+            
+                app.UseRouting();
+                app.UseAuthorization();
 
-            app.UseStaticFiles(new StaticFileOptions
-            {
-                FileProvider = new PhysicalFileProvider(photosPath),
-                RequestPath = "/Photos"
-            });
+                // Kontrolli i rrugës për dosjen "Photos"
+                string photosPath = Path.Combine(Directory.GetCurrentDirectory(), "Photos");
+                Console.WriteLine("Photos path: " + photosPath);
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+                app.UseStaticFiles(new StaticFileOptions
+                {
+                    FileProvider = new PhysicalFileProvider(photosPath),
+                    RequestPath = "/Photos"
+                });
+
+                app.UseEndpoints(endpoints =>
+                {
+                    endpoints.MapControllers();
+                });
+            }
+            
         }
     }
-}

@@ -51,7 +51,8 @@ namespace Job__Portal_.Controllers
             {
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    
+
+                    myCommand.Parameters.AddWithValue("@JobTitle", job.JobTitle);
                     myCommand.Parameters.AddWithValue("@NumberOfPositions", job.NumberOfPositions);
                     myCommand.Parameters.AddWithValue("@JobDescription", job.JobDescription);
                     myCommand.Parameters.AddWithValue("@Qualification", job.Qualification);

@@ -22,9 +22,9 @@ namespace Job__Portal_.Models
         public int U_Phone { get; set; }
         public string U_Password { get; set; }
         public string U_RepeatPassword { get; set; }
-        public DateTime U_TimeCreated { get; set; }
+      
 
-
+      
     }
 
 

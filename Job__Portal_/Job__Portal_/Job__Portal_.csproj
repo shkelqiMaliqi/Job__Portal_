@@ -8,6 +8,8 @@
 
   <ItemGroup>
 
+    <PackageReference Include="Microsoft.AspNet.WebApi.Cors" Version="5.3.0" />
+
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.4" />
@@ -20,7 +22,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
     <PackageReference Include="System.Linq" Version="4.3.0" />
 
@@ -29,7 +31,8 @@
 
   <ItemGroup>
     <Folder Include="Photos\" />
-
+    <Folder Include="Photos\" />
+    <Folder Include="Photos\" />
   </ItemGroup>
 
 </Project>

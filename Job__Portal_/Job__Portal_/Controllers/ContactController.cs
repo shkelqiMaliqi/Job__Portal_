@@ -28,7 +28,10 @@ namespace Job__Portal_.Controllers
         [HttpGet]
         public JsonResult Get()
         {
-            string query = @"SELECT C_ID, C_Name, C_Surname, C_Email, C_Subject, C_Message, C_TimeCreated FROM dbo.Contact_Form";
+
+            string query = @"SELECT C_Id, C_Name, C_Surname, C_Email, C_Subject, C_Message FROM dbo.Contact_Form";
+
+           
 
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
@@ -52,8 +55,8 @@ namespace Job__Portal_.Controllers
         public IActionResult Post(Contact c)
         {
             string query = @"
-                    INSERT INTO dbo.Contact_Form (C_Name,C_Surname,C_Email,C_Subject,C_Message,C_TimeCreated) 
-                    VALUES (@C_Name, @C_Surname, @C_Email, @C_Subject, @C_Message, @C_TimeCreated)";
+                    INSERT INTO dbo.Contact_Form (C_Name,C_Surname,C_Email,C_Subject,C_Message) 
+                    VALUES (@C_Name, @C_Surname, @C_Email, @C_Subject, @C_Message)";
 
             string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
             using (SqlConnection myCon = new SqlConnection(sqlDataSource))
@@ -65,7 +68,7 @@ namespace Job__Portal_.Controllers
                     myCommand.Parameters.AddWithValue("@C_Email", c.C_Email);
                     myCommand.Parameters.AddWithValue("@C_Subject", c.C_Subject);
                     myCommand.Parameters.AddWithValue("@C_Message", c.C_Message);
-                    myCommand.Parameters.AddWithValue("@C_TimeCreated", c.C_TimeCreated);
+                   
 
                     myCon.Open();
                     myCommand.ExecuteNonQuery(); // Execute the query without a reader
@@ -86,8 +89,10 @@ namespace Job__Portal_.Controllers
             C_Email = @C_Email, 
             C_Subject = @C_Subject, 
             C_Message = @C_Message, 
-            C_TimeCreated = @C_TimeCreated
-            WHERE C_ID = @C_ID";
+
+        
+            WHERE C_Id = @C_Id";
+
 
             string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
             using (SqlConnection myCon = new SqlConnection(sqlDataSource))
@@ -100,7 +105,7 @@ namespace Job__Portal_.Controllers
                     myCommand.Parameters.AddWithValue("@C_Email", c.C_Email);
                     myCommand.Parameters.AddWithValue("@C_Subject", c.C_Subject);
                     myCommand.Parameters.AddWithValue("@C_Message", c.C_Message);
-                    myCommand.Parameters.AddWithValue("@C_TimeCreated", c.C_TimeCreated);
+             
 
                     myCon.Open();
                     myCommand.ExecuteNonQuery();

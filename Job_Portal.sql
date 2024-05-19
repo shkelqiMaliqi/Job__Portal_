@@ -10,8 +10,7 @@ U_Email varchar (MAX),
 U_Username varchar(255),
 U_Phone int ,
 U_Password varchar(255),
-U_RepeatPassword varchar(255),
-U_TimeCreated datetime
+U_RepeatPassword varchar(255)
 
 )
 INSERT INTO Users (U_Name, U_Surname, U_Email, U_Username, U_Phone, U_Password, U_RepeatPassword, U_TimeCreated)
@@ -27,7 +26,7 @@ C_Surname varchar(255),
 C_Email varchar (MAX),
 C_Subject varchar (255),
 C_Message varchar (MAX),
-C_TimeCreated datetime
+
 
 )
 INSERT INTO Contact_Form (C_Name, C_Surname, C_Email, C_Subject, C_Message, C_TimeCreated)
@@ -52,6 +51,7 @@ CompanyState varchar(50),
 CompanyPhone int,
 CreateDate_C datetime
 )
+
 INSERT INTO Jobs (
     JobTitle,
     NumberOfPositions,
@@ -106,7 +106,7 @@ Cv_Email varchar(255),
 )
 INSERT INTO CV (Cv_Name, Cv_Surname, Cv_DateOfBirth, Cv_PhoneNumber, Cv_Email)
 VALUES ('John', 'Doe', '1990-01-01', 1234567890, 'john@example.com');
-
+select * from Cv
 create table Cv_Education(
 CvEdu_Id int primary key identity(1,1),
 CvEdu_Education varchar(MAX)
@@ -116,6 +116,7 @@ create table Cv_Experience(
 CvExp_Id int primary key identity(1,1),
 CvExp_Experiences varchar(MAX)
 )
+insert into Cv_Experience(CvExp_Experiences) Values('Internnn');
 
 create table Cv_Industry(
 CvIndustry_Id int primary key identity(1,1),
@@ -241,4 +242,27 @@ CREATE TABLE EnrollmentTypes (
 CREATE TABLE ExperienceLevels (
     ExperienceLevelId int primary key identity(1,1),	
     LevelName VARCHAR(255) NOT NULL
+);
+
+-----------------------Normal or Business User-------------------
+create table BusinessUser (
+	B_Id int primary key identity(1,1),
+    B_CompanyName varchar(255),
+    B_Email varchar(MAX),
+    B_PhoneNumber int,
+    B_Password varchar(255),
+    B_RepeatPassword varchar(255),
+);
+
+create table UserType (
+    UserType_Id int primary key identity(1,1),
+    UserType_Name varchar(50) 
+);
+
+INSERT INTO dbo.UserType(UserType_Name)
+Values ('Admin')
+
+create table BusinessType (
+    BusinessType_Id int primary key identity(1,1),
+    BusinessType_Name varchar(255)
 );

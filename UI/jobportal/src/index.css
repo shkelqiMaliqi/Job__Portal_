@@ -13,6 +13,7 @@ code {
 }
 
 .nav {
+  width: 100%;
   background-color: whitesmoke;
   color: gray;
   display: flex;
@@ -229,3 +230,317 @@ color : white;
 }
 
 
+
+/*Profile*/
+.login_intro{
+  color: grey;
+  text-align: center;
+}
+.profile-container {
+  
+  padding: 50px;
+  margin: auto;
+  margin-top: 50px;
+  width: 50%;
+  border: 5px solid transparent;
+  border-radius: 100px;
+  background-color: white;
+  color: black;
+}
+
+.error {
+  color: red;
+}
+.login_labels {
+
+  color: transparent;
+  background-image: linear-gradient(to right, #007bff, #00bfff);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.input-field {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: none;
+  background-color: transparent;
+  border-radius: 0;
+  border-bottom: 1px solid blue; 
+  outline: none; 
+  color: white;
+}
+
+.input-field:focus{
+  border-bottom-color: green;
+  transition: 0.6s ease;
+}
+
+.login-button {
+  margin-left: 230px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: blue;
+  color: white;
+  border: none;
+  margin-top: 20px;
+}
+.login-button:hover{
+  background-color: green;
+  transition: 0.9s ease;
+  color: black;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 30px;
+}
+.register_link:hover{
+  color: green;
+  transition: 0.4s ease-in-out;
+}
+
+.loggedIn_div{
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+
+}
+.loggedIn_intro{
+  color: red;
+}
+.logout_button{
+color: blue;
+width: 300px;
+}
+
+/* styles.css */
+.logged-in-container {
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+}
+
+.user-details {
+  margin-bottom: 20px;
+}
+
+.logout-button, .publish-job-button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.logout-button:hover, .publish-job-button:hover {
+  background-color: #0056b3;
+ 
+}
+
+
+/*   CV   */
+
+.cv_form {
+  max-width: 800px;
+  margin-top: 100px;
+  margin-left: 250px;
+  padding: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cv_form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.cv_form input[type="text"],
+.cv_form input[type="date"],
+.cv_form input[type="tel"],
+.cv_form input[type="email"] {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.cv_form input[type="text"]:focus,
+.cv_form input[type="date"]:focus,
+.cv_form input[type="tel"]:focus,
+.cv_form input[type="email"]:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.cv_form button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.cv_form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+<<<<<<< HEAD
+/* LogIn */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* Form Styles */
+.login-form, .register-form {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.login-form:hover, .register-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333333;
+  text-align: center;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #007bff;
+  margin: 0.5rem auto 0;
+}
+
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #555555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+button:active {
+  background-color: #004494;
+  transform: translateY(1px);
+}
+
+/* Error Message */
+.error-message {
+  color: #ff0000;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Link Styles */
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: #6c757d;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+.text-body {
+  color: #007bff;
+  transition: color 0.3s;
+}
+
+.text-body:hover {
+  color: #0056b3;
+  text-decoration: underline;
+=======
+
+
+/*JOB LISTING*/
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-text {
+  margin-bottom: 0.5rem;
+}
+
+.btn-primary {
+  align-self: flex-start;
+>>>>>>> 26f4599b4b8fa81780ac09eb2a38791c5d237a5c
+}
