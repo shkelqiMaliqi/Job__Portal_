@@ -35,6 +35,7 @@ const Publish = () => {
             await axios.post('https://localhost:7263/api/jobs', job);
             
             console.log('Job created successfully!');
+            alert('Job added successfully!');
         } catch (error) {
             console.error('Error creating job:', error);
         }

@@ -7,16 +7,24 @@ using System.Threading.Tasks;
 
 namespace Job__Portal_.Models
 {
-    public class TrainingCourse
+    public class TrainingCourses
     {
         public int TrainingCourseId { get; set; }
+
+     
         public string Title { get; set; }
+
         public string Description { get; set; }
+
         public DateTime StartDate { get; set; }
+
+     
         public DateTime EndDate { get; set; }
+
+       
         public string Instructor { get; set; }
+
+     
         public decimal Price { get; set; }
     }
-
 }
-
