@@ -15,6 +15,7 @@ import Cv from'./Cv_Form/Cv';
 import NormalorBusiness from './components/NormalorBusiness';
 import MainPage from './components/MainPage';
 import TrainingCourses from './components/TrainingCourses';
+import Career from './components/Career';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path="/normalorbusiness" element={<NormalorBusiness />} />
           <Route path="/mainpage" element={<MainPage />} />
           <Route path="/trainingcourses" element={<TrainingCourses />} />
+          <Route path="/career" element={<Career />} />
 
         </Routes>
       </div>

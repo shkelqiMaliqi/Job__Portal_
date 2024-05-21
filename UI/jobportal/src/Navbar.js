@@ -10,6 +10,7 @@ export default function Navbar() {
                 <CustomLink to="/Whyus">Why Us</CustomLink>
                 <CustomLink to="/Publish">Publish</CustomLink>
                 <CustomLink to="/Contactus">Contact Us</CustomLink>
+                <CustomLink to="/Career">Career</CustomLink>
 
            
                 
