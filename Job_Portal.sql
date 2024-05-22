@@ -233,16 +233,14 @@ CREATE TABLE TrainingCourses (
     Instructor VARCHAR(255),
     Price DECIMAL(10, 2)
 );
-select * from dbo.TrainingCourses;
-INSERT INTO TrainingCourses (Title, Description, StartDate, EndDate, Instructor, Price)
-VALUES (
-    'Introduction to Data Science',
-    'A comprehensive course covering the basics of data science, including Python programming, statistics, and machine learning.',
-    '2024-06-01',
-    '2024-08-01',
-    'Dr. Jane Doe',
-    499.99
-);
+CREATE TABLE CourseApplyForm (
+	CourseApplyId int primary key identity(1,1),
+	Attendant_Name VARCHAR(255) NOT NULL,
+	Attendant_Surname VARCHAR(255) NOT NULL,
+	Attendant_Email VARCHAR(255) ,
+	Attendant_PhoneNo INT NOT NULL,
+	Courses_ApplyingName VARCHAR(255) NOT NULL
+	);
 
 
 CREATE TABLE EnrollmentTypes (
