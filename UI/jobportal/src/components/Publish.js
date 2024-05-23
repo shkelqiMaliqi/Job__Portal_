@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const Publish = () => {
     const [job, setJob] = useState({
@@ -18,7 +20,7 @@ const Publish = () => {
         CompanyCountry: '',
         CompanyState: '',
         CompanyPhone: 0,
-        CreateDate_C: new Date().toISOString().slice(0, 10) // To set the date in 'YYYY-MM-DD' format
+        CreateDate_C: new Date().toISOString().slice(0, 10) 
     });
 
     const handleChange = (e) => {
@@ -42,42 +44,80 @@ const Publish = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>Job Title:</label>
-            <input type="text" name="JobTitle" value={job.JobTitle} onChange={handleChange} />
-            <label>Number of Positions:</label>
-            <input type="number" name="NumberOfPositions" value={job.NumberOfPositions} onChange={handleChange} />
-            <label>Job Description:</label>
-            <input type="text" name="JobDescription" value={job.JobDescription} onChange={handleChange} />
-            <label>Qualification:</label>
-            <input type="text" name="Qualification" value={job.Qualification} onChange={handleChange} />
-            <label>Experience:</label>
-            <input type="text" name="Experience" value={job.Experience} onChange={handleChange} />
-            <label>Requirements:</label>
-            <input type="text" name="Requirements" value={job.Requirements} onChange={handleChange} />
-            <label>Job Type:</label>
-            <input type="text" name="JobType" value={job.JobType} onChange={handleChange} />
-            <label>Company Name:</label>
-            <input type="text" name="CompanyName" value={job.CompanyName} onChange={handleChange} />
-            <label>Company Logo:</label>
-            <input type="text" name="CompanyLogo" value={job.CompanyLogo} onChange={handleChange} />
-            <label>Website:</label>
-            <input type="text" name="Website" value={job.Website} onChange={handleChange} />
-            <label>Company Email:</label>
-            <input type="email" name="CompanyEmail" value={job.CompanyEmail} onChange={handleChange} />
-            <label>Company Address:</label>
-            <input type="text" name="CompanyAddress" value={job.CompanyAddress} onChange={handleChange} />
-            <label>Company Country:</label>
-            <input type="text" name="CompanyCountry" value={job.CompanyCountry} onChange={handleChange} />
-            <label>Company State:</label>
-            <input type="text" name="CompanyState" value={job.CompanyState} onChange={handleChange} />
-            <label>Company Phone:</label>
-            <input type="text" name="CompanyPhone" value={job.CompanyPhone} onChange={handleChange} />
-            <label>Create Date:</label>
-            <input type="date" name="CreateDate_C" value={job.CreateDate_C} onChange={handleChange} />
-
-            <button type="submit">Create Job</button>
-        </form>
+        <div className="publish-container">
+            <div className="container">
+                <h2 className="text-center my-4">Publish a Job</h2>
+                <form onSubmit={handleSubmit} className="row g-3">
+                    <div className="col-md-6">
+                        <label htmlFor="JobTitle" className="form-label_publish">Job Title:</label>
+                        <input type="text" id="JobTitle" name="JobTitle" value={job.JobTitle} onChange={handleChange} className="form-control" required />
+                    </div>
+                    <div className="col-md-6">
+                        <label htmlFor="NumberOfPositions" className="form-label_publis">Number of Positions:</label>
+                        <input type="number" id="NumberOfPositions" name="NumberOfPositions" value={job.NumberOfPositions} onChange={handleChange} className="form-control" required />
+                    </div>
+                    <div className="col-md-12">
+                        <label htmlFor="JobDescription" className="form-label_publis">Job Description:</label>
+                        <input type="text" id="JobDescription" name="JobDescription" value={job.JobDescription} onChange={handleChange} className="form-control" required />
+                    </div>
+                    <div className="col-md-6">
+                        <label htmlFor="Qualification" className="form-label_publis">Qualification:</label>
+                        <input type="text" id="Qualification" name="Qualification" value={job.Qualification} onChange={handleChange} className="form-control" required />
+                    </div>
+                    <div className="col-md-6">
+                        <label htmlFor="Experience" className="form-label_publis">Experience:</label>
+                        <input type="text" id="Experience" name="Experience" value={job.Experience} onChange={handleChange} className="form-control" required />
+                    </div>
+                    <div className="col-md-12">
+                        <label htmlFor="Requirements" className="form-label_publis">Requirements:</label>
+                        <input type="text" id="Requirements" name="Requirements" value={job.Requirements} onChange={handleChange} className="form-control" required />
+                    </div>
+                    <div className="col-md-6">
+                        <label htmlFor="JobType" className="form-label_publis">Job Type:</label>
+                        <input type="text" id="JobType" name="JobType" value={job.JobType} onChange={handleChange} className="form-control" required />
+                    </div>
+                    <div className="col-md-6">
+                        <label htmlFor="CompanyName" className="form-label_publis">Company Name:</label>
+                        <input type="text" id="CompanyName" name="CompanyName" value={job.CompanyName} onChange={handleChange} className="form-control" required />
+                    </div>
+                    <div className="col-md-6">
+                        <label htmlFor="CompanyLogo" className="form-label_publis">Company Logo:</label>
+                        <input type="text" id="CompanyLogo" name="CompanyLogo" value={job.CompanyLogo} onChange={handleChange} className="form-control" />
+                    </div>
+                    <div className="col-md-6">
+                        <label htmlFor="Website" className="form-label_publish">Website:</label>
+                        <input type="text" id="Website" name="Website" value={job.Website} onChange={handleChange} className="form-control" />
+                    </div>
+                    <div className="col-md-6">
+                        <label htmlFor="CompanyEmail" className="form-label_publish">Company Email:</label>
+                        <input type="email" id="CompanyEmail" name="CompanyEmail" value={job.CompanyEmail} onChange={handleChange} className="form-control" required />
+                    </div>
+                    <div className="col-md-6">
+                        <label htmlFor="CompanyAddress" className="form-label_publish">Company Address:</label>
+                        <input type="text" id="CompanyAddress" name="CompanyAddress" value={job.CompanyAddress} onChange={handleChange} className="form-control" required />
+                    </div>
+                    <div className="col-md-6">
+                        <label htmlFor="CompanyCountry" className="form-label_publish">Company Country:</label>
+                        <input type="text" id="CompanyCountry" name="CompanyCountry" value={job.CompanyCountry} onChange={handleChange} className="form-control" required />
+                    </div>
+                    <div className="col-md-6">
+                        <label htmlFor="CompanyState" className="form-label_publish">Company State:</label>
+                        <input type="text" id="CompanyState" name="CompanyState" value={job.CompanyState} onChange={handleChange} className="form-control" required />
+                    </div>
+                    <div className="col-md-6">
+                        <label htmlFor="CompanyPhone" className="form-label_publish">Company Phone:</label>
+                        <input type="text" id="CompanyPhone" name="CompanyPhone" value={job.CompanyPhone} onChange={handleChange} className="form-control" required />
+                    </div>
+                    <div className="col-md-6">
+                        <label htmlFor="CreateDate_C" className="form-label_publish">Create Date:</label>
+                        <input type="date" id="CreateDate_C" name="CreateDate_C" value={job.CreateDate_C} onChange={handleChange} className="form-control" required />
+                    </div>
+                    <div className="col-12 text-center mt-4">
+                        <button type="submit" className="btn btn_publish">Create Job</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     );
 };
 

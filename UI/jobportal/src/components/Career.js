@@ -45,7 +45,7 @@ const Career = () => {
                                             className="btn_career btn-primary w-auto px-5 py-2.5" 
                                             onClick={() => navigate('/CourseApply_Form')}
                                             style={{ 
-                                            backgroundColor: 'teal', 
+                                            backgroundColor: 'lightgreen', 
                                             border: 'none', 
                                             color: 'white', 
                                             borderRadius: '8px', 

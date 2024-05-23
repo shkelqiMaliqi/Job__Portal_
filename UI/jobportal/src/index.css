@@ -17,7 +17,7 @@ code {
 
 .nav {
   padding: 10px 20px;
-  background-color: #f8f9fa; /* Optional: Change navbar background color */
+  background-color: #f8f9fa;
 }
 
 .navbar-nav {
@@ -29,12 +29,13 @@ code {
 }
 
 .navbar-nav .nav-item.active > .nav-link {
-  text-decoration: underline;
+  text-decoration: none ;
+  
 }
 
 .nav-link {
   text-decoration: none;
-  color: gray; /* Bootstrap primary color */
+  color: gray; 
   font-weight: 500;
 }
 
@@ -117,18 +118,20 @@ color : white;
 /* ContactUs.css */
 .contactus_main {
   margin-top: 50px;
-  width: 750px;
+  width: auto;
   padding: 20px;
   background: linear-gradient(to right, lightgreen, lightblue);
   color: white;
-  min-height: 100vh;
-  margin-left: 600px;
+ 
+  margin-left: 200px;
   border-radius: 20px;
+  height: auto;
 }
 
 .contactus_container {
-  width: 600px;
-  height: 700px;
+  
+  width: auto;
+  height: auto;
   background: white;
   border-radius: 10px;
   padding: 30px;
@@ -139,6 +142,11 @@ color : white;
 .contact_h2{
   color: none;
   font-family: monospace ;
+  margin-top: 50px;
+  font-size: 30px;
+  text-align: center;
+  font-weight: 800;
+  font-style: italic;
 }
 
 .form-control.is-invalid {
@@ -159,6 +167,11 @@ color : white;
   color: black;
   background-color: lightgreen;
   transition: ease 0.6s;
+}
+.contactus_text{
+  margin-top: 150px;
+  font-size: 25px;
+  font-weight: 200;
 }
 
 
@@ -306,7 +319,7 @@ color: blue;
 width: 300px;
 }
 
-/* styles.css */
+
 .logged-in-container {
   padding: 20px;
   background-color: #f0f0f0;
@@ -317,19 +330,29 @@ width: 300px;
   margin-bottom: 20px;
 }
 
-.logout-button, .publish-job-button {
-  margin-right: 10px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  cursor: pointer;
+/* Publish Job*/
+.publish-container {
+  margin-top: 50px;
+  background: linear-gradient(45deg, rgb(54, 53, 53), rgb(194, 255, 115));
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.logout-button:hover, .publish-job-button:hover {
-  background-color: #0056b3;
- 
+.form-label_publish {
+  font-weight: bold;
 }
+
+.btn_publish {
+  background-color: #00bfff;
+  border-color: #000;
+}
+
+.btn_publish:hover{
+  background-color: #f3ec78;
+  border-color: #f3ec78;
+  transition: 0.6s ease;
+}
+
 
 
 /*   CV   */
