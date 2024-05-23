@@ -2,10 +2,18 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 const MainPage = () => {
     const [jobs, setJobs] = useState([]);
+    const [categories, setCategories] = useState({
+        JobCategories: [],
+        JobCategories_City: [],
+        JobCategories_Schedule_Time: []
+    });
     const [expandedJobId, setExpandedJobId] = useState(null);
+
+    const [selectedIndustry, setSelectedIndustry] = useState('');
+    const [selectedCity, setSelectedCity] = useState('');
+    const [selectedSchedule, setSelectedSchedule] = useState('');
 
     useEffect(() => {
         const fetchJobs = async () => {
@@ -17,16 +25,89 @@ const MainPage = () => {
             }
         };
 
+        const fetchCategories = async () => {
+            try {
+                const [categoryNameResponse, categoryCityResponse, categoryScheduleResponse] = await Promise.all([
+                    axios.get('https://localhost:7263/api/jobcategories'),
+                    axios.get('https://localhost:7263/api/jobcategories_city'),
+                    axios.get('https://localhost:7263/api/jobcategories_schedule')
+                ]);
+
+                setCategories({
+                    JobCategories: categoryNameResponse.data,
+                    JobCategories_City: categoryCityResponse.data,
+                    JobCategories_Schedule_Time: categoryScheduleResponse.data
+                });
+            } catch (error) {
+                console.error('Error fetching categories:', error);
+            }
+        };
+
         fetchJobs();
+        fetchCategories();
     }, []);
 
     const toggleDetails = (jobId) => {
         setExpandedJobId(prevJobId => (prevJobId === jobId ? null : jobId));
     };
 
+    const handleIndustryChange = (event) => {
+        setSelectedIndustry(event.target.value);
+    };
+
+    const handleCityChange = (event) => {
+        setSelectedCity(event.target.value);
+    };
+
+    const handleScheduleChange = (event) => {
+        setSelectedSchedule(event.target.value);
+    };
+
     return (
         <div className="container mt-5">
             <h1 className="text-center mb-4">Job Listings</h1>
+            
+            <div className="mb-4">
+                <h3>Categories</h3>
+                <form>
+                    <div className="row">
+                        <div className="col-md-4">
+                            <div className="form-group">
+                                <label htmlFor="industrySelect">Industry</label>
+                                <select className="form-control" id="industrySelect" value={selectedIndustry} onChange={handleIndustryChange}>
+                                    <option value="" disabled>Select Industry</option>
+                                    {categories.JobCategories.map((category, index) => (
+                                        <option key={index} value={category.JobCategoryName}>{category.JobCategoryName}</option>
+                                    ))}
+                                </select>
+                            </div>
+                        </div>
+                        <div className="col-md-4">
+                            <div className="form-group">
+                                <label htmlFor="citySelect">City</label>
+                                <select className="form-control" id="citySelect" value={selectedCity} onChange={handleCityChange}>
+                                    <option value="" disabled>Select City</option>
+                                    {categories.JobCategories_City.map((category, index) => (
+                                        <option key={index} value={category.JobCategory_City_Name}>{category.JobCategory_City_Name}</option>
+                                    ))}
+                                </select>
+                            </div>
+                        </div>
+                        <div className="col-md-4">
+                            <div className="form-group">
+                                <label htmlFor="scheduleSelect">Schedule</label>
+                                <select className="form-control" id="scheduleSelect" value={selectedSchedule} onChange={handleScheduleChange}>
+                                    <option value="" disabled>Select Schedule</option>
+                                    {categories.JobCategories_Schedule_Time.map((category, index) => (
+                                        <option key={index} value={category.JobCategories_Schedule_Time}>{category.JobCategories_Schedule_Time}</option>
+                                    ))}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
             <div className="row">
                 {jobs.map((job) => (
                     <div key={job.JobId} className="col-md-4 mb-4">

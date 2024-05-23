@@ -94,6 +94,20 @@ JobCategoryId int primary key identity(1,1),
 JobCategoryName varchar (255)
 )
 
+create table JobCategories_Schedule(
+JobCategories_ScheduleId int primary key identity(1,1),
+JobCategories_Schedule_Time varchar (255)
+)
+insert into dbo.JobCategories_Schedule ( JobCategories_Schedule_Time) Values ('Remote');
+
+
+create table JobCategories_City(
+JobCategory_CityId int primary key identity(1,1),
+JobCategory_City_Name varchar (255)
+)
+
+insert into dbo.JobCategories_City( JobCategory_City_Name) Values ('Gjakova');
+
 ----------------------------- THE CV FIELD -----------------------------------------
 create table CV (
 Cv_Id int primary key identity(1,1),
