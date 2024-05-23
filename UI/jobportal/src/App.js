@@ -16,7 +16,7 @@ import NormalorBusiness from './components/NormalorBusiness';
 import MainPage from './components/MainPage';
 import TrainingCourses from './Courses/TrainingCourses';
 import Career from './components/Career';
-import CourseApply_Form './Courses/CourseApply_Form';
+import CourseApply_Form from './Courses/CourseApply_Form';
 
 function App() {
   return (
@@ -38,7 +38,7 @@ function App() {
           <Route path="/mainpage" element={<MainPage />} />
           <Route path="/trainingcourses" element={<TrainingCourses />} />
           <Route path="/career" element={<Career />} />
-          <Route parh="/CourseApply_Form" element={<CourseApply_Form />} />
+          <Route path="/CourseApply_Form" element={<CourseApply_Form />} />
 
         </Routes>
       </div>

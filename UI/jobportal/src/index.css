@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -630,4 +631,13 @@ button:hover {
 
 .course-details p strong {
   color: #333;
+}
+
+.course {
+  border: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.course:hover {
+  border-color: linear-gradient(to right, #ff8a00, #da1b60);
 }

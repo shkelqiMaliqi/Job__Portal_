@@ -12,7 +12,7 @@ const TrainingCourses = () => {
         price: ''
     });
 
-    //const navigate = useNavigate();
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
