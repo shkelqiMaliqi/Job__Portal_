@@ -1,8 +1,9 @@
-// CourseApplyForm.js
+
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const CourseApplyForm = () => {
     const [form, setForm] = useState({
@@ -24,73 +25,75 @@ const CourseApplyForm = () => {
         try {
             await axios.post('https://localhost:7263/api/coursesapply', form);
             alert('Application submitted successfully');
-            navigate('/career'); // Navigate back to Career component
+            navigate('/career'); 
         } catch (error) {
             console.error('Error submitting application:', error);
         }
     };
 
     return (
-        <div className="container mt-5">
-            <h1 className="text-center mb-4">Apply for a Course</h1>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label>First Name</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        name="Attendant_Name"
-                        value={form.Attendant_Name}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="form-group">
-                    <label>Surname</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        name="Attendant_Surname"
-                        value={form.Attendant_Surname}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="form-group">
-                    <label>Email</label>
-                    <input
-                        type="email"
-                        className="form-control"
-                        name="Attendant_Email"
-                        value={form.Attendant_Email}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="form-group">
-                    <label>Phone Number</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        name="Attendant_PhoneNo"
-                        value={form.Attendant_PhoneNo}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="form-group">
-                    <label>Course Name</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        name="Courses_ApplyingName"
-                        value={form.Courses_ApplyingName}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <button type="submit" className="btn btn-primary">Reserve a Spot</button>
-            </form>
+        <div className="container_apply mt-5">
+            <div className="form-container_apply p-4 shadow-sm rounded">
+                <h1 className="text-center mb-4">Apply for a Course</h1>
+                <form onSubmit={handleSubmit}>
+                    <div className="form-group mb-3">
+                        <label htmlFor="Attendant_Name">First Name</label>
+                        <input
+                            type="text"
+                            className="form-contro_apply"
+                            name="Attendant_Name"
+                            value={form.Attendant_Name}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="form-group_apply mb-3">
+                        <label htmlFor="Attendant_Surname">Surname</label>
+                        <input
+                            type="text"
+                            className="form-control_apply"
+                            name="Attendant_Surname"
+                            value={form.Attendant_Surname}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="form-group_apply mb-3">
+                        <label htmlFor="Attendant_Email">Email</label>
+                        <input
+                            type="email"
+                            className="form-control_apply"
+                            name="Attendant_Email"
+                            value={form.Attendant_Email}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="form-group_apply mb-3">
+                        <label htmlFor="Attendant_PhoneNo">Phone Number</label>
+                        <input
+                            type="text"
+                            className="form-control_apply"
+                            name="Attendant_PhoneNo"
+                            value={form.Attendant_PhoneNo}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="form-group_apply mb-4">
+                        <label htmlFor="Courses_ApplyingName">Course Name</label>
+                        <input
+                            type="text"
+                            className="form-control_apply"
+                            name="Courses_ApplyingName"
+                            value={form.Courses_ApplyingName}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <button type="submit" className="btn_ btn-primary_apply btn-block">Reserve a Spot</button>
+                </form>
+            </div>
         </div>
     );
 };

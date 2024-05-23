@@ -772,3 +772,7 @@ C:\Users\user\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\Sy
 C:\Users\user\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\System.Net.Http.Formatting.dll
 C:\Users\user\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\System.Web.Http.dll
 C:\Users\user\Desktop\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\System.Web.Http.Cors.dll
+C:\Users\Elvir\OneDrive\Desktop\Projektii\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\System.Web.Cors.dll
+C:\Users\Elvir\OneDrive\Desktop\Projektii\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\System.Net.Http.Formatting.dll
+C:\Users\Elvir\OneDrive\Desktop\Projektii\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\System.Web.Http.dll
+C:\Users\Elvir\OneDrive\Desktop\Projektii\Job__Portal_\Job__Portal_\Job__Portal_\bin\Debug\net8.0\System.Web.Http.Cors.dll
