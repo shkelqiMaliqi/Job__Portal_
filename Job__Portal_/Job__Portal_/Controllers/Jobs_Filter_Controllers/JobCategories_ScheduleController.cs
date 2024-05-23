@@ -7,19 +7,19 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using Job__Portal_.Models;
+using Job__Portal_.Models.Job_Filter;
 
-namespace Job__Portal_.Controllers
+namespace Job__Portal_.Controllers.Jobs_Filter
 {
     [Route("api/[controller]")]
     [ApiController]
 
-    public class JobCategoriesController : ControllerBase
+    public class JobCategories_ScheduleController : ControllerBase
     {
         private readonly IConfiguration _configuration;
         private SqlDataReader myReader;
 
-        public JobCategoriesController(IConfiguration configuration)
+        public JobCategories_ScheduleController(IConfiguration configuration)
         {
             _configuration = configuration;
         }
@@ -27,7 +27,7 @@ namespace Job__Portal_.Controllers
         [HttpGet]
         public JsonResult Get()
         {
-            string query = @"SELECT JobCategoryID ,JobCategoryName FROM dbo.JobCategories";
+            string query = @"SELECT JobCategories_ScheduleId ,JobCategories_Schedule_Time FROM dbo.JobCategories_Schedule";
 
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
@@ -45,19 +45,21 @@ namespace Job__Portal_.Controllers
             }
             return new JsonResult(table);
         }
+
+
         [HttpPost]
-        public IActionResult Post(JobCategories jobC)
+        public IActionResult Post(JobCategories_Schedule jobC_Sch)
         {
             string query = @"
-                    INSERT INTO dbo.JobCategories (JobCategoryName) 
-                    VALUES (@JobCategoryName)";
+                    INSERT INTO dbo.JobCategories_Schedule (JobCategories_Schedule_Time) 
+                    VALUES (@JobCategories_Schedule_Time)";
 
             string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
             using (SqlConnection myCon = new SqlConnection(sqlDataSource))
             {
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@JobCategoryName", jobC.JobCategoryName);
+                    myCommand.Parameters.AddWithValue("@JobCategories_Schedule_Time", jobC_Sch.JobCategories_Schedule_Time);
 
 
                     myCon.Open();
@@ -69,12 +71,12 @@ namespace Job__Portal_.Controllers
         }
 
         [HttpPut]
-        public IActionResult Put(JobCategories jobC)
+        public IActionResult Put(JobCategories_Schedule jobC_Sch)
         {
             string query = @"
-                    UPDATE dbo.JobCategories
-                    SET JobCategoryName=@JobCategoryName
-                    where JobCategoryId=@JobCategoryID
+                    UPDATE dbo.JobCategories_Schedule
+                    SET JobCategories_Schedule_Time=@JobCategories_Schedule_Time
+                    where JobCategories_ScheduleId=@JobCategories_ScheduleId
                     ";
 
             string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
@@ -82,8 +84,8 @@ namespace Job__Portal_.Controllers
             {
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@JobCategoryID", jobC.JobCategoryID);
-                    myCommand.Parameters.AddWithValue("@JobCategoryName", jobC.JobCategoryName);
+                    myCommand.Parameters.AddWithValue("@JobCategories_ScheduleId", jobC_Sch.JobCategories_ScheduleId);
+                    myCommand.Parameters.AddWithValue("@JobCategories_Schedule_Time", jobC_Sch.JobCategories_Schedule_Time);
 
 
                     myCon.Open();
@@ -97,8 +99,8 @@ namespace Job__Portal_.Controllers
         public IActionResult Delete(int id)
         {
             string query = @"
-                    delete from dbo.JobCategories
-                    where JobCategoryId = @JobCategoryId
+                    delete from dbo.JobCategories_Schedule
+                    where JobCategories_ScheduleId = @JobCategories_ScheduleId
                     ";
 
             string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
@@ -106,7 +108,7 @@ namespace Job__Portal_.Controllers
             {
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@JobCategoryID", id);
+                    myCommand.Parameters.AddWithValue("@JobCategories_ScheduleId", id);
 
 
 

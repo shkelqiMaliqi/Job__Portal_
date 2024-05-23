@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 
-namespace Job__Portal_.Models
+namespace Job__Portal_.Models.Job_Filter
 {
     public class JobCategories
 
