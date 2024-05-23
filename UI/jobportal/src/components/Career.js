@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
+
 const Career = () => {
     const [courses, setCourses] = useState([]);
     const navigate = useNavigate();
@@ -31,7 +32,7 @@ const Career = () => {
                 {courses.length > 0 ? (
                     courses.map((course) => (
                         <div key={course.TrainingCourseId} className="col">
-                            <div className="course h-100 shadow w-auto px-4 py-3">
+                            <div className="course gradient-background_career h-100 shadow w-auto px-4 py-3">
                                 <div className="courses-body">
                                     <h5 className="course-title mb-4 text-center">{course.Title}</h5>
                                     <p className="course-text mb-4">{course.Description}</p>

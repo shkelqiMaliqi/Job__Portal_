@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+
 function ContactUs() {
   const [formData, setFormData] = useState({
     C_Name: '',
@@ -27,10 +28,8 @@ function ContactUs() {
 
     try {
       await axios.post('https://localhost:7263/api/contact', formData);
-    
     } catch (error) {
       console.error('Submission failed:', error);
-      
     }
   };
 
@@ -43,15 +42,14 @@ function ContactUs() {
     if (!data.C_Email.trim()) {
       errors.C_Email = 'Email is required';
     }
-   
 
     return errors;
   };
 
   return (
     <main className="contactus_main">
-      <div className="contactus_container">
-        <h2>Contact Us</h2>
+      <div className="container contactus_container">
+        <h2 className='contact_h2'>Contact Us</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="C_Name">Name:</label>
@@ -108,7 +106,7 @@ function ContactUs() {
             ></textarea>
           </div>
 
-          <button type="submit" className="btn btn-primary">Send Message</button>
+          <button type="submit" className="btn_contactUs btn-primary">Send Message</button>
         </form>
       </div>
     </main>
