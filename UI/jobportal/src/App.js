@@ -17,6 +17,10 @@ import MainPage from './components/MainPage';
 import TrainingCourses from './Courses/TrainingCourses';
 import Career from './components/Career';
 import CourseApply_Form from './Courses/CourseApply_Form';
+import AdminDashboard from './Admin_Bashboard/AdminDashboard';
+import AdminSidebar from './Admin_Bashboard/AdminSidebar';
+import AdminNavbar from './Admin_Bashboard/AdminNavbar';
+import AdminFooter from './Admin_Bashboard/AdminFooter';
 
 function App() {
   return (
@@ -39,6 +43,11 @@ function App() {
           <Route path="/trainingcourses" element={<TrainingCourses />} />
           <Route path="/career" element={<Career />} />
           <Route path="/CourseApply_Form" element={<CourseApply_Form />} />
+          <Route path="/admindashboard" element={<AdminDashboard />} />
+          <Route path="/adminsidebar" element={<AdminSidebar />} />
+          <Route path="/adminnavbar" element={<AdminNavbar />} />
+          <Route path="/adminfooter" element={<AdminFooter />} />
+
 
         </Routes>
       </div>
