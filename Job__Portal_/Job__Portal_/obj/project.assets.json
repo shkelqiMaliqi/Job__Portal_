@@ -6106,23 +6106,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lenovo\\.nuget\\packages\\": {},
+    "C:\\Users\\user\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
       "projectName": "Job__Portal_",
-      "projectPath": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
-      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\obj\\",
+      "projectPath": "C:\\Users\\user\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -6209,7 +6209,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   },

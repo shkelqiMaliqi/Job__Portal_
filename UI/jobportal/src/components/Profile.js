@@ -73,7 +73,7 @@ const Profile = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button type="submit">Login</button>
+          <button type="submit" className="login-button">Login</button>
           <p className="text-center text-muted mt-5 mb-0">
             Don't have an account? <a href="/register" className="fw-bold text-body"><u>Register here</u></a>
           </p>
