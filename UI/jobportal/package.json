@@ -9,19 +9,26 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
     "modules": "^0.4.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
+<<<<<<< HEAD
     "react-scripts": "^4.0.3",
+=======
+    "react-scripts": "^3.4.4",
+>>>>>>> 2b8c8494cd2694e97572d3bff0553fd3efc6ca4c
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
     "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prestart": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts start"
   },
   "eslintConfig": {
     "extends": [

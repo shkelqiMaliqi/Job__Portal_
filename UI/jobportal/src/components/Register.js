@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // Assuming you are using react-router-dom for navigation
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -10,17 +11,13 @@ function Register() {
     U_Phone: '',
     U_Password: '',
     U_RepeatPassword: '',
-    role: 'user'  // Default role
   });
 
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
-  };
-
-  const handleRoleChange = (e) => {
-    setFormData({ ...formData, role: e.target.value });
   };
 
   const handleSubmit = async (e) => {
@@ -60,6 +57,14 @@ function Register() {
     }
 
     return errors;
+  };
+
+  const handleRoleClick = (role) => {
+    if (role === 'user') {
+      navigate('/userRegister');
+    } else if (role === 'business') {
+      navigate('/businessRegister');
+    }
   };
 
   return (
@@ -113,6 +118,14 @@ function Register() {
                     {errors.U_RepeatPassword && <div className="invalid-feedback">{errors.U_RepeatPassword}</div>}
                   </div>
 
+<<<<<<< HEAD
+=======
+                  <div className="d-flex justify-content-center mb-4">
+                    <button type="button" className="btn btn-primary me-2" onClick={() => handleRoleClick('user')}>User</button>
+                    <button type="button" className="btn btn-secondary" onClick={() => handleRoleClick('business')}>Business</button>
+                  </div>
+
+>>>>>>> 2b8c8494cd2694e97572d3bff0553fd3efc6ca4c
                   <div className="d-flex justify-content-center">
                     <button type="submit" className="register_btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
                   </div>
