@@ -21,6 +21,7 @@ import AdminDashboard from './Admin_Bashboard/AdminDashboard';
 import AdminSidebar from './Admin_Bashboard/AdminSidebar';
 import AdminNavbar from './Admin_Bashboard/AdminNavbar';
 import AdminFooter from './Admin_Bashboard/AdminFooter';
+import Business from './components/Business';
 
 function App() {
   return (
@@ -47,7 +48,7 @@ function App() {
           <Route path="/adminsidebar" element={<AdminSidebar />} />
           <Route path="/adminnavbar" element={<AdminNavbar />} />
           <Route path="/adminfooter" element={<AdminFooter />} />
-
+          <Route path="/business" element={<Business />} />
 
         </Routes>
       </div>

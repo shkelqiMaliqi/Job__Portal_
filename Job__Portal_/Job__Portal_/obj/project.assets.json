@@ -6106,39 +6106,23 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\user\\.nuget\\packages\\": {},
-=======
-    "C:\\Users\\PC\\.nuget\\packages\\": {},
->>>>>>> 4d278981a947395b6264e6ea05262210d8239c49
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\user\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
       "projectName": "Job__Portal_",
       "projectPath": "C:\\Users\\user\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\user\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\PC\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
-      "projectName": "Job__Portal_",
-      "projectPath": "C:\\Users\\PC\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Job__Portal_.csproj",
-      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC\\Job__Portal_\\Job__Portal_\\Job__Portal_\\obj\\",
->>>>>>> 4d278981a947395b6264e6ea05262210d8239c49
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 4d278981a947395b6264e6ea05262210d8239c49
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -6225,15 +6209,17 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
->>>>>>> 4d278981a947395b6264e6ea05262210d8239c49
       }
     }
   },
   "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\user\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
     {
       "code": "NU1701",
       "level": "Warning",

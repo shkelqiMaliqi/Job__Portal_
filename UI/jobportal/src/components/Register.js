@@ -70,8 +70,7 @@ function Register() {
             <div className="card" style={{ borderRadius: '15px' }}>
               <div className="card-body p-5">
                 <h2 className="text-uppercase text-center mb-5">Create an account</h2>
-
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}>  
                   <div className="form-outline mb-4">
                     <input type="text" id="U_Name" className={`form-control form-control-lg ${errors.U_Name ? 'is-invalid' : ''}`} onChange={handleInputChange} />
                     <label className="form-label" htmlFor="U_Name">Your Name</label>
@@ -112,14 +111,6 @@ function Register() {
                     <input type="password" id="U_RepeatPassword" className={`form-control form-control-lg ${errors.U_RepeatPassword ? 'is-invalid' : ''}`} onChange={handleInputChange} />
                     <label className="form-label" htmlFor="U_RepeatPassword">Repeat Password</label>
                     {errors.U_RepeatPassword && <div className="invalid-feedback">{errors.U_RepeatPassword}</div>}
-                  </div>
-
-                  <div className="form-outline mb-4">
-                    <select id="role" className="form-control form-control-lg" value={formData.role} onChange={handleRoleChange}>
-                      <option value="user">User</option>
-                      <option value="admin">Admin</option>
-                      <option value="business">Business</option>
-                    </select>
                   </div>
 
                   <div className="d-flex justify-content-center">
