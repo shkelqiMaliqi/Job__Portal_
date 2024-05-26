@@ -78,29 +78,50 @@ namespace Job__Portal_.Controllers
         [HttpPost]
         public IActionResult Post(Users usp)
         {
-            string query = @"
-                    INSERT INTO dbo.Users (U_Name,U_Surname,U_Email,U_Username,U_Phone,U_Password,U_RepeatPassword) 
-                    VALUES (@U_Name, @U_Surname, @U_Email, @U_Username, @U_Phone, @U_Password, @U_RepeatPassword)";
-
             string sqlDataSource = _configuration.GetConnectionString("CRUDCS");
+            string query = @"
+        INSERT INTO dbo.Users (U_Name, U_Surname, U_Email, U_Username, U_Phone, U_Password, U_RepeatPassword) 
+        VALUES (@U_Name, @U_Surname, @U_Email, @U_Username, @U_Phone, @U_Password, @U_RepeatPassword)";
+
             using (SqlConnection myCon = new SqlConnection(sqlDataSource))
             {
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
+                myCon.Open();
+
+                // Remove or comment out this section if U_Id is an identity column
+                // using (SqlCommand enableIdentityInsertCmd = new SqlCommand("SET IDENTITY_INSERT dbo.Users ON", myCon))
+                // {
+                //     enableIdentityInsertCmd.ExecuteNonQuery();
+                // }
+
+                using (SqlCommand insertCmd = new SqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@U_Name", usp.U_Name);
-                    myCommand.Parameters.AddWithValue("@U_Surname", usp.U_Surname);
-                    myCommand.Parameters.AddWithValue("@U_Email", usp.U_Email);
-                    myCommand.Parameters.AddWithValue("@U_Username", usp.U_Username);
-                    myCommand.Parameters.AddWithValue("@U_Phone", usp.U_Phone);
-                    myCommand.Parameters.AddWithValue("@U_Password", usp.U_Password);
-                    myCommand.Parameters.AddWithValue("@U_RepeatPassword", usp.U_RepeatPassword);
-                    myCon.Open();
-                    myCommand.ExecuteNonQuery();
-                    myCon.Close();
+                    insertCmd.Parameters.AddWithValue("@U_Name", usp.U_Name);
+                    insertCmd.Parameters.AddWithValue("@U_Surname", usp.U_Surname);
+                    insertCmd.Parameters.AddWithValue("@U_Email", usp.U_Email);
+                    insertCmd.Parameters.AddWithValue("@U_Username", usp.U_Username);
+                    insertCmd.Parameters.AddWithValue("@U_Phone", usp.U_Phone);
+                    insertCmd.Parameters.AddWithValue("@U_Password", usp.U_Password);
+                    insertCmd.Parameters.AddWithValue("@U_RepeatPassword", usp.U_RepeatPassword);
+
+                    // Ensure U_Id is not included in the INSERT statement if it's an identity column
+                    // insertCmd.Parameters.AddWithValue("@U_Id", usp.U_Id); // Comment out or remove this line
+
+                    insertCmd.ExecuteNonQuery();
                 }
+
+                // Remove or comment out this section if U_Id is an identity column
+                // using (SqlCommand disableIdentityInsertCmd = new SqlCommand("SET IDENTITY_INSERT dbo.Users OFF", myCon))
+                // {
+                //     disableIdentityInsertCmd.ExecuteNonQuery();
+                // }
+
+                myCon.Close();
             }
+
             return Ok("User added successfully");
         }
+
+
         [HttpPut("{id}")]
         public IActionResult Put(int id, Users usp)
         {

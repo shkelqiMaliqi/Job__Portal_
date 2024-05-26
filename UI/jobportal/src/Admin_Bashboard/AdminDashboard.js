@@ -5,20 +5,19 @@ import AdminFooter from './AdminFooter';
 
 const AdminDashboard = () => {
     return (
-        <div id="wrapper">
+        <div id="admin_wrapper">
             {/* Sidebar */}
             <AdminSidebar />
             {/* Content Wrapper */}
-            <div id="content-wrapper" className="d-flex flex-column">
+            <div id="admin_content-wrapper" className="d-flex flex-column">
                 {/* Main Content */}
                 <div id="content">
                     <AdminNavbar />
-                    <div className="container-fluid">
-                        <h1 className="h3 mb-4 text-gray-800">Dashboard</h1>
+                    <div className="admin_container-fluid">
+                       
                     </div>
                 </div>
-                {/* Footer */}
-                <AdminFooter />
+          
             </div>
         </div>
     );

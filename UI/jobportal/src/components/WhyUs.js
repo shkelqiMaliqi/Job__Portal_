@@ -42,6 +42,7 @@ const WhyUs = () => {
             In addition to job listings, we offer a wealth of resources and tools to support our users throughout their career journey.
             From resume writing tips to interview preparation advice, we're here to help you succeed every step of the way.</p>
         </div>
+        
       </div>
     </main>
   );

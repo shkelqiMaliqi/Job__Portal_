@@ -198,13 +198,23 @@ CREATE TABLE BusinessUser (
 -- Create UserType table
 CREATE TABLE UserType (
     UserType_Id INT PRIMARY KEY IDENTITY(1,1),
-    UserType_Name VARCHAR(50),
-    U_Id INT,
-    CONSTRAINT FK_UserType_Users FOREIGN KEY (U_Id) REFERENCES Users(U_Id)
+    UserType_Name VARCHAR(50)
 );
+
+
+insert into dbo.UserType ( UserType_Name) VALUES ('Admin');
 
 -- Create BusinessType table
 CREATE TABLE BusinessType (
     BusinessType_Id INT PRIMARY KEY IDENTITY(1,1),
     BusinessType_Name VARCHAR(255)
 );
+
+
+
+
+
+-- ALTERS
+ALTER TABLE Users
+ADD UserType_Id INT,
+CONSTRAINT FK_UserType_Users FOREIGN KEY (UserType_Id) REFERENCES UserType(UserType_Id);

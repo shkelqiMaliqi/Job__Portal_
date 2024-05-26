@@ -1,12 +1,40 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\Job__Portal_\\Job__Portal_\\",
   "Documents": [
     {
       "AbsoluteMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|c:\\users\\user\\desktop\\job__portal_\\job__portal_\\job__portal_\\controllers\\courses_controllers\\trainingcoursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+=======
+  "WorkspaceRootPath": "C:\\Users\\PC\\Job__Portal_\\Job__Portal_\\",
+  "Documents": [
+    {
+<<<<<<< HEAD
+      "AbsoluteMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|c:\\users\\lenovo\\onedrive\\desktop\\job__portal_\\job__portal_\\job__portal_\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|solutionrelative:job__portal_\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|c:\\users\\lenovo\\onedrive\\desktop\\job__portal_\\job__portal_\\job__portal_\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|solutionrelative:job__portal_\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|c:\\users\\lenovo\\onedrive\\desktop\\job__portal_\\job__portal_\\job__portal_\\controllers\\courses_controllers\\coursesapplycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|solutionrelative:job__portal_\\controllers\\courses_controllers\\coursesapplycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|c:\\users\\lenovo\\onedrive\\desktop\\job__portal_\\job__portal_\\job__portal_\\models\\courses\\coursesapply.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|solutionrelative:job__portal_\\models\\courses\\coursesapply.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|c:\\users\\lenovo\\onedrive\\desktop\\job__portal_\\job__portal_\\job__portal_\\controllers\\courses_controllers\\trainingcoursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+>>>>>>> 4d278981a947395b6264e6ea05262210d8239c49
+      "RelativeMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|solutionrelative:job__portal_\\controllers\\courses_controllers\\trainingcoursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|c:\\users\\pc\\job__portal_\\job__portal_\\job__portal_\\controllers\\courses_controllers\\trainingcoursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|solutionrelative:job__portal_\\controllers\\courses_controllers\\trainingcoursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|c:\\users\\user\\desktop\\job__portal_\\job__portal_\\job__portal_\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|solutionrelative:job__portal_\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -21,6 +49,23 @@
     {
       "AbsoluteMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|c:\\users\\user\\desktop\\job__portal_\\job__portal_\\job__portal_\\models\\courses\\coursesapply.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|solutionrelative:job__portal_\\models\\courses\\coursesapply.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|c:\\users\\pc\\job__portal_\\job__portal_\\job__portal_\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|solutionrelative:job__portal_\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|c:\\users\\pc\\job__portal_\\job__portal_\\job__portal_\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|solutionrelative:job__portal_\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|c:\\users\\pc\\job__portal_\\job__portal_\\job__portal_\\controllers\\jobscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|solutionrelative:job__portal_\\controllers\\jobscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|c:\\users\\pc\\job__portal_\\job__portal_\\job__portal_\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57A7C07D-A9C3-4822-AFC9-BD534E675733}|Job__Portal_\\Job__Portal_.csproj|solutionrelative:job__portal_\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> 1dee90be9022adce90041328cefac956c6bd03dc
+>>>>>>> 4d278981a947395b6264e6ea05262210d8239c49
     }
   ],
   "DocumentGroupContainers": [
@@ -30,6 +75,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 5,
           "Children": [
             {
@@ -47,10 +93,55 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAABQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-05-25T15:58:30.624Z"
+=======
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Startup.cs",
+              "RelativeDocumentMoniker": "Job__Portal_\\Startup.cs",
+              "ToolTip": "C:\\Users\\PC\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Startup.cs",
+              "RelativeToolTip": "Job__Portal_\\Startup.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAEwFQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T13:32:50.607Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+<<<<<<< HEAD
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Job__Portal_\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Job__Portal_\\Controllers\\UsersController.cs",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAUwGwAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T00:09:55.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Users.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Models\\Users.cs",
+              "RelativeDocumentMoniker": "Job__Portal_\\Models\\Users.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Models\\Users.cs",
+              "RelativeToolTip": "Job__Portal_\\Models\\Users.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAA5wCEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T00:09:14.366Z",
+              "EditorCaption": ""
+>>>>>>> 4d278981a947395b6264e6ea05262210d8239c49
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+<<<<<<< HEAD
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\appsettings.json",
               "RelativeDocumentMoniker": "Job__Portal_\\appsettings.json",
@@ -75,6 +166,43 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
+=======
+              "Title": "CoursesApplyController.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Controllers\\Courses_Controllers\\CoursesApplyController.cs",
+              "RelativeDocumentMoniker": "Job__Portal_\\Controllers\\Courses_Controllers\\CoursesApplyController.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Controllers\\Courses_Controllers\\CoursesApplyController.cs",
+              "RelativeToolTip": "Job__Portal_\\Controllers\\Courses_Controllers\\CoursesApplyController.cs",
+              "ViewState": "AQIAAFMAAAAAAAAAAAAgwFcAAAAhAAAA",
+=======
+              "Title": "TrainingCoursesController.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Controllers\\Courses_Controllers\\TrainingCoursesController.cs",
+              "RelativeDocumentMoniker": "Job__Portal_\\Controllers\\Courses_Controllers\\TrainingCoursesController.cs",
+              "ToolTip": "C:\\Users\\PC\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Controllers\\Courses_Controllers\\TrainingCoursesController.cs",
+              "RelativeToolTip": "Job__Portal_\\Controllers\\Courses_Controllers\\TrainingCoursesController.cs",
+              "ViewState": "AQIAABIAAAAAmpmZmZklwDIAAABWAAAA",
+>>>>>>> 1dee90be9022adce90041328cefac956c6bd03dc
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T18:11:36.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\PC\\Job__Portal_\\Job__Portal_\\Job__Portal_\\appsettings.json",
+              "RelativeDocumentMoniker": "Job__Portal_\\appsettings.json",
+              "ToolTip": "C:\\Users\\PC\\Job__Portal_\\Job__Portal_\\Job__Portal_\\appsettings.json",
+              "RelativeToolTip": "Job__Portal_\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-25T13:30:31.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+<<<<<<< HEAD
+              "DocumentIndex": 3,
+>>>>>>> 4d278981a947395b6264e6ea05262210d8239c49
               "Title": "CoursesApply.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Models\\Courses\\CoursesApply.cs",
               "RelativeDocumentMoniker": "Job__Portal_\\Models\\Courses\\CoursesApply.cs",
@@ -86,15 +214,47 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 0,
+=======
+              "DocumentIndex": 4,
+>>>>>>> 4d278981a947395b6264e6ea05262210d8239c49
               "Title": "TrainingCoursesController.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Controllers\\Courses_Controllers\\TrainingCoursesController.cs",
               "RelativeDocumentMoniker": "Job__Portal_\\Controllers\\Courses_Controllers\\TrainingCoursesController.cs",
               "ToolTip": "C:\\Users\\user\\Desktop\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Controllers\\Courses_Controllers\\TrainingCoursesController.cs",
               "RelativeToolTip": "Job__Portal_\\Controllers\\Courses_Controllers\\TrainingCoursesController.cs",
+<<<<<<< HEAD
               "ViewState": "AQIAAEcAAAAAAAAAAAAEwFgAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-24T07:31:19.099Z",
+=======
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHIAAABUAAAA",
+=======
+              "DocumentIndex": 2,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\PC\\Job__Portal_\\Job__Portal_\\Job__Portal_\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "Job__Portal_\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\PC\\Job__Portal_\\Job__Portal_\\Job__Portal_\\appsettings.Development.json",
+              "RelativeToolTip": "Job__Portal_\\appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-25T13:30:30.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "JobsController.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Controllers\\JobsController.cs",
+              "RelativeDocumentMoniker": "Job__Portal_\\Controllers\\JobsController.cs",
+              "ToolTip": "C:\\Users\\PC\\Job__Portal_\\Job__Portal_\\Job__Portal_\\Controllers\\JobsController.cs",
+              "RelativeToolTip": "Job__Portal_\\Controllers\\JobsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+>>>>>>> 1dee90be9022adce90041328cefac956c6bd03dc
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T13:30:28.506Z",
+>>>>>>> 4d278981a947395b6264e6ea05262210d8239c49
               "EditorCaption": ""
             }
           ]
