@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
+import jsPDF from 'jspdf';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Cv = () => {
     const [cvData, setCvData] = useState({
@@ -69,28 +71,67 @@ const Cv = () => {
             console.error('Error adding CV and experience:', error);
         }
     };
-    
+
+    const saveAsPdf = () => {
+        const doc = new jsPDF();
+        doc.text('CV Data', 10, 10);
+        Object.keys(cvData).forEach((key, index) => {
+            doc.text(`${key}: ${cvData[key]}`, 10, 20 + index * 10);
+        });
+        doc.save('cv.pdf');
+    };
 
     return (
-        <div className='cv_form'>
-            <h2>Create CV</h2>
-            <form onSubmit={handleSubmit}>
-                <input type="text" name="Cv_Name" placeholder="First Name" value={cvData.Cv_Name} onChange={handleChange} />
-                <input type="text" name="Cv_Surname" placeholder="Last Name" value={cvData.Cv_Surname} onChange={handleChange} />
-                <input type="date" name="Cv_DateOfBirth" value={cvData.Cv_DateOfBirth} onChange={handleChange} />
-                <input type="tel" name="Cv_PhoneNumber" placeholder="Phone Number" value={cvData.Cv_PhoneNumber} onChange={handleChange} />
-                <input type="email" name="Cv_Email" placeholder="Email" value={cvData.Cv_Email} onChange={handleChange} />
-                <input type="text" name="CvExp_Experiences" placeholder="Experiences" value={cvData.CvExp_Experiences} onChange={handleChange} />
-                <input type="text" name="CvEdu_Education" placeholder="Education" value={cvData.CvEdu_Education} onChange={handleChange} />
-                <input type="text" name="CvIndustry_IndustryType" placeholder="Industry" value={cvData.CvIndustry_IndustryType} onChange={handleChange} />
-                <input type="text" name="CvTs_TSkills" placeholder="Technical Skills" value={cvData.CvTs_TSkills} onChange={handleChange} />
-                <input type="text" name="CvCertifications_Certifications" placeholder="Certifications" value={cvData.CvCertifications_Certifications} onChange={handleChange} />
-                <input type="text" name="CvAs_ASkills" placeholder="Additional Skills" value={cvData.CvAs_ASkills} onChange={handleChange} />
-                <input type="text" name="CvCourses_C" placeholder="Courses" value={cvData.CvCourses_C} onChange={handleChange} />
-                <input type="text" name="CvLang_Lang" placeholder="Languages" value={cvData.CvLang_Lang} onChange={handleChange} />
-                <input type="text" name="CvAddMore_Add" placeholder="Add More" value={cvData.CvAddMore_Add} onChange={handleChange} />
-                <button type="submit" className="cv-button">Create</button>
-            </form>
+        <div className='container mt-5'>
+            <div className='cv_form p-5' style={{ background: 'linear-gradient(to right, #ff7e5f, #feb47b)' }}>
+                <h2>Create CV</h2>
+                <form onSubmit={handleSubmit}>
+                    <div className="mb-3">
+                        <input type="text" className="form-control" name="Cv_Name" placeholder="First Name" value={cvData.Cv_Name} onChange={handleChange} />
+                    </div>
+                    <div className="mb-3">
+                        <input type="text" className="form-control" name="Cv_Surname" placeholder="Last Name" value={cvData.Cv_Surname} onChange={handleChange} />
+                    </div>
+                    <div className="mb-3">
+                        <input type="date" className="form-control" name="Cv_DateOfBirth" value={cvData.Cv_DateOfBirth} onChange={handleChange} />
+                    </div>
+                    <div className="mb-3">
+                        <input type="tel" className="form-control" name="Cv_PhoneNumber" placeholder="Phone Number" value={cvData.Cv_PhoneNumber} onChange={handleChange} />
+                    </div>
+                    <div className="mb-3">
+                        <input type="email" className="form-control" name="Cv_Email" placeholder="Email" value={cvData.Cv_Email} onChange={handleChange} />
+                    </div>
+                    <div className="mb-3">
+                        <input type="text" className="form-control" name="CvExp_Experiences" placeholder="Experiences" value={cvData.CvExp_Experiences} onChange={handleChange} />
+                    </div>
+                    <div className="mb-3">
+                        <input type="text" className="form-control" name="CvEdu_Education" placeholder="Education" value={cvData.CvEdu_Education} onChange={handleChange} />
+                    </div>
+                    <div className="mb-3">
+                        <input type="text" className="form-control" name="CvIndustry_IndustryType" placeholder="Industry" value={cvData.CvIndustry_IndustryType} onChange={handleChange} />
+                    </div>
+                    <div className="mb-3">
+                        <input type="text" className="form-control" name="CvTs_TSkills" placeholder="Technical Skills" value={cvData.CvTs_TSkills} onChange={handleChange} />
+                    </div>
+                    <div className="mb-3">
+                        <input type="text" className="form-control" name="CvCertifications_Certifications" placeholder="Certifications" value={cvData.CvCertifications_Certifications} onChange={handleChange} />
+                    </div>
+                    <div className="mb-3">
+                        <input type="text" className="form-control" name="CvAs_ASkills" placeholder="Additional Skills" value={cvData.CvAs_ASkills} onChange={handleChange} />
+                    </div>
+                    <div className="mb-3">
+                        <input type="text" className="form-control" name="CvCourses_C" placeholder="Courses" value={cvData.CvCourses_C} onChange={handleChange} />
+                    </div>
+                    <div className="mb-3">
+                        <input type="text" className="form-control" name="CvLang_Lang" placeholder="Languages" value={cvData.CvLang_Lang} onChange={handleChange} />
+                    </div>
+                    <div className="mb-3">
+                        <input type="text" className="form-control" name="CvAddMore_Add" placeholder="Add More" value={cvData.CvAddMore_Add} onChange={handleChange} />
+                    </div>
+                    <button type="submit" className="btn btn-cv">Create</button>
+                    <button type="button" className="btn btn-pdf ms-1" onClick={saveAsPdf}>Save as PDF</button>
+                </form>
+            </div>
         </div>
     );
 };
