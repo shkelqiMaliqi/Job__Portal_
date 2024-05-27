@@ -21,7 +21,7 @@ export default function Navbar() {
                         <CustomLink to="/Career">Career</CustomLink>
                     </ul>
                 </div>
-                <Link to="/Profile" className="nav-link site-profile">
+                <Link to="/LoginPage" className="nav-link site-profile">
                     Profile
                 </Link>
             </div>

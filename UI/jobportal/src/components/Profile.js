@@ -1,85 +1,126 @@
 import React, { useState, useEffect } from 'react';
+import { Button, Form } from 'react-bootstrap';
 import axios from 'axios';
-import LoggedIn from './LoggedIn';
+import { Link } from 'react-router-dom';
 
-const Profile = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [userData, setUserData] = useState(null);
+const Profile = ({ user, onLogout }) => {
+  const [editMode, setEditMode] = useState(false);
+  const [userData, setUserData] = useState({ ...user });
 
   useEffect(() => {
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
-    if (isLoggedIn) {
-      const userData = JSON.parse(localStorage.getItem('userData'));
-      if (userData) {
-        setLoggedIn(true);
-        setUserData(userData);
-      }
-    }
+    fetchUserData(); // Fetch user data on component mount
   }, []);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const fetchUserData = async () => {
     try {
-      const response = await axios.post('https://localhost:7263/api/Users/login', {
-        U_Email: email,
-        U_Password: password,
-      });
-      setLoggedIn(true);
+      const response = await axios.get(`https://localhost:7263/api/users/${user.U_Id}`);
       setUserData(response.data);
-      localStorage.setItem('isLoggedIn', true);
-      localStorage.setItem('userData', JSON.stringify(response.data));
-      const userResponse = await axios.get(`https://localhost:7263/api/Users/${response.data.UserId}`);
-      setUserData(userResponse.data);
     } catch (error) {
-      console.error('Login error:', error);
-      setError('Invalid email or password');
+      console.error('Error fetching user data:', error);
     }
   };
 
-  const handleLogout = async () => {
+  const handleEdit = () => {
+    setEditMode(true);
+  };
+
+  const handleCancel = () => {
+    setEditMode(false);
+    fetchUserData(); 
+  };
+
+  const handleUpdate = async () => {
     try {
-      await axios.post('https://localhost:7263/api/Users/logout');
-      setLoggedIn(false);
-      setUserData(null);
-      localStorage.removeItem('isLoggedIn');
-      localStorage.removeItem('userData');
+      await axios.put(`https://localhost:7263/api/users/${userData.U_Id}`, userData);
+      setEditMode(false);
+      
     } catch (error) {
-      console.error('Logout error:', error);
+      console.error('Error updating user data:', error);
     }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUserData({ ...userData, [name]: value });
   };
 
   return (
-    <div className="profile-container">
-      {!loggedIn ? (
-        <form className="login-form" onSubmit={handleSubmit}>
-          <h2>Login</h2>
-          {error && <p className="error-message">{error}</p>}
-          <div className="form-group">
-            <label>Email:</label>
-            <input
-              type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+    <div className='container mt-4'>
+      <div className='d-flex justify-content-between align-items-center mb-4'>
+        <h2>Profile</h2>
+        <Button variant='danger' onClick={onLogout}>Logout</Button>
+      </div>
+
+      {editMode ? (
+        <Form>
+          <Form.Group className='mb-3'>
+            <Form.Label>Name</Form.Label>
+            <Form.Control
+              type='text'
+              name='U_Name'
+              value={userData.U_Name}
+              onChange={handleChange}
             />
-          </div>
-          <div className="form-group">
-            <label>Password:</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+          </Form.Group>
+          <Form.Group className='mb-3'>
+            <Form.Label>Surname</Form.Label>
+            <Form.Control
+              type='text'
+              name='U_Surname'
+              value={userData.U_Surname}
+              onChange={handleChange}
             />
-          </div>
-          <button type="submit" className="login-button">Login</button>
-          <p className="text-center text-muted mt-5 mb-0">
-            Don't have an account? <a href="/normalorbusiness" className="fw-bold text-body"><u>Register here</u></a>
-          </p>
-        </form>
+          </Form.Group>
+          <Form.Group className='mb-3'>
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              type='email'
+              name='U_Email'
+              value={userData.U_Email}
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group className='mb-3'>
+            <Form.Label>Username</Form.Label>
+            <Form.Control
+              type='text'
+              name='U_Username'
+              value={userData.U_Username}
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group className='mb-3'>
+            <Form.Label>Phone</Form.Label>
+            <Form.Control
+              type='text'
+              name='U_Phone'
+              value={userData.U_Phone}
+              onChange={handleChange}
+            />
+          </Form.Group>
+
+          <Button variant='primary' onClick={handleUpdate}>
+            Save Changes
+          </Button>{' '}
+          <Button variant='secondary' onClick={handleCancel}>
+            Cancel
+          </Button>
+        </Form>
       ) : (
-        <LoggedIn user={userData} onLogout={handleLogout} />
+        <div>
+          <div className='container_profile mb-7'>
+            <h3>Welcome, {userData.U_Name}!</h3>
+            <p>Email: {userData.U_Email}</p>
+            <p>Username: {userData.U_Username}</p>
+            <p>Phone: {userData.U_Phone}</p>
+          </div>
+          <Button variant='primary' onClick={handleEdit}>
+            Edit Profile
+          </Button>{' '}
+          <Link to='/cv' className='btn_cv'>
+            Create CV
+          </Link>
+        </div>
       )}
     </div>
   );

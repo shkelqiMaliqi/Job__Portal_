@@ -22,7 +22,7 @@ namespace Job__Portal_.Models
         public int U_Phone { get; set; }
         public string U_Password { get; set; }
         public string U_RepeatPassword { get; set; }
-        public int UserType_Id { get; set; } 
+        public string U_Type { get; set; }
 
 
 

@@ -13,29 +13,41 @@ const AdminSidebar = () => {
             <hr className="sidebar-divider" />
            
             <li className="nav-item">
-                <Link className="nav-link" to="/profile">
+                <Link className="nav-link" to="/users">
                     <i className="fas fa-fw fa-user"></i>
                     <span>Users</span>
                 </Link>
             </li>
 
             <li className="nav-item">
-                <Link className="nav-link" to="/BusinessDashboard">
+                <Link className="nav-link" to="/BusinessUsers">
                     <i className="fas fa-fw fa-building"></i>
                     <span>Businesses</span>
                 </Link>
             </li>
 
             <li className="nav-item">
-                <Link className="nav-link" to="/publish">
+                <Link className="nav-link" to="/jobs_listings">
                     <i className="fas fa-fw fa-briefcase"></i>
                     <span>Job Listings</span>
                 </Link>
             </li>
 
-            <hr className="sidebar-divider" />
+            <li className="nav-item">
+                <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCategories" aria-expanded="true" aria-controls="collapseCategories">
+                    <i className="fas fa-fw fa-list"></i>
+                    <span>Categories</span>
+                </a>
+                <div id="collapseCategories" className="collapse" aria-labelledby="headingCategories" data-parent="#accordionSidebar">
+                    <div className="bg-white py-2 collapse-inner rounded">
+                        <Link className="collapse-item" to="/jobcategories" onClick={() => console.log("Job Categories link clicked")}>Job Categories</Link>
+                        <Link className="collapse-item" to="/jobcategoriescity" onClick={() => console.log("City Categories link clicked")}>City Categories</Link>
+                        <Link className="collapse-item" to="/jobcategoriesschedule" onClick={() => console.log("Schedule Categories link clicked")}>Schedule Categories</Link>
+                        {}
+                    </div>
+                </div>
+            </li>
 
-            {/* Dropdown Example */}
             <li className="nav-item">
                 <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCourses" aria-expanded="true" aria-controls="collapseCourses">
                     <i className="fas fa-fw fa-book"></i>
@@ -44,8 +56,8 @@ const AdminSidebar = () => {
                 <div id="collapseCourses" className="collapse" aria-labelledby="headingCourses" data-parent="#accordionSidebar">
                     <div className="bg-white py-2 collapse-inner rounded">
                         <Link className="collapse-item" to="/trainingcourses">Training Courses</Link>
-                        <Link className="collapse-item" to="/workshops">Workshops</Link>
-                        {/* Add more links as needed */}
+                        <Link className="collapse-item" to="/courses_list">Courses List</Link>
+                        {}
                     </div>
                 </div>
             </li>

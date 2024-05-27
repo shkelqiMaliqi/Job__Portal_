@@ -17,7 +17,10 @@ namespace Job__Portal_.Models.UserType
        public int B_PhoneNumber { get; set; }
        public string B_Password { get; set; }
        public string B_RepeatPassword { get; set; }
-       
+
+        public int UserType_Id { get; set; }
+
+
 
     }
 }

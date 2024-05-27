@@ -326,6 +326,9 @@ color : black;
 .btn-pdf:hover{
   background-color: lightblue;
 }
+.btn-cv{
+  background-color: aquamarine;
+}
 
 /* LogIn */
 .profile-container{
@@ -630,4 +633,22 @@ button:hover {
 
 .admin_container-fluid {
   margin-top: 20px;
+}
+
+/*Jobs Report*/
+.company-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .table {
+      font-size: 14px;
+  }
+
+  .company-logo {
+      width: 40px;
+      height: 40px;
+  }
 }

@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import JobCategories from '../Jobs_Repository/JobCategories';
+import JobCategoriesCity from '../Jobs_Repository/JobCategoriesCity';
+import JobCategoriesSchedule from '../Jobs_Repository/JobCategoriesSchedule';
+
 
 const MainPage = () => {
     const [jobs, setJobs] = useState([]);
@@ -14,6 +18,10 @@ const MainPage = () => {
     const [selectedIndustry, setSelectedIndustry] = useState('');
     const [selectedCity, setSelectedCity] = useState('');
     const [selectedSchedule, setSelectedSchedule] = useState('');
+
+    const [showJobCategories, setShowJobCategories] = useState(false);
+    const [showJobCategoriesCity, setShowJobCategoriesCity] = useState(false);
+    const [showJobCategoriesSchedule, setShowJobCategoriesSchedule] = useState(false);
 
     useEffect(() => {
         const fetchJobs = async () => {
@@ -61,6 +69,24 @@ const MainPage = () => {
 
     const handleScheduleChange = (event) => {
         setSelectedSchedule(event.target.value);
+    };
+
+    const toggleJobCategories = () => {
+        setShowJobCategories(prevState => !prevState);
+        setShowJobCategoriesCity(false); 
+        setShowJobCategoriesSchedule(false);
+    };
+
+    const toggleJobCategoriesCity = () => {
+        setShowJobCategoriesCity(prevState => !prevState);
+        setShowJobCategories(false); 
+        setShowJobCategoriesSchedule(false);
+    };
+
+    const toggleJobCategoriesSchedule = () => {
+        setShowJobCategoriesSchedule(prevState => !prevState);
+        setShowJobCategories(false); 
+        setShowJobCategoriesCity(false);
     };
 
     return (
@@ -146,9 +172,13 @@ const MainPage = () => {
                     </div>
                 ))}
             </div>
+
+            {}
+            {showJobCategories && <JobCategories />}
+            {showJobCategoriesCity && <JobCategoriesCity />}
+            {showJobCategoriesSchedule && <JobCategoriesSchedule />}
         </div>
     );
 };
 
 export default MainPage;
-

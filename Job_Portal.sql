@@ -1,19 +1,20 @@
 CREATE DATABASE Job_Portal;
 USE Job_Portal;
 
--- Create Users table
 CREATE TABLE Users (
     U_Id INT PRIMARY KEY IDENTITY(1,1),
-    U_Name VARCHAR(255),
-    U_Surname VARCHAR(255),
-    U_Email VARCHAR(MAX),
-    U_Username VARCHAR(255),
-    U_Phone INT,
-    U_Password VARCHAR(255),
-    U_RepeatPassword VARCHAR(255)
+    U_Name VARCHAR(255) NOT NULL,
+    U_Surname VARCHAR(255) NOT NULL,
+    U_Email VARCHAR(255) NOT NULL,
+    U_Username VARCHAR(255) NOT NULL,
+    U_Phone VARCHAR(20) NOT NULL,  
+    U_Password VARCHAR(255) NOT NULL,
+	U_RepeatPassword Varchar(255) NOT NULL,
+    U_Type VARCHAR (10) NOT NULL,  
+    
 );
+select * from dbo.Users
 
--- Create Contact_Form table
 CREATE TABLE Contact_Form (
     C_Id INT PRIMARY KEY IDENTITY(1,1),
     C_Name VARCHAR(255),
@@ -25,7 +26,7 @@ CREATE TABLE Contact_Form (
     CONSTRAINT FK_Contact_Form_Users FOREIGN KEY (U_Id) REFERENCES Users(U_Id)
 );
 
--- Create Jobs table
+
 CREATE TABLE Jobs (
     JobId INT PRIMARY KEY IDENTITY(1,1),
     JobTitle VARCHAR(50),
@@ -47,9 +48,10 @@ CREATE TABLE Jobs (
     JobCategoryId INT,
     U_Id INT,
     CONSTRAINT FK_Jobs_JobCategories FOREIGN KEY (JobCategoryId) REFERENCES JobCategories(JobCategoryId),
+    CONSTRAINT FK_Jobs_JobCategories_Schedule FOREIGN KEY (JobCategoryId) REFERENCES JobCategories_Schedule(JobCategories_ScheduleId),
+    CONSTRAINT FK_Jobs_JobCategories_City FOREIGN KEY (JobCategoryId) REFERENCES JobCategories_City(JobCategory_CityId),
     CONSTRAINT FK_Jobs_Users FOREIGN KEY (U_Id) REFERENCES Users(U_Id)
 );
-
 -- Create JobCategories table
 CREATE TABLE JobCategories (
     JobCategoryId INT PRIMARY KEY IDENTITY(1,1),
@@ -185,36 +187,4 @@ CREATE TABLE ExperienceLevels (
     LevelName VARCHAR(255) NOT NULL
 );
 
--- Create BusinessUser table
-CREATE TABLE BusinessUser (
-    B_Id INT PRIMARY KEY IDENTITY(1,1),
-    B_CompanyName VARCHAR(255),
-    B_Email VARCHAR(MAX),
-    B_PhoneNumber INT,
-    B_Password VARCHAR(255),
-    B_RepeatPassword VARCHAR(255)
-);
 
--- Create UserType table
-CREATE TABLE UserType (
-    UserType_Id INT PRIMARY KEY IDENTITY(1,1),
-    UserType_Name VARCHAR(50)
-);
-
-
-insert into dbo.UserType ( UserType_Name) VALUES ('Admin');
-
--- Create BusinessType table
-CREATE TABLE BusinessType (
-    BusinessType_Id INT PRIMARY KEY IDENTITY(1,1),
-    BusinessType_Name VARCHAR(255)
-);
-
-
-
-
-
--- ALTERS
-ALTER TABLE Users
-ADD UserType_Id INT,
-CONSTRAINT FK_UserType_Users FOREIGN KEY (UserType_Id) REFERENCES UserType(UserType_Id);

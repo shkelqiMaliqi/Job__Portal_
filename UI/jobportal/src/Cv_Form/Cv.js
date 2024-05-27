@@ -3,6 +3,7 @@ import axios from 'axios';
 import jsPDF from 'jspdf';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 const Cv = () => {
     const [cvData, setCvData] = useState({
         Cv_Name: '',
@@ -83,7 +84,7 @@ const Cv = () => {
 
     return (
         <div className='container mt-5'>
-            <div className='cv_form p-5' style={{ background: 'linear-gradient(to right, #ff7e5f, #feb47b)' }}>
+            <div className='cv_form p-5 shadow-sm rounded' style={{ background: 'linear-gradient(to right, gray, lightgray)' }}>
                 <h2>Create CV</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
@@ -128,8 +129,8 @@ const Cv = () => {
                     <div className="mb-3">
                         <input type="text" className="form-control" name="CvAddMore_Add" placeholder="Add More" value={cvData.CvAddMore_Add} onChange={handleChange} />
                     </div>
-                    <button type="submit" className="btn btn-cv">Create</button>
-                    <button type="button" className="btn btn-pdf ms-1" onClick={saveAsPdf}>Save as PDF</button>
+                    <button type="submit" className="btn btn-cv ms--2">Create</button>
+                    <button type="button" className="btn btn-pdf ms--1" onClick={saveAsPdf}>Save as PDF</button>
                 </form>
             </div>
         </div>

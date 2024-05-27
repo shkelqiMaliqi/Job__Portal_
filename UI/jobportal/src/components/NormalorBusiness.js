@@ -6,9 +6,9 @@ function NormalorBusiness() {
   const handleRoleSelection = (role) => {
     setUserRole(role);
     if (role === 'normal') {
-      window.location.href = '/register/';
+      window.location.href = '/register';
     } else if (role === 'business') {
-      window.location.href = '/business/';
+      window.location.href = '/business';
     }
   };
 

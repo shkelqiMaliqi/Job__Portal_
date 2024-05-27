@@ -22,6 +22,18 @@ import AdminSidebar from './Admin_Bashboard/AdminSidebar';
 import AdminNavbar from './Admin_Bashboard/AdminNavbar';
 import AdminFooter from './Admin_Bashboard/AdminFooter';
 import Business from './components/Business';
+import BusinessDashboard from './BusinessDetails/BusinessDashboard';
+import UpdateUser from './User_Updates/UpdateUser';
+import DeleteUser from './User_Updates/DeleteUser';
+import Jobs_Listings from './Jobs_Repository/Jobs_Listings';
+import Users from './User_Updates/Users';
+import BusinessUsers from './BusinessDetails/BusinessUsers';
+import Courses_List from './Courses/Courses_List';
+import Staff from './Admin_Bashboard/Staff/Staff';
+import JobCategories from './Jobs_Repository/JobCategories';
+import JobCategoriesCity from './Jobs_Repository/JobCategoriesCity';
+import JobCategoriesSchedule from './Jobs_Repository/JobCategoriesSchedule';
+
 
 function App() {
   return (
@@ -49,6 +61,17 @@ function App() {
           <Route path="/adminnavbar" element={<AdminNavbar />} />
           <Route path="/adminfooter" element={<AdminFooter />} />
           <Route path="/business" element={<Business />} />
+          <Route path="/businessdashboard" element={<BusinessDashboard />} />
+          <Route path="/updateuser" element={<UpdateUser />} />
+          <Route path="/deleteuser" element={<DeleteUser />} />
+          <Route path="/jobs_listings" element={<Jobs_Listings />} />
+          <Route path="users" element={<Users />} />
+          <Route path="businessusers" element={<BusinessUsers />} />
+          <Route path="courses_list" element={<Courses_List />} />
+          <Route path="staff" element={<Staff />} />
+          <Route path="JobCategories" element={<JobCategories />} />
+          <Route path="JobCategoriesCity" element={<JobCategoriesCity />} />
+          <Route path="JobCategoriesSchedule" element={<JobCategoriesSchedule />} />
 
         </Routes>
       </div>

@@ -8,17 +8,13 @@ function Business() {
     B_PhoneNumber: '',
     B_Password: '',
     B_RepeatPassword: '',
-    role: 'BusinessUser'  
+    UserType_Id: '5'
   });
 
   const [errors, setErrors] = useState({});
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
-  };
-
-  const handleRoleChange = (e) => {
-    setFormData({ ...formData, role: e.target.value });
   };
 
   const handleSubmit = async (e) => {
@@ -32,7 +28,7 @@ function Business() {
 
     try {
       await axios.post('https://localhost:7263/api/business', formData);
-      window.location.href = '/profile'; // Redirect to profile page after successful registration
+      window.location.href = '/profile';
     } catch (error) {
       console.error('Registration failed:', error);
     }
@@ -43,13 +39,17 @@ function Business() {
 
     if (!data.B_CompanyName.trim()) {
       errors.B_CompanyName = 'Company Name is required';
-    } else if (!data.B_Email.trim()) {
+    }
+    if (!data.B_Email.trim()) {
       errors.B_Email = 'Email is required';
-    } else if (!data.B_PhoneNumber.trim()) {
+    }
+    if (!data.B_PhoneNumber.trim()) {
       errors.B_PhoneNumber = 'Phone Number is required';
-    } else if (!data.B_Password.trim()) {
+    }
+    if (!data.B_Password.trim()) {
       errors.B_Password = 'Password is required';
-    } else if (!data.B_RepeatPassword.trim()) {
+    }
+    if (!data.B_RepeatPassword.trim()) {
       errors.B_RepeatPassword = 'Repeat password is required';
     }
 
@@ -64,10 +64,10 @@ function Business() {
             <div className="card" style={{ borderRadius: '15px' }}>
               <div className="card-body p-5">
                 <h2 className="text-uppercase text-center mb-5">Create an account</h2>
-                <form onSubmit={handleSubmit}>  
+                <form onSubmit={handleSubmit}>
                   <div className="form-outline mb-4">
                     <input type="text" id="B_CompanyName" className={`form-control form-control-lg ${errors.B_CompanyName ? 'is-invalid' : ''}`} onChange={handleInputChange} />
-                    <label className="form-label" htmlFor="U_Name">Your Company Name</label>
+                    <label className="form-label" htmlFor="B_CompanyName">Your Company Name</label>
                     {errors.B_CompanyName && <div className="invalid-feedback">{errors.B_CompanyName}</div>}
                   </div>
 
@@ -101,7 +101,6 @@ function Business() {
 
                   <p className="text-center text-muted mt-5 mb-0">Already have an account? <a href="./profile" className="fw-bold text-body"><u>Login here</u></a></p>
                 </form>
-
               </div>
             </div>
           </div>
