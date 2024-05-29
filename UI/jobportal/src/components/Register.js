@@ -11,7 +11,7 @@ const Register = () => {
     U_Phone: '',
     U_Password: '',
     U_RepeatPassword: '',
-    U_Type: 'user', 
+    U_Type: 'user',
   });
 
   const [errors, setErrors] = useState({});
@@ -23,7 +23,6 @@ const Register = () => {
 
   const validateForm = (data) => {
     let errors = {};
-
     if (!data.U_Name.trim()) {
       errors.U_Name = 'Name is required';
     }
@@ -53,13 +52,11 @@ const Register = () => {
     } else if (data.U_Password !== data.U_RepeatPassword) {
       errors.U_RepeatPassword = 'Passwords do not match';
     }
-
     return errors;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const validationErrors = validateForm(formData);
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
@@ -67,8 +64,7 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post('https://localhost:7263/api/users', formData);
-      console.log('Registration successful:', response.data);
+      await axios.post('https://localhost:7263/api/Users', formData);
       navigate('/loginpage');
     } catch (error) {
       console.error('Registration failed:', error);
@@ -96,7 +92,6 @@ const Register = () => {
                     <label className="form-label" htmlFor="U_Name">Your Name</label>
                     {errors.U_Name && <div className="invalid-feedback">{errors.U_Name}</div>}
                   </div>
-
                   {/* Surname */}
                   <div className="form-outline mb-4">
                     <input
@@ -109,7 +104,6 @@ const Register = () => {
                     <label className="form-label" htmlFor="U_Surname">Your Surname</label>
                     {errors.U_Surname && <div className="invalid-feedback">{errors.U_Surname}</div>}
                   </div>
-
                   {/* Email */}
                   <div className="form-outline mb-4">
                     <input
@@ -122,7 +116,6 @@ const Register = () => {
                     <label className="form-label" htmlFor="U_Email">Your Email</label>
                     {errors.U_Email && <div className="invalid-feedback">{errors.U_Email}</div>}
                   </div>
-
                   {/* Username */}
                   <div className="form-outline mb-4">
                     <input
@@ -135,7 +128,6 @@ const Register = () => {
                     <label className="form-label" htmlFor="U_Username">Your Username</label>
                     {errors.U_Username && <div className="invalid-feedback">{errors.U_Username}</div>}
                   </div>
-
                   {/* Phone Number */}
                   <div className="form-outline mb-4">
                     <input
@@ -148,7 +140,6 @@ const Register = () => {
                     <label className="form-label" htmlFor="U_Phone">Your Phone Number</label>
                     {errors.U_Phone && <div className="invalid-feedback">{errors.U_Phone}</div>}
                   </div>
-
                   {/* Password */}
                   <div className="form-outline mb-4">
                     <input
@@ -161,7 +152,6 @@ const Register = () => {
                     <label className="form-label" htmlFor="U_Password">Your Password</label>
                     {errors.U_Password && <div className="invalid-feedback">{errors.U_Password}</div>}
                   </div>
-
                   {/* Repeat Password */}
                   <div className="form-outline mb-4">
                     <input
@@ -174,7 +164,6 @@ const Register = () => {
                     <label className="form-label" htmlFor="U_RepeatPassword">Repeat Password</label>
                     {errors.U_RepeatPassword && <div className="invalid-feedback">{errors.U_RepeatPassword}</div>}
                   </div>
-
                   {/* Select User Type */}
                   <div className="form-outline mb-4">
                     <select
@@ -185,15 +174,12 @@ const Register = () => {
                     >
                       <option value="user">User</option>
                       <option value="business">Business</option>
-                      
                     </select>
                   </div>
-
                   {/* Register button */}
                   <div className="d-grid">
                     <button type="submit" className="btn btn-success btn-lg gradient-custom-4 text-body">Register</button>
                   </div>
-
                   {/* Login link */}
                   <p className="text-center text-muted mt-5 mb-0">
                     Already have an account? <a href="./loginpage" className="fw-bold text-body"><u>Login here</u></a>

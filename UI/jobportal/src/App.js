@@ -33,6 +33,8 @@ import Staff from './Admin_Bashboard/Staff/Staff';
 import JobCategories from './Jobs_Repository/JobCategories';
 import JobCategoriesCity from './Jobs_Repository/JobCategoriesCity';
 import JobCategoriesSchedule from './Jobs_Repository/JobCategoriesSchedule';
+import PrivateRoute from './PrivateRoute';
+import { setToken, getToken, removeToken, getUserFromToken } from './Auth';
 
 
 function App() {
@@ -72,6 +74,7 @@ function App() {
           <Route path="JobCategories" element={<JobCategories />} />
           <Route path="JobCategoriesCity" element={<JobCategoriesCity />} />
           <Route path="JobCategoriesSchedule" element={<JobCategoriesSchedule />} />
+          <Route path="PrivateRoute"  element={<PrivateRoute />} />
 
         </Routes>
       </div>
