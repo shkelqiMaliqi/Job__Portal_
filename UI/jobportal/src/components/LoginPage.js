@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import Profile from './Profile'; 
+import { setToken, getUserFromToken, removeToken } from '../Auth';
+import Profile from './Profile';
 import AdminDashboard from '../Admin_Bashboard/AdminDashboard';
 import BusinessDashboard from '../BusinessDetails/BusinessDashboard';
 
 const LoginPage = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -15,14 +16,14 @@ const LoginPage = () => {
   const [userType, setUserType] = useState('');
 
   useEffect(() => {
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
-    if (isLoggedIn) {
-      const userData = JSON.parse(localStorage.getItem('userData'));
-      if (userData) {
+    const token = localStorage.getItem('jwtToken');
+    if (token) {
+      const user = getUserFromToken();
+      if (user) {
         setLoggedIn(true);
-        setUserData(userData);
-        setUserType(userData.U_Type);
-        redirectToDashboard(userData.U_Type); // Ensure proper redirection on page reload
+        setUserData(user);
+        setUserType(user.U_Type);
+        redirectToDashboard(user.U_Type); // Ensure proper redirection on page reload
       }
     }
   }, []);
@@ -34,12 +35,13 @@ const LoginPage = () => {
         U_Email: email,
         U_Password: password,
       });
+      const { token } = response.data;
+      setToken(token);
+      const user = getUserFromToken();
       setLoggedIn(true);
-      setUserData(response.data);
-      localStorage.setItem('isLoggedIn', true);
-      localStorage.setItem('userData', JSON.stringify(response.data));
-      setUserType(response.data.U_Type);
-      redirectToDashboard(response.data.U_Type);
+      setUserData(user);
+      setUserType(user.U_Type);
+      redirectToDashboard(user.U_Type);
     } catch (error) {
       console.error('Login error:', error);
       setError('Invalid email or password');
@@ -49,12 +51,11 @@ const LoginPage = () => {
   const handleLogout = async () => {
     try {
       await axios.post('https://localhost:7263/api/Users/logout');
+      removeToken();
       setLoggedIn(false);
       setUserData(null);
       setUserType('');
-      localStorage.removeItem('isLoggedIn');
-      localStorage.removeItem('userData');
-      navigate('/mainpage'); // Redirect to login page after logout
+      navigate('/mainpage'); // Redirect to main page after logout
     } catch (error) {
       console.error('Logout error:', error);
     }
@@ -63,7 +64,7 @@ const LoginPage = () => {
   const redirectToDashboard = (userType) => {
     switch (userType) {
       case 'user':
-        navigate('/loginpage'); 
+        navigate('/profile'); // Ensure correct route for user profile
         break;
       case 'admin':
         navigate('/admindashboard'); 
