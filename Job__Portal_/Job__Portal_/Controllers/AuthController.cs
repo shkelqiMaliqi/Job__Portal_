@@ -46,7 +46,7 @@ namespace Job__Portal_.Controllers
                         string email = reader.GetString(1);
                         string userType = reader.GetString(2);
 
-                        // Generate JWT token
+                       
                         var tokenHandler = new JwtSecurityTokenHandler();
                         var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Secret"]);
                         var tokenDescriptor = new SecurityTokenDescriptor

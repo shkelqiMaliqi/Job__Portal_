@@ -5,6 +5,10 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using Job__Portal_.Models;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace Job__Portal_.Controllers
 {
@@ -183,11 +187,27 @@ namespace Job__Portal_.Controllers
                     {
                         int userId = reader.GetInt32(0);
                         string email = reader.GetString(1);
-                        string userType = reader.GetString(2);  
+                        string userType = reader.GetString(2);
 
-                        HttpContext.Session.SetInt32(SessionKeyName, userId);
+                        var claims = new[]
+                        {
+                    new Claim(JwtRegisteredClaimNames.Sub, email),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                    new Claim("UserId", userId.ToString()),
+                    new Claim("UserType", userType)
+                };
 
-                        return Ok(new { UserId = userId, U_Email = email, U_Type = userType });
+                        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("your_secret_key"));
+                        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+                        var token = new JwtSecurityToken(
+                            issuer: "yourdomain.com",
+                            audience: "yourdomain.com",
+                            claims: claims,
+                            expires: DateTime.Now.AddMinutes(30),
+                            signingCredentials: creds);
+
+                        return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token) });
                     }
                     else
                     {

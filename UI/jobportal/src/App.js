@@ -1,17 +1,17 @@
 import React from 'react';
-import  {Route, Routes } from 'react-router-dom'; 
+import { Route, Routes } from 'react-router-dom'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import Navbar from "./Navbar"
+import Navbar from "./Navbar";
 import Home from './components/Home';
 import WhyUs from './components/WhyUs';
 import ContactUs from './components/ContactUs';
 import Profile from './components/Profile';
-import Publish from './components/Publish'
-import Register  from './components/Register';
+import Publish from './components/Publish';
+import Register from './components/Register';
 import LoggedIn from './components/LoggedIn';
 import LoginPage from './components/LoginPage';
-import Cv from'./Cv_Form/Cv';
+import Cv from './Cv_Form/Cv';
 import NormalorBusiness from './components/NormalorBusiness';
 import MainPage from './components/MainPage';
 import TrainingCourses from './Courses/TrainingCourses';
@@ -34,9 +34,10 @@ import JobCategories from './Jobs_Repository/JobCategories';
 import JobCategoriesCity from './Jobs_Repository/JobCategoriesCity';
 import JobCategoriesSchedule from './Jobs_Repository/JobCategoriesSchedule';
 import PrivateRoute from './PrivateRoute';
-import { setToken, getToken, removeToken, getUserFromToken } from './Auth';
-
-
+/*
+import { getToken, getUserFromToken } from './Auth';
+import TokenManagement from './TokenManagement';
+*/
 function App() {
   return (
     <>
@@ -67,22 +68,22 @@ function App() {
           <Route path="/updateuser" element={<UpdateUser />} />
           <Route path="/deleteuser" element={<DeleteUser />} />
           <Route path="/jobs_listings" element={<Jobs_Listings />} />
-          <Route path="users" element={<Users />} />
-          <Route path="businessusers" element={<BusinessUsers />} />
-          <Route path="courses_list" element={<Courses_List />} />
-          <Route path="staff" element={<Staff />} />
-          <Route path="JobCategories" element={<JobCategories />} />
-          <Route path="JobCategoriesCity" element={<JobCategoriesCity />} />
-          <Route path="JobCategoriesSchedule" element={<JobCategoriesSchedule />} />
-          <Route path="PrivateRoute"  element={<PrivateRoute />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/businessusers" element={<BusinessUsers />} />
+          <Route path="/courses_list" element={<Courses_List />} />
+          <Route path="/staff" element={<Staff />} />
+          <Route path="/JobCategories" element={<JobCategories />} />
+          <Route path="/JobCategoriesCity" element={<JobCategoriesCity />} />
+          <Route path="/JobCategoriesSchedule" element={<JobCategoriesSchedule />} />
+          <Route path="/PrivateRoute" element={<PrivateRoute />} />
 
         </Routes>
       </div>
       <footer>
-
+        {}
       </footer>
     </>
-  )
+  );
 }
 
 export default App;

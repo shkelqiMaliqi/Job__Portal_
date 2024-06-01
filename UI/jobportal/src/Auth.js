@@ -1,22 +1,28 @@
-import { decode as jwt_decode } from 'jwt-decode';
+/*
+import jwt_decode from 'jwt-decode';
 
-
-export const setToken = (token) => {
-  localStorage.setItem('jwtToken', token);
-};
-
-export const getToken = () => {
-  return localStorage.getItem('jwtToken');
-};
-
-export const removeToken = () => {
-  localStorage.removeItem('jwtToken');
-};
-
-export const getUserFromToken = () => {
-  const token = getToken();
-  if (token) {
-    return jwt_decode(token);
+const Auth = {
+  setToken: (token) => {
+    localStorage.setItem('jwtToken', token);
+  },
+  
+  getToken: () => {
+    return localStorage.getItem('jwtToken');
+  },
+  
+  removeToken: () => {
+    localStorage.removeItem('jwtToken');
+  },
+  
+  getUserFromToken: () => {
+    const token = Auth.getToken();
+    if (token) {
+      return jwt_decode(token); // Use the correct named import
+    }
+    return null;
   }
-  return null;
 };
+
+export default Auth;
+export const { setToken, getToken, removeToken, getUserFromToken } = Auth;
+*/

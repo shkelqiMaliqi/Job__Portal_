@@ -1,122 +1,211 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 const Publish = () => {
     const [job, setJob] = useState({
         JobTitle: '',
-        NumberOfPositions: 0,
+        NumberOfPositions: '',
         JobDescription: '',
         Qualification: '',
         Experience: '',
         Requirements: '',
         JobType: '',
         CompanyName: '',
-        CompanyLogo: '',
+        CompanyLogo: null, 
         Website: '',
         CompanyEmail: '',
         CompanyAddress: '',
         CompanyCountry: '',
         CompanyState: '',
-        CompanyPhone: 0,
-        CreateDate_C: new Date().toISOString().slice(0, 10) 
+        CompanyPhone: '',
+        CreateDate_C: new Date(),
+        JobCategoryId: '',
+        JobCategories_ScheduleId: '',
+        JobCategories_CityId: '',
+        U_Id: ''
     });
+
+    const [jobCategories, setJobCategories] = useState([]);
+    const [jobCategoriesCity, setJobCategoriesCity] = useState([]);
+    const [jobCategoriesSchedule, setJobCategoriesSchedule] = useState([]);
+
+    useEffect(() => {
+        fetchJobCategories();
+        fetchJobCategoriesCity();
+        fetchJobCategoriesSchedule();
+    }, []);
+
+    const fetchJobCategories = async () => {
+        try {
+            const response = await axios.get('https://localhost:7263/api/JobCategories');
+            setJobCategories(response.data);
+        } catch (error) {
+            console.error('Error fetching job categories:', error);
+        }
+    };
+
+    const fetchJobCategoriesCity = async () => {
+        try {
+            const response = await axios.get('https://localhost:7263/api/JobCategories_City');
+            setJobCategoriesCity(response.data);
+        } catch (error) {
+            console.error('Error fetching job categories city:', error);
+        }
+    };
+
+    const fetchJobCategoriesSchedule = async () => {
+        try {
+            const response = await axios.get('https://localhost:7263/api/JobCategories_Schedule');
+            setJobCategoriesSchedule(response.data);
+        } catch (error) {
+            console.error('Error fetching job categories schedule:', error);
+        }
+    };
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setJob(prevJob => ({
-            ...prevJob,
+        setJob({
+            ...job,
             [name]: value
-        }));
+        });
+    };
+
+    const handleFileChange = (e) => {
+        setJob({
+            ...job,
+            CompanyLogo: e.target.files[0]
+        });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('https://localhost:7263/api/jobs', job);
-            
-            console.log('Job created successfully!');
-            alert('Job added successfully!');
+            const formData = new FormData();
+            for (const key in job) {
+                if (key === 'CompanyLogo' && job[key]) {
+                    formData.append(key, job[key], job[key].name);
+                } else {
+                    formData.append(key, job[key]);
+                }
+            }
+
+            const imageResponse = await axios.post('https://localhost:7263/api/Jobs/SaveFile', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
+            const imageName = imageResponse.data;
+
+            const jobData = { ...job, CompanyLogo: imageName };
+            await axios.post('https://localhost:7263/api/Jobs', jobData);
+            alert('Job posted successfully!');
         } catch (error) {
-            console.error('Error creating job:', error);
+            console.error('There was an error posting the job!', error);
         }
     };
 
     return (
-        <div className="publish-container">
-            <div className="container">
-                <h2 className="text-center my-4">Publish a Job</h2>
-                <form onSubmit={handleSubmit} className="row g-3">
-                    <div className="col-md-6">
-                        <label htmlFor="JobTitle" className="form-label_publish">Job Title:</label>
-                        <input type="text" id="JobTitle" name="JobTitle" value={job.JobTitle} onChange={handleChange} className="form-control" required />
-                    </div>
-                    <div className="col-md-6">
-                        <label htmlFor="NumberOfPositions" className="form-label_publis">Number of Positions:</label>
-                        <input type="number" id="NumberOfPositions" name="NumberOfPositions" value={job.NumberOfPositions} onChange={handleChange} className="form-control" required />
-                    </div>
-                    <div className="col-md-12">
-                        <label htmlFor="JobDescription" className="form-label_publis">Job Description:</label>
-                        <input type="text" id="JobDescription" name="JobDescription" value={job.JobDescription} onChange={handleChange} className="form-control" required />
-                    </div>
-                    <div className="col-md-6">
-                        <label htmlFor="Qualification" className="form-label_publis">Qualification:</label>
-                        <input type="text" id="Qualification" name="Qualification" value={job.Qualification} onChange={handleChange} className="form-control" required />
-                    </div>
-                    <div className="col-md-6">
-                        <label htmlFor="Experience" className="form-label_publis">Experience:</label>
-                        <input type="text" id="Experience" name="Experience" value={job.Experience} onChange={handleChange} className="form-control" required />
-                    </div>
-                    <div className="col-md-12">
-                        <label htmlFor="Requirements" className="form-label_publis">Requirements:</label>
-                        <input type="text" id="Requirements" name="Requirements" value={job.Requirements} onChange={handleChange} className="form-control" required />
-                    </div>
-                    <div className="col-md-6">
-                        <label htmlFor="JobType" className="form-label_publis">Job Type:</label>
-                        <input type="text" id="JobType" name="JobType" value={job.JobType} onChange={handleChange} className="form-control" required />
-                    </div>
-                    <div className="col-md-6">
-                        <label htmlFor="CompanyName" className="form-label_publis">Company Name:</label>
-                        <input type="text" id="CompanyName" name="CompanyName" value={job.CompanyName} onChange={handleChange} className="form-control" required />
-                    </div>
-                    <div className="col-md-6">
-                        <label htmlFor="CompanyLogo" className="form-label_publis">Company Logo:</label>
-                        <input type="text" id="CompanyLogo" name="CompanyLogo" value={job.CompanyLogo} onChange={handleChange} className="form-control" />
-                    </div>
-                    <div className="col-md-6">
-                        <label htmlFor="Website" className="form-label_publish">Website:</label>
-                        <input type="text" id="Website" name="Website" value={job.Website} onChange={handleChange} className="form-control" />
-                    </div>
-                    <div className="col-md-6">
-                        <label htmlFor="CompanyEmail" className="form-label_publish">Company Email:</label>
-                        <input type="email" id="CompanyEmail" name="CompanyEmail" value={job.CompanyEmail} onChange={handleChange} className="form-control" required />
-                    </div>
-                    <div className="col-md-6">
-                        <label htmlFor="CompanyAddress" className="form-label_publish">Company Address:</label>
-                        <input type="text" id="CompanyAddress" name="CompanyAddress" value={job.CompanyAddress} onChange={handleChange} className="form-control" required />
-                    </div>
-                    <div className="col-md-6">
-                        <label htmlFor="CompanyCountry" className="form-label_publish">Company Country:</label>
-                        <input type="text" id="CompanyCountry" name="CompanyCountry" value={job.CompanyCountry} onChange={handleChange} className="form-control" required />
-                    </div>
-                    <div className="col-md-6">
-                        <label htmlFor="CompanyState" className="form-label_publish">Company State:</label>
-                        <input type="text" id="CompanyState" name="CompanyState" value={job.CompanyState} onChange={handleChange} className="form-control" required />
-                    </div>
-                    <div className="col-md-6">
-                        <label htmlFor="CompanyPhone" className="form-label_publish">Company Phone:</label>
-                        <input type="text" id="CompanyPhone" name="CompanyPhone" value={job.CompanyPhone} onChange={handleChange} className="form-control" required />
-                    </div>
-                    <div className="col-md-6">
-                        <label htmlFor="CreateDate_C" className="form-label_publish">Create Date:</label>
-                        <input type="date" id="CreateDate_C" name="CreateDate_C" value={job.CreateDate_C} onChange={handleChange} className="form-control" required />
-                    </div>
-                    <div className="col-12 text-center mt-4">
-                        <button type="submit" className="btn btn_publish">Create Job</button>
-                    </div>
-                </form>
-            </div>
+        <div className="container mt-5">
+            <form onSubmit={handleSubmit}>
+                <div className="form-group">
+                    <label>Job Title</label>
+                    <input type="text" className="form-control" name="JobTitle" value={job.JobTitle} onChange={handleChange} />
+                </div>
+                <div className="form-group">
+                    <label>Number of Positions</label>
+                    <input type="number" className="form-control" name="NumberOfPositions" value={job.NumberOfPositions} onChange={handleChange} />
+                </div>
+                <div className="form-group">
+                    <label>Job Description</label>
+                    <textarea className="form-control" name="JobDescription" value={job.JobDescription} onChange={handleChange}></textarea>
+                </div>
+                <div className="form-group">
+                    <label>Qualification</label>
+                    <textarea className="form-control" name="Qualification" value={job.Qualification} onChange={handleChange}></textarea>
+                </div>
+                <div className="form-group">
+                    <label>Experience</label>
+                    <textarea className="form-control" name="Experience" value={job.Experience} onChange={handleChange}></textarea>
+                </div>
+                <div className="form-group">
+                    <label>Requirements</label>
+                    <textarea className="form-control" name="Requirements" value={job.Requirements} onChange={handleChange}></textarea>
+                </div>
+                <div className="form-group">
+                    <label>Job Type</label>
+                    <select className="form-control" name="JobType" value={job.JobType} onChange={handleChange}>
+                        <option value="">Select Job Type</option>
+                        <option value="Full-Time">Full-Time</option>
+                        <option value="Part-Time">Part-Time</option>
+                        <option value="Internship">Internship</option>
+                    </select>
+                </div>
+                <div className="form-group">
+                    <label>Company Name</label>
+                    <input type="text" className="form-control" name="CompanyName" value={job.CompanyName} onChange={handleChange} />
+                </div>
+                <div className="form-group">
+                    <label>Company Logo</label>
+                    <input type="file" className="form-control" name="CompanyLogo" onChange={handleFileChange} />
+                </div>
+                <div className="form-group">
+                    <label>Website</label>
+                    <input type="text" className="form-control" name="Website" value={job.Website} onChange={handleChange} />
+                </div>
+                <div className="form-group">
+                    <label>Company Email</label>
+                    <input type="email" className="form-control" name="CompanyEmail" value={job.CompanyEmail} onChange={handleChange} />
+                </div>
+                <div className="form-group">
+                    <label>Company Address</label>
+                    <textarea className="form-control" name="CompanyAddress" value={job.CompanyAddress} onChange={handleChange}></textarea>
+                </div>
+                <div className="form-group">
+                    <label>Company Country</label>
+                    <input type="text" className="form-control" name="CompanyCountry" value={job.CompanyCountry} onChange={handleChange} />
+                </div>
+                <div className="form-group">
+                    <label>Company State</label>
+                    <input type="text" className="form-control" name="CompanyState" value={job.CompanyState} onChange={handleChange} />
+                </div>
+                <div className="form-group">
+                    <label>Company Phone</label>
+                    <input type="text" className="form-control" name="CompanyPhone" value={job.CompanyPhone} onChange={handleChange} />
+                </div>
+                <div className="form-group">
+                    <label>Job Category</label>
+                    <select className="form-control" name="JobCategoryId" value={job.JobCategoryId} onChange={handleChange}>
+                        <option value="">Select Job Category</option>
+                        {jobCategories.map(category => (
+                            <option key={category.JobCategoryID} value={category.JobCategoryID}>{category.JobCategoryName}</option>
+                        ))}
+                    </select>
+                </div>
+                <div className="form-group">
+                    <label>Job City</label>
+                    <select className="form-control" name="JobCategories_CityId" value={job.JobCategories_CityId} onChange={handleChange}>
+                        <option value="">Select Job City</option>
+                        {jobCategoriesCity.map(city => (
+                            <option key={city.JobCategory_CityId} value={city.JobCategory_CityId}>{city.JobCategory_City_Name}</option>
+                        ))}
+                    </select>
+                </div>
+                <div className="form-group">
+                    <label>Job Schedule</label>
+                    <select className="form-control" name="JobCategories_ScheduleId" value={job.JobCategories_ScheduleId} onChange={handleChange}>
+                        <option value="">Select Job Schedule</option>
+                        {jobCategoriesSchedule.map(schedule => (
+                            <option key={schedule.JobCategories_ScheduleId} value={schedule.JobCategories_ScheduleId}>{schedule.JobCategories_Schedule_Time}</option>
+                        ))}
+                    </select>
+                </div>
+                <div className="form-group">
+                    <label>User ID</label>
+                    <input type="text" className="form-control" name="U_Id" value={job.U_Id} onChange={handleChange} />
+                </div>
+                <button type="submit" className="btn btn-primary">Post Job</button>
+            </form>
         </div>
     );
 };

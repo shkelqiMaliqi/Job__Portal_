@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import JobCategories from '../Jobs_Repository/JobCategories';
 import JobCategoriesCity from '../Jobs_Repository/JobCategoriesCity';
 import JobCategoriesSchedule from '../Jobs_Repository/JobCategoriesSchedule';
 
-
 const MainPage = () => {
     const [jobs, setJobs] = useState([]);
+    const [filteredJobs, setFilteredJobs] = useState([]);
     const [categories, setCategories] = useState({
         JobCategories: [],
         JobCategories_City: [],
@@ -23,11 +23,15 @@ const MainPage = () => {
     const [showJobCategoriesCity, setShowJobCategoriesCity] = useState(false);
     const [showJobCategoriesSchedule, setShowJobCategoriesSchedule] = useState(false);
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const [jobsPerPage] = useState(6); // Number of jobs per page
+
     useEffect(() => {
         const fetchJobs = async () => {
             try {
                 const response = await axios.get('https://localhost:7263/api/jobs');
                 setJobs(response.data);
+                setFilteredJobs(response.data);
             } catch (error) {
                 console.error('Error fetching jobs:', error);
             }
@@ -55,6 +59,28 @@ const MainPage = () => {
         fetchCategories();
     }, []);
 
+    useEffect(() => {
+        const applyFilters = () => {
+            let filtered = jobs;
+
+            if (selectedIndustry) {
+                filtered = filtered.filter(job => job.JobCategoryName === selectedIndustry);
+            }
+
+            if (selectedCity) {
+                filtered = filtered.filter(job => job.JobCategory_City_Name === selectedCity);
+            }
+
+            if (selectedSchedule) {
+                filtered = filtered.filter(job => job.JobCategories_Schedule_Time === selectedSchedule);
+            }
+
+            setFilteredJobs(filtered);
+        };
+
+        applyFilters();
+    }, [selectedIndustry, selectedCity, selectedSchedule, jobs]);
+
     const toggleDetails = (jobId) => {
         setExpandedJobId(prevJobId => (prevJobId === jobId ? null : jobId));
     };
@@ -71,23 +97,13 @@ const MainPage = () => {
         setSelectedSchedule(event.target.value);
     };
 
-    const toggleJobCategories = () => {
-        setShowJobCategories(prevState => !prevState);
-        setShowJobCategoriesCity(false); 
-        setShowJobCategoriesSchedule(false);
+    const handlePageChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
     };
 
-    const toggleJobCategoriesCity = () => {
-        setShowJobCategoriesCity(prevState => !prevState);
-        setShowJobCategories(false); 
-        setShowJobCategoriesSchedule(false);
-    };
-
-    const toggleJobCategoriesSchedule = () => {
-        setShowJobCategoriesSchedule(prevState => !prevState);
-        setShowJobCategories(false); 
-        setShowJobCategoriesCity(false);
-    };
+    const indexOfLastJob = currentPage * jobsPerPage;
+    const indexOfFirstJob = indexOfLastJob - jobsPerPage;
+    const currentJobs = filteredJobs.slice(indexOfFirstJob, indexOfLastJob);
 
     return (
         <div className="container mt-5">
@@ -135,16 +151,16 @@ const MainPage = () => {
             </div>
             
             <div className="row">
-                {jobs.map((job) => (
+                {currentJobs.map((job) => (
                     <div key={job.JobId} className="col-md-4 mb-4">
                         <div className="card">
                             <div className="card-body">
                                 <h2 className="card-title">{job.JobTitle}</h2>
                                 <div className="card-intro">
-                                    <div className="col-md-12">
-                                        <p>{job.CompanyName}</p>
-                                        <p>{job.JobType}</p>
-                                    </div>
+                                    <p><strong>Industry:</strong> {job.JobCategoryName}</p>
+                                    <p><strong>City:</strong> {job.JobCategory_City_Name}</p>
+                                    <p><strong>Schedule:</strong> {job.JobCategories_Schedule_Time}</p>
+                                    <p><strong>Type:</strong> {job.JobType}</p>
                                 </div>
                                 <button className="btn btn-primary" onClick={() => toggleDetails(job.JobId)}>
                                     {expandedJobId === job.JobId ? 'Show Less' : 'See More'}
@@ -157,13 +173,13 @@ const MainPage = () => {
                                         <p><strong>Requirements:</strong> {job.Requirements}</p>
                                         <p><strong>Number of Positions:</strong> {job.NumberOfPositions}</p>
                                         <hr/>
-                                        <p><i class="fa fa-link"></i> <a href={job.Website} target="_blank" rel="noopener noreferrer">{job.Website}</a></p>
-                                        <p><i class="fa fa-envelope"></i> {job.CompanyEmail}</p>
-                                        <p><i class="fa fa-map-marker"></i> {job.CompanyAddress}</p>
-                                        <p><i class="fa fa-globe"></i> {job.CompanyCountry}</p>
-                                        <p><i class="fa fa-map-signs"></i> {job.CompanyState}</p>
-                                        <p><i class="fa fa-phone"></i> {job.CompanyPhone}</p>
-                                        <p><i class="fa fa-calendar"></i> {new Date(job.CreateDate_C).toLocaleDateString()}</p>
+                                        <p><i className="fa fa-link"></i> <a href={job.Website} target="_blank" rel="noopener noreferrer">{job.Website}</a></p>
+                                        <p><i className="fa fa-envelope"></i> {job.CompanyEmail}</p>
+                                        <p><i className="fa fa-map-marker"></i> {job.CompanyAddress}</p>
+                                        <p><i className="fa fa-globe"></i> {job.CompanyCountry}</p>
+                                        <p><i className="fa fa-map-signs"></i> {job.CompanyState}</p>
+                                        <p><i className="fa fa-phone"></i> {job.CompanyPhone}</p>
+                                        <p><i className="fa fa-calendar"></i> {new Date(job.CreateDate_C).toLocaleDateString()}</p>
                                         <div className="apply-button">Apply Now</div>
                                     </div>
                                 )}
@@ -173,7 +189,17 @@ const MainPage = () => {
                 ))}
             </div>
 
-            {}
+            {/* Pagination */}
+            <nav aria-label="Job Pagination">
+                <ul className="pagination justify-content-center">
+                    {[...Array(Math.ceil(filteredJobs.length / jobsPerPage)).keys()].map((number) => (
+                        <li key={number} className={`page-item ${currentPage === number + 1 ? 'active' : ''}`}>
+                            <button className="page-link" onClick={() => handlePageChange(number + 1)}>{number + 1}</button>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
+
             {showJobCategories && <JobCategories />}
             {showJobCategoriesCity && <JobCategoriesCity />}
             {showJobCategoriesSchedule && <JobCategoriesSchedule />}

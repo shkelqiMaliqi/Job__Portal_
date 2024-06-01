@@ -23,7 +23,7 @@ const LoginPage = () => {
         setLoggedIn(true);
         setUserData(user);
         setUserType(user.U_Type);
-        redirectToDashboard(user.U_Type); // Ensure proper redirection on page reload
+        redirectToDashboard(user.U_Type);
       }
     }
   }, []);
@@ -55,7 +55,7 @@ const LoginPage = () => {
       setLoggedIn(false);
       setUserData(null);
       setUserType('');
-      navigate('/mainpage'); // Redirect to main page after logout
+      navigate('/mainpage');
     } catch (error) {
       console.error('Logout error:', error);
     }
@@ -64,13 +64,13 @@ const LoginPage = () => {
   const redirectToDashboard = (userType) => {
     switch (userType) {
       case 'user':
-        navigate('/profile'); // Ensure correct route for user profile
+        navigate('/profile');
         break;
       case 'admin':
-        navigate('/admindashboard'); 
+        navigate('/admindashboard');
         break;
       case 'business':
-        navigate('/businessdashboard'); 
+        navigate('/businessdashboard');
         break;
       default:
         break;
@@ -86,9 +86,11 @@ const LoginPage = () => {
           <div className="form-group">
             <label>Email:</label>
             <input
-              type="text"
+              type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
+              className="form-control"
             />
           </div>
           <div className="form-group">
@@ -97,9 +99,11 @@ const LoginPage = () => {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required
+              className="form-control"
             />
           </div>
-          <button type="submit" className="login-button">Login</button>
+          <button type="submit" className="btn btn-primary">Login</button>
           <p className="text-center text-muted mt-5 mb-0">
             Don't have an account? <a href="/register" className="fw-bold text-body"><u>Register here</u></a>
           </p>

@@ -31,28 +31,31 @@ CREATE TABLE Jobs (
     JobId INT PRIMARY KEY IDENTITY(1,1),
     JobTitle VARCHAR(50),
     NumberOfPositions INT,
-    JobDescription VARCHAR(MAX),
-    Qualification VARCHAR(MAX),
+    JobDescription TEXT,
+    Qualification TEXT,
     Experience VARCHAR(50),
-    Requirements VARCHAR(MAX),
+    Requirements TEXT,
     JobType VARCHAR(50),
     CompanyName VARCHAR(50),
     CompanyLogo VARCHAR(MAX),
     Website VARCHAR(100),
-    CompanyEmail VARCHAR(50),
-    CompanyAddress VARCHAR(MAX),
+    CompanyEmail VARCHAR(255),
+    CompanyAddress TEXT,
     CompanyCountry VARCHAR(50),
     CompanyState VARCHAR(50),
-    CompanyPhone INT,
+    CompanyPhone VARCHAR(20),
     CreateDate_C DATETIME,
     JobCategoryId INT,
+    JobCategories_ScheduleId INT,
+    JobCategories_CityId INT,
     U_Id INT,
     CONSTRAINT FK_Jobs_JobCategories FOREIGN KEY (JobCategoryId) REFERENCES JobCategories(JobCategoryId),
-    CONSTRAINT FK_Jobs_JobCategories_Schedule FOREIGN KEY (JobCategoryId) REFERENCES JobCategories_Schedule(JobCategories_ScheduleId),
-    CONSTRAINT FK_Jobs_JobCategories_City FOREIGN KEY (JobCategoryId) REFERENCES JobCategories_City(JobCategory_CityId),
+    CONSTRAINT FK_Jobs_JobCategories_Schedule FOREIGN KEY (JobCategories_ScheduleId) REFERENCES JobCategories_Schedule(JobCategories_ScheduleId),
+    CONSTRAINT FK_Jobs_JobCategories_City FOREIGN KEY (JobCategories_CityId) REFERENCES JobCategories_City(JobCategory_CityId),
     CONSTRAINT FK_Jobs_Users FOREIGN KEY (U_Id) REFERENCES Users(U_Id)
 );
--- Create JobCategories table
+
+
 CREATE TABLE JobCategories (
     JobCategoryId INT PRIMARY KEY IDENTITY(1,1),
     JobCategoryName VARCHAR(255)
